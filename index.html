@@ -167,24 +167,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- NAVIGATION -->
 <nav>
 <div class="nav-scroll">
-<button class="nav-btn active" onclick="showTab(0)">Kirish</button>
-<button class="nav-btn" onclick="showTab(1)">Moliyaviy</button>
-<button class="nav-btn" onclick="showTab(2)">Geografik</button>
-<button class="nav-btn" onclick="showTab(3)">Segmentlar</button>
-<button class="nav-btn" onclick="showTab(4)">M&A</button>
-<button class="nav-btn" onclick="showTab(5)">Benchmarklar</button>
-<button class="nav-btn" onclick="showTab(6)">Givaudan tahlili</button>
-<button class="nav-btn" onclick="showTab(7)">Orgstruktura</button>
-<button class="nav-btn" onclick="showTab(8)">KPI lavozimlar</button>
-<button class="nav-btn" onclick="showTab(9)">Texnik KPI</button>
-<button class="nav-btn" onclick="showTab(10)">Sotuv jarayoni</button>
-<button class="nav-btn" onclick="showTab(11)">Sotuv batafsil</button>
-<button class="nav-btn" onclick="showTab(12)">Texnik rollar</button>
-<button class="nav-btn" onclick="showTab(13)">Biznesga qo'llash</button>
-<button class="nav-btn" onclick="showTab(14)">Dollar taqsimoti</button>
-<button class="nav-btn" onclick="showTab(15)">Xulosalar</button>
-<button class="nav-btn" onclick="showTab(16)">Manbalar</button>
-<button class="nav-btn" onclick="showTab(17)" style="border:1px solid var(--gold)">Lug'at</button>
+<button class="nav-btn active" onclick="showTab('tab0',this)">Kirish</button>
+<button class="nav-btn" onclick="showTab('tab1',this)">Moliyaviy</button>
+<button class="nav-btn" onclick="showTab('tab2',this)">Geografik</button>
+<button class="nav-btn" onclick="showTab('tab3',this)">Segmentlar</button>
+<button class="nav-btn" onclick="showTab('tab14',this)">$1 taqsimoti</button>
+<button class="nav-btn" onclick="showTab('tab4',this)">M&A bitimlar</button>
+<button class="nav-btn" onclick="showTab('tab5',this)">Benchmarklar</button>
+<button class="nav-btn" onclick="showTab('tab6',this)">Givaudan tahlili</button>
+<button class="nav-btn" onclick="showTab('tab7',this)">Orgstruktura</button>
+<button class="nav-btn" onclick="showTab('tab8',this)">KPI tizimi</button>
+<button class="nav-btn" onclick="showTab('tab10',this)">Sotuv jarayoni</button>
+<button class="nav-btn" onclick="showTab('tab11',this)">Sotuv bosqichlari</button>
+<button class="nav-btn" onclick="showTab('tab12',this)">Texnik rollar</button>
+<button class="nav-btn" onclick="showTab('tab13',this)">Biznesga qo'llash</button>
+<button class="nav-btn" onclick="showTab('tab15',this)">Xulosalar</button>
+<button class="nav-btn" onclick="showTab('tab16',this)">Manbalar</button>
+<button class="nav-btn" onclick="showTab('tab17',this)" style="border:1px solid var(--gold)">Lug'at</button>
 </div>
 </nav>
 
@@ -1255,13 +1254,10 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 <div class="panel" style="border-left:3px solid var(--blue)">
-<p style="font-size:.9rem;margin:0"><strong>Texnik xodimlar KPI lari</strong> (Perfumer, Qo'llash mutaxassisi, Sensorik, Tartibga solish, CMI, Yetkazib berish zanjiri, SN) — <a href="javascript:void(0)" onclick="showTab(9)" style="color:var(--blue);font-weight:600">"Texnik KPI" tabiga qarang &rarr;</a></p>
-</div>
+<p style="font-size:.9rem;margin:0"><strong>Texnik xodimlar KPI lari</strong> (Perfumer, Qo'llash mutaxassisi, Sensorik, Tartibga solish, CMI, Yetkazib berish zanjiri, SN) — pastda keltirilgan.</p>
 </div>
 
-<!-- ====== TAB 9: TEXNIK KPI ====== -->
-<div class="sec" id="tab9">
-<h2><span class="ico">X</span> Texnik xodimlar KPI lari</h2>
+<h2 style="margin-top:32px"><span class="ico">X</span> Texnik xodimlar KPI lari</h2>
 
 <div class="grid2">
 <div class="panel">
@@ -1413,7 +1409,7 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 
 <div class="panel panel-glow">
 <h3>10.2 Ichki varonka (kompaniya ichida) — 10 bosqich</h3>
-<p style="font-size:.9rem;color:var(--muted);padding:12px 0">Ichki varonkaning to'liq 10 bosqichli batafsil tavsifi — har bir bosqich, mas'ul shaxslar, harakatlar va KPI/signallar bilan — keyingi <strong style="color:var(--white)">"Sotuv batafsil"</strong> tabida keltirilgan. <a href="javascript:void(0)" onclick="showTab(11)" style="color:var(--blue);font-weight:600">Batafsil jadvalga o'tish &rarr;</a></p>
+<p style="font-size:.9rem;color:var(--muted);padding:12px 0">Ichki varonkaning to'liq 10 bosqichli batafsil tavsifi — har bir bosqich, mas'ul shaxslar, harakatlar va KPI/signallar bilan — keyingi <strong style="color:var(--white)">"Sotuv batafsil"</strong> tabida keltirilgan. <a href="javascript:void(0)" onclick="showTab('tab11')" style="color:var(--blue);font-weight:600">Batafsil jadvalga o'tish &rarr;</a></p>
 </div>
 
 <div class="panel">
@@ -2513,11 +2509,11 @@ har bir segment uchun           segmentlarni boshqaradi
 // TAB NAVIGATION
 const tabs=document.querySelectorAll('.sec');
 const btns=document.querySelectorAll('.nav-btn');
-function showTab(i){
+function showTab(id,btn){
 tabs.forEach(t=>t.classList.remove('active'));
 btns.forEach(b=>b.classList.remove('active'));
-tabs[i].classList.add('active');
-btns[i].classList.add('active');
+document.getElementById(id).classList.add('active');
+if(btn)btn.classList.add('active');
 window.scrollTo({top:0,behavior:'smooth'});
 }
 
