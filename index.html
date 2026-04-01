@@ -25,13 +25,22 @@ li{margin-bottom:6px}
 /* PROGRESS BAR */
 #prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green),var(--blue));z-index:99999;width:0%;transition:width .15s}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:9999;background:rgba(6,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-scroll{display:flex;gap:4px;padding:8px 16px;max-width:1400px;margin:auto;overflow-x:auto;scrollbar-width:none}
-.nav-scroll::-webkit-scrollbar{display:none}
-.nav-btn{padding:8px 14px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:.2s;font-family:'Inter',sans-serif}
-.nav-btn:hover{color:var(--white);background:rgba(255,255,255,.06)}
-.nav-btn.active{color:var(--white);background:var(--red);box-shadow:0 2px 12px rgba(233,69,96,.4)}
+/* ACCORDION */
+.accordion{margin-bottom:12px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;transition:.2s;user-select:none}
+.acc-header:hover{background:rgba(255,255,255,.03)}
+.acc-header.open{background:rgba(233,69,96,.06);border-bottom:1px solid var(--border)}
+.acc-left{display:flex;align-items:center;gap:16px}
+.acc-num{background:var(--red);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;font-family:'Inter',sans-serif;flex-shrink:0}
+.acc-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);font-weight:700}
+.acc-subtitle{font-size:.82rem;color:var(--muted);margin-top:2px}
+.acc-arrow{color:var(--gold);font-size:1.2rem;transition:transform .3s;flex-shrink:0}
+.acc-header.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{display:none;padding:24px}
+.acc-body.open{display:block;animation:fadeUp .3s}
+.acc-controls{text-align:center;margin:20px 0 8px}
+.acc-controls button{background:var(--surface);border:1px solid var(--border);color:var(--gold);padding:10px 24px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.acc-controls button:hover{background:rgba(240,192,64,.1);border-color:var(--gold)}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,#0a0f1e 0%,#141e3a 40%,#1a1040 70%,#0a0f1e 100%);padding:80px 20px 50px;text-align:center;position:relative;overflow:hidden}
@@ -51,9 +60,7 @@ nav{position:sticky;top:0;z-index:9999;background:rgba(6,9,15,.92);backdrop-filt
 /* CONTAINER */
 .wrap{max-width:1280px;margin:0 auto;padding:20px 16px}
 
-/* SECTIONS */
-.sec{display:none;animation:fadeUp .4s}
-.sec.active{display:block}
+/* ANIMATION */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* PANELS */
@@ -126,7 +133,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .career-arrow{color:var(--gold);font-weight:700}
 
 /* PRINT */
-@media print{body{background:#fff;color:#222}nav,.hero,#prog,#btt{display:none!important}.sec{display:block!important}.panel{border:1px solid #ddd;box-shadow:none}th{background:#f0f0f0;color:#000}td{color:#222}}
+@media print{body{background:#fff;color:#222}.hero,#prog,#btt,.acc-controls{display:none!important}.acc-body{display:block!important}.panel{border:1px solid #ddd;box-shadow:none}th{background:#f0f0f0;color:#000}td{color:#222}}
 
 /* COLLAPSIBLE */
 .summary{margin-bottom:16px}
@@ -138,7 +145,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .toggle-btn.open .arrow{transform:rotate(180deg)}
 
 /* RESPONSIVE */
-@media(max-width:768px){.hero h1{font-size:1.8rem}.hero .stat .num{font-size:1.4rem}.grid2,.grid3,.grid4{grid-template-columns:1fr}h2{font-size:1.4rem}.nav-btn{font-size:.72rem;padding:6px 10px}}
+@media(max-width:768px){.hero h1{font-size:1.8rem}.hero .stat .num{font-size:1.4rem}.grid2,.grid3,.grid4{grid-template-columns:1fr}h2{font-size:1.4rem}.acc-title{font-size:1rem}.acc-header{padding:14px 16px}.acc-num{width:30px;height:30px;font-size:.75rem}}
 
 /* DOMINO CHAIN */
 .domino{display:flex;flex-direction:column;gap:0;margin:16px 0}
@@ -173,25 +180,6 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- PROGRESS BAR -->
 <div id="prog"></div>
 
-<!-- NAVIGATION -->
-<nav>
-<div class="nav-scroll">
-<button class="nav-btn active" onclick="showTab('tab0',this)">Kirish</button>
-<button class="nav-btn" onclick="showTab('tab1',this)">Moliyaviy</button>
-<button class="nav-btn" onclick="showTab('tab2',this)">Geografiya va segmentlar</button>
-<button class="nav-btn" onclick="showTab('tab5',this)">Benchmarklar</button>
-<button class="nav-btn" onclick="showTab('tab6',this)">Givaudan tahlili</button>
-<button class="nav-btn" onclick="showTab('tab7',this)">Orgstruktura</button>
-<button class="nav-btn" onclick="showTab('tab8',this)">KPI tizimi</button>
-<button class="nav-btn" onclick="showTab('tab10',this)">Sotuv jarayoni</button>
-<button class="nav-btn" onclick="showTab('tab11',this)">Sotuv bosqichlari</button>
-<button class="nav-btn" onclick="showTab('tab12',this)">Texnik rollar</button>
-<button class="nav-btn" onclick="showTab('tab13',this)">Biznesga qo'llash</button>
-<button class="nav-btn" onclick="showTab('tab15',this)">Xulosalar</button>
-<button class="nav-btn" onclick="showTab('tab16',this)">Manbalar</button>
-<button class="nav-btn" onclick="showTab('tab17',this)" style="border:1px solid var(--gold)">Lug'at</button>
-</div>
-</nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -212,9 +200,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <div class="wrap">
 
-<!-- ====== TAB 0: KIRISH ====== -->
-<div class="sec active" id="tab0">
-<h2><span class="ico">I</span> Kirish va metodologiya</h2>
+<div class="acc-controls">
+<button onclick="toggleAll()">Hammasini ochish / Hammasini yopish</button>
+</div>
+
+<!-- ====== ACCORDION 1: KIRISH ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">1</div>
+<div>
+<div class="acc-title">Kirish va metodologiya</div>
+<div class="acc-subtitle">Bozor: &euro;45.3 mlrd &middot; Top 4: 61% &middot; 6 ta manba &middot; FY2024 + FY2025</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
 
 <div class="summary">
 <div class="panel panel-glow">
@@ -271,10 +273,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 1: MOLIYAVIY ====== -->
-<div class="sec" id="tab1">
+</div><!-- /acc-body -->
+</div><!-- /accordion 1 -->
+
+<!-- ====== ACCORDION 2: MOLIYAVIY ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">2</div>
+<div>
+<div class="acc-title">Moliyaviy taqqoslash</div>
+<div class="acc-subtitle">Givaudan: 44.1% yalpi foyda &middot; IFF: $11.5B &middot; Symrise: eng kam qarz &middot; FY24+FY25</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">II</span> Moliyaviy taqqoslash (FY2024 + FY2025)</h2>
 
 <div class="summary">
@@ -433,10 +449,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 2: GEOGRAFIK ====== -->
-<div class="sec" id="tab2">
+</div><!-- /acc-body -->
+</div><!-- /accordion 2 -->
+
+<!-- ====== ACCORDION 3: GEOGRAFIYA ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">3</div>
+<div>
+<div class="acc-title">Geografiya va segmentlar</div>
+<div class="acc-subtitle">EAME: 33-42% &middot; LATAM: +26.1% &middot; 4 kompaniya mintaqaviy + segment taqsimoti</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">III</span> Geografiya va segmentlar</h2>
 
 <div class="summary">
@@ -600,10 +630,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 5: BENCHMARKLAR ====== -->
-<div class="sec" id="tab5">
+</div><!-- /acc-body -->
+</div><!-- /accordion 3 -->
+
+<!-- ====== ACCORDION 4: BENCHMARKLAR ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">4</div>
+<div>
+<div class="acc-title">Benchmarklar</div>
+<div class="acc-subtitle">Sotuv sikli: 3-36 oy &middot; G'alaba: 10-25% &middot; Saqlab qolish: 85-92% &middot; 14 ko'rsatkich</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">VI</span> Sanoat benchmarklari — tushuntirishlar bilan</h2>
 
 <div class="summary">
@@ -746,10 +790,24 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 6: GIVAUDAN CASE STUDY ====== -->
-<div class="sec" id="tab6">
+</div><!-- /acc-body -->
+</div><!-- /accordion 4 -->
+
+<!-- ====== ACCORDION 5: GIVAUDAN ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">5</div>
+<div>
+<div class="acc-title">Givaudan tahlili</div>
+<div class="acc-subtitle">41% global / 59% mahalliy &middot; 12,000+ mijoz &middot; R&amp;D 7.6% &middot; Carto, Myromi, Creatogether</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">VII</span> Givaudan batafsil tahlili</h2>
 
 <div class="summary">
@@ -888,10 +946,24 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 7: ORGSTRUKTURA ====== -->
-<div class="sec" id="tab7">
+</div><!-- /acc-body -->
+</div><!-- /accordion 5 -->
+
+<!-- ====== ACCORDION 6: ORGSTRUKTURA ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">6</div>
+<div>
+<div class="acc-title">Orgstruktura</div>
+<div class="acc-subtitle">Givaudan 7 qatlam &middot; IFF CCO &middot; Symrise 'ONE' &middot; DSM-F Cross-BU &middot; 4 kompaniya taqqoslash</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">VIII</span> Tashkiliy tuzilma — 4 kompaniya</h2>
 
 <div class="summary">
@@ -1111,10 +1183,24 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 8: KPI LAVOZIMLAR ====== -->
-<div class="sec" id="tab8">
+</div><!-- /acc-body -->
+</div><!-- /accordion 6 -->
+
+<!-- ====== ACCORDION 7: KPI ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">7</div>
+<div>
+<div class="acc-title">KPI tizimi</div>
+<div class="acc-subtitle">CEO dan koordinatorgacha + 7 texnik rol &middot; Domino effekti &middot; G'alaba darajasi formulasi</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">IX</span> Har bir lavozim KPI lari (sotuv jamoasi)</h2>
 
 <div class="summary">
@@ -1376,10 +1462,24 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 10: SOTUV JARAYONI ====== -->
-<div class="sec" id="tab10">
+</div><!-- /acc-body -->
+</div><!-- /accordion 7 -->
+
+<!-- ====== ACCORDION 8: SOTUV JARAYONI ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">8</div>
+<div>
+<div class="acc-title">Sotuv jarayoni</div>
+<div class="acc-subtitle">Shortlist &rarr; Brief &rarr; Co-creation &rarr; Namuna &rarr; Sinov &rarr; Shartnoma &rarr; Takroriy biznes</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">XI</span> Sotuv jarayoni (0-10 bosqich)</h2>
 
 <div class="summary">
@@ -1404,7 +1504,7 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 
 <div class="panel panel-glow">
 <h3>10.2 Ichki varonka (kompaniya ichida) — 10 bosqich</h3>
-<p style="font-size:.9rem;color:var(--muted);padding:12px 0">Ichki varonkaning to'liq 10 bosqichli batafsil tavsifi — har bir bosqich, mas'ul shaxslar, harakatlar va KPI/signallar bilan — keyingi <strong style="color:var(--white)">"Sotuv batafsil"</strong> tabida keltirilgan. <a href="javascript:void(0)" onclick="showTab('tab11')" style="color:var(--blue);font-weight:600">Batafsil jadvalga o'tish &rarr;</a></p>
+<p style="font-size:.9rem;color:var(--muted);padding:12px 0">Ichki varonkaning to'liq 10 bosqichli batafsil tavsifi — har bir bosqich, mas'ul shaxslar, harakatlar va KPI/signallar bilan — pastdagi <strong style="color:var(--white)">"Sotuv bosqichlari"</strong> bo'limida keltirilgan.</p>
 </div>
 
 <div class="panel">
@@ -1444,10 +1544,24 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 11: SOTUV BATAFSIL ====== -->
-<div class="sec" id="tab11">
+</div><!-- /acc-body -->
+</div><!-- /accordion 8 -->
+
+<!-- ====== ACCORDION 9: SOTUV BOSQICHLARI ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">9</div>
+<div>
+<div class="acc-title">Sotuv bosqichlari</div>
+<div class="acc-subtitle">0-10 bosqich batafsil &middot; Givaudan modeli &middot; IFF/Symrise/DSM farqlari &middot; 3-18 oy sikl</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">XI-B</span> GIVAUDAN — TO'LIQ SAVDO JARAYONI (0 dan $ gacha)</h2>
 
 <div class="summary">
@@ -1810,10 +1924,24 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 12: TEXNIK ROLLAR ====== -->
-<div class="sec" id="tab12">
+</div><!-- /acc-body -->
+</div><!-- /accordion 9 -->
+
+<!-- ====== ACCORDION 10: TEXNIK ROLLAR ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">10</div>
+<div>
+<div class="acc-title">Texnik rollar</div>
+<div class="acc-subtitle">7 rol &middot; Perfumer 40% &middot; Ko'rinmas sotuv kuchi &middot; RACI matritsa &middot; Almashtirish xarajati</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">XI-C</span> Texnik xodimlarning sotuvdagi roli</h2>
 
 <div class="summary">
@@ -2063,10 +2191,24 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 
 </div><!-- /details -->
-</div>
 
-<!-- ====== TAB 13: BIZNESGA QO'LLASH ====== -->
-<div class="sec" id="tab13">
+</div><!-- /acc-body -->
+</div><!-- /accordion 10 -->
+
+<!-- ====== ACCORDION 11: BIZNESGA QO'LLASH ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">11</div>
+<div>
+<div class="acc-title">Biznesga qo'llash</div>
+<div class="acc-subtitle">6 qatlamli orgstruktura &middot; 10 KPI &middot; 3 dars &middot; Gross Margin maqsadlar</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">XI-D</span> Sizning biznesga qo'llash</h2>
 
 <div class="summary">
@@ -2261,12 +2403,24 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 
 </div><!-- /details -->
+
+</div><!-- /acc-body -->
+</div><!-- /accordion 11 -->
+
+<!-- ====== ACCORDION 12: XULOSALAR ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">12</div>
+<div>
+<div class="acc-title">Xulosalar</div>
+<div class="acc-subtitle">5 ta asosiy topilma &middot; Eng kuchli sotuv formulasi &middot; FY24&rarr;FY25 trend</div>
 </div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
 
-<!-- ====== TAB 14: DOLLAR TAQSIMOTI ====== -->
-
-<!-- ====== TAB 16: XULOSALAR ====== -->
-<div class="sec" id="tab15">
 <h2><span class="ico">XIV</span> Xulosalar va asosiy topilmalar</h2>
 
 <div class="panel panel-glow">
@@ -2341,8 +2495,23 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 </div>
 
-<!-- ====== TAB 17: MANBALAR ====== -->
-<div class="sec" id="tab16">
+</div><!-- /acc-body -->
+</div><!-- /accordion 12 -->
+
+<!-- ====== ACCORDION 13: MANBALAR ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">13</div>
+<div>
+<div class="acc-title">Manbalar</div>
+<div class="acc-subtitle">27 ta manba: yillik hisobotlar, sanoat tadqiqotlari, Givaudan maxsus</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">XV</span> Manbalar ro'yxati (27 ta)</h2>
 
 <div class="panel">
@@ -2395,8 +2564,23 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 </div>
 
-<!-- ====== TAB 18: LUG'AT ====== -->
-<div class="sec" id="tab17">
+</div><!-- /acc-body -->
+</div><!-- /accordion 13 -->
+
+<!-- ====== ACCORDION 14: LUG'AT ====== -->
+<div class="accordion">
+<div class="acc-header" onclick="toggleAcc(this)">
+<div class="acc-left">
+<div class="acc-num">14</div>
+<div>
+<div class="acc-title">Lug'at</div>
+<div class="acc-subtitle">50+ termin: lavozimlar, sotuv jarayoni, moliyaviy, texnik, strategik</div>
+</div>
+</div>
+<span class="acc-arrow">&#9660;</span>
+</div>
+<div class="acc-body">
+
 <h2><span class="ico">&#128218;</span> Atamalar lug'ati</h2>
 
 <div class="panel panel-dark">
@@ -2497,7 +2681,8 @@ har bir segment uchun           segmentlarni boshqaradi
 </div>
 </div>
 
-</div>
+</div><!-- /acc-body -->
+</div><!-- /accordion 14 -->
 
 </div><!-- .wrap -->
 
@@ -2505,18 +2690,27 @@ har bir segment uchun           segmentlarni boshqaradi
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
 <script>
-// TAB NAVIGATION
-const tabs=document.querySelectorAll('.sec');
-const btns=document.querySelectorAll('.nav-btn');
-function showTab(id,btn){
-tabs.forEach(t=>t.classList.remove('active'));
-btns.forEach(b=>b.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-if(btn)btn.classList.add('active');
-window.scrollTo({top:0,behavior:'smooth'});
+// ACCORDION TOGGLE
+function toggleAcc(el){
+el.classList.toggle('open');
+el.nextElementSibling.classList.toggle('open');
 }
 
-// TOGGLE DETAILS
+// TOGGLE ALL ACCORDIONS
+function toggleAll(){
+const headers=document.querySelectorAll('.acc-header');
+const bodies=document.querySelectorAll('.acc-body');
+const anyOpen=document.querySelector('.acc-header.open');
+if(anyOpen){
+headers.forEach(h=>h.classList.remove('open'));
+bodies.forEach(b=>b.classList.remove('open'));
+}else{
+headers.forEach(h=>h.classList.add('open'));
+bodies.forEach(b=>b.classList.add('open'));
+}
+}
+
+// TOGGLE DETAILS (inner expand/collapse within sections)
 function toggleDetails(btn){
 const details=btn.nextElementSibling;
 details.classList.toggle('open');
