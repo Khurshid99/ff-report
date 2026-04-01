@@ -128,6 +128,15 @@ tr:hover td{background:rgba(255,255,255,.02)}
 /* PRINT */
 @media print{body{background:#fff;color:#222}nav,.hero,#prog,#btt{display:none!important}.sec{display:block!important}.panel{border:1px solid #ddd;box-shadow:none}th{background:#f0f0f0;color:#000}td{color:#222}}
 
+/* COLLAPSIBLE */
+.summary{margin-bottom:16px}
+.details{display:none;animation:fadeUp .3s}
+.details.open{display:block}
+.toggle-btn{background:var(--surface);border:1px solid var(--border);color:var(--gold);padding:10px 24px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:8px;margin:12px 0}
+.toggle-btn:hover{background:rgba(240,192,64,.1);border-color:var(--gold)}
+.toggle-btn .arrow{transition:transform .3s}
+.toggle-btn.open .arrow{transform:rotate(180deg)}
+
 /* RESPONSIVE */
 @media(max-width:768px){.hero h1{font-size:1.8rem}.hero .stat .num{font-size:1.4rem}.grid2,.grid3,.grid4{grid-template-columns:1fr}h2{font-size:1.4rem}.nav-btn{font-size:.72rem;padding:6px 10px}}
 
@@ -207,6 +216,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <div class="sec active" id="tab0">
 <h2><span class="ico">I</span> Kirish va metodologiya</h2>
 
+<div class="summary">
+<div class="panel panel-glow">
+<h3>Bozor umumiy ko'rinishi</h3>
+<p>Global F&F bozori 2024 yilda taxminan <strong style="color:var(--gold)">$45.3 mlrd</strong> ni tashkil etgan. To'rt yirik o'yinchi (Givaudan, IFF, DSM-Firmenich, Symrise) bozorning <strong>~61%</strong> ini nazorat qiladi. Givaudan "kengaytirilgan bozor maydonini" taxminan <strong>CHF 42 mlrd</strong> deb tariflaydi.</p>
+<p>Bozor <strong>ikki qavatli model</strong>ga o'tmoqda: yuqorida global key-accountlar, pastda tez o'sayotgan local/regional accountlar.</p>
+<div class="grid4" style="margin-top:16px">
+<div class="kpi-card"><div class="val" style="color:var(--giv)">~17-22%</div><div class="lbl">Givaudan ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--iff)">~17%</div><div class="lbl">IFF ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--dsm)">~15%</div><div class="lbl">DSM-F ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--sym)">~11%</div><div class="lbl">Symrise ulushi</div></div>
+</div>
+</div>
+<p style="font-size:.9rem;color:var(--muted);margin-top:12px">F&F bozori <strong style="color:var(--gold)">€45.3 mlrd</strong>. Top 4 kompaniya <strong>61%</strong> nazorat qiladi. 6 ta manba, FY2024+FY2025 yonma-yon taqqoslash.</p>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
+
 <div class="panel">
 <h3>Manbalar</h3>
 <div class="tbl-wrap">
@@ -244,22 +270,37 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div>
 </div>
 
-<div class="panel panel-glow">
-<h3>Bozor umumiy ko'rinishi</h3>
-<p>Global F&F bozori 2024 yilda taxminan <strong style="color:var(--gold)">$45.3 mlrd</strong> ni tashkil etgan. To'rt yirik o'yinchi (Givaudan, IFF, DSM-Firmenich, Symrise) bozorning <strong>~61%</strong> ini nazorat qiladi. Givaudan "kengaytirilgan bozor maydonini" taxminan <strong>CHF 42 mlrd</strong> deb tariflaydi.</p>
-<p>Bozor <strong>ikki qavatli model</strong>ga o'tmoqda: yuqorida global key-accountlar, pastda tez o'sayotgan local/regional accountlar.</p>
-<div class="grid4" style="margin-top:16px">
-<div class="kpi-card"><div class="val" style="color:var(--giv)">~17-22%</div><div class="lbl">Givaudan ulushi</div></div>
-<div class="kpi-card"><div class="val" style="color:var(--iff)">~17%</div><div class="lbl">IFF ulushi</div></div>
-<div class="kpi-card"><div class="val" style="color:var(--dsm)">~15%</div><div class="lbl">DSM-F ulushi</div></div>
-<div class="kpi-card"><div class="val" style="color:var(--sym)">~11%</div><div class="lbl">Symrise ulushi</div></div>
-</div>
-</div>
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 1: MOLIYAVIY ====== -->
 <div class="sec" id="tab1">
 <h2><span class="ico">II</span> Moliyaviy taqqoslash (FY2024 + FY2025)</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">Givaudan eng yuqori marjaga ega (<strong style="color:var(--giv)">44.1%</strong>), IFF eng katta hajm (<strong style="color:var(--iff)">$11.5B</strong>). Barcha kompaniyalar FY2024 da kuchli o'sdi, FY2025 da sekinlashdi.</p>
+
+<div class="panel panel-glow">
+<h3>2.10 Yig'ma taqqoslash jadvali</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Metrika</th><th><span class="badge badge-giv">Givaudan</span> FY24/FY25</th><th><span class="badge badge-iff">IFF</span> FY24/FY25</th><th><span class="badge badge-sym">Symrise</span> FY24/FY25</th><th><span class="badge badge-dsm">DSM-F</span> FY24/FY25</th></tr>
+<tr><td><strong>Daromad</strong></td><td>CHF 7,412M / 7,472M</td><td>$11,484M / $10,890M</td><td>$4,999M / $4,929M</td><td>$12,799M / $9,034M*</td></tr>
+<tr><td><strong>Organik o'sish</strong></td><td>+12.3% / ~+3%</td><td>+6.0% / ~+3%</td><td>+8.7% / ~+6%</td><td>+6.0% / ~+4%</td></tr>
+<tr><td><strong>Yalpi foyda marjasi</strong></td><td><strong>44.1%</strong> / <strong>43.5%</strong></td><td>35.9% / 36.2%</td><td>39.3% / 37.6%</td><td>33.2% / ~39%*</td></tr>
+<tr><td><strong>EBITDA margin</strong></td><td><strong>23.8%</strong> / ~22%</td><td>19.2% / ~19%</td><td>20.7% / ~20%</td><td>16.5% / ~18%*</td></tr>
+<tr><td><strong>R&D % savdo</strong></td><td><strong>7.6%</strong> / <strong>7.4%</strong></td><td>5.8% / 6.4%</td><td>5.5% / 5.6%</td><td>6.2% / 7.9%*</td></tr>
+<tr><td><strong>S&M % savdo</strong></td><td>13.1% / 13.3%</td><td>17.4%&dagger; / 16.8%&dagger;</td><td>14.0% / 14.1%</td><td>14.1% / 14.2%</td></tr>
+<tr><td><strong>Sof foyda marjasi</strong></td><td><strong>14.7%</strong> / ~14%</td><td>2.1% / ~2%</td><td>9.6% / ~9%</td><td>2.2% / ~3%</td></tr>
+<tr><td><strong>Xodimlar</strong></td><td>16,942 / 17,580</td><td>~22,400 / ~21,500</td><td>~12,700 / 12,745</td><td>28,214 / 28,550</td></tr>
+<tr><td><strong>Sof qarz/EBITDA</strong></td><td>2.3x / ~2.0x</td><td>3.8x / ~3.5x</td><td>1.8x / ~1.8x</td><td>~1.2x / ~1.0x</td></tr>
+</table>
+</div>
+<p style="font-size:.8rem;color:var(--muted)">*DSM-F FY2025 = faqat davom etuvchi operatsiyalar. &dagger;IFF S&A G&A ni o'z ichiga oladi.</p>
+</div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel">
 <h3>2.1 Umumiy daromad</h3>
@@ -390,29 +431,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div>
 </div>
 
-<div class="panel panel-glow">
-<h3>2.10 Yig'ma taqqoslash jadvali</h3>
-<div class="tbl-wrap">
-<table>
-<tr><th>Metrika</th><th><span class="badge badge-giv">Givaudan</span> FY24/FY25</th><th><span class="badge badge-iff">IFF</span> FY24/FY25</th><th><span class="badge badge-sym">Symrise</span> FY24/FY25</th><th><span class="badge badge-dsm">DSM-F</span> FY24/FY25</th></tr>
-<tr><td><strong>Daromad</strong></td><td>CHF 7,412M / 7,472M</td><td>$11,484M / $10,890M</td><td>$4,999M / $4,929M</td><td>$12,799M / $9,034M*</td></tr>
-<tr><td><strong>Organik o'sish</strong></td><td>+12.3% / ~+3%</td><td>+6.0% / ~+3%</td><td>+8.7% / ~+6%</td><td>+6.0% / ~+4%</td></tr>
-<tr><td><strong>Yalpi foyda marjasi</strong></td><td><strong>44.1%</strong> / <strong>43.5%</strong></td><td>35.9% / 36.2%</td><td>39.3% / 37.6%</td><td>33.2% / ~39%*</td></tr>
-<tr><td><strong>EBITDA margin</strong></td><td><strong>23.8%</strong> / ~22%</td><td>19.2% / ~19%</td><td>20.7% / ~20%</td><td>16.5% / ~18%*</td></tr>
-<tr><td><strong>R&D % savdo</strong></td><td><strong>7.6%</strong> / <strong>7.4%</strong></td><td>5.8% / 6.4%</td><td>5.5% / 5.6%</td><td>6.2% / 7.9%*</td></tr>
-<tr><td><strong>S&M % savdo</strong></td><td>13.1% / 13.3%</td><td>17.4%&dagger; / 16.8%&dagger;</td><td>14.0% / 14.1%</td><td>14.1% / 14.2%</td></tr>
-<tr><td><strong>Sof foyda marjasi</strong></td><td><strong>14.7%</strong> / ~14%</td><td>2.1% / ~2%</td><td>9.6% / ~9%</td><td>2.2% / ~3%</td></tr>
-<tr><td><strong>Xodimlar</strong></td><td>16,942 / 17,580</td><td>~22,400 / ~21,500</td><td>~12,700 / 12,745</td><td>28,214 / 28,550</td></tr>
-<tr><td><strong>Sof qarz/EBITDA</strong></td><td>2.3x / ~2.0x</td><td>3.8x / ~3.5x</td><td>1.8x / ~1.8x</td><td>~1.2x / ~1.0x</td></tr>
-</table>
-</div>
-<p style="font-size:.8rem;color:var(--muted)">*DSM-F FY2025 = faqat davom etuvchi operatsiyalar. &dagger;IFF S&A G&A ni o'z ichiga oladi.</p>
-</div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 2: GEOGRAFIK ====== -->
 <div class="sec" id="tab2">
 <h2><span class="ico">III</span> Geografiya va segmentlar</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">EAME barcha kompaniyalarda eng katta mintaqa (<strong>33-42%</strong>). Lotin Amerikasi eng tez o'suvchi (<strong style="color:var(--green)">+26.1%</strong>).</p>
 
 <div class="panel">
 <h3>3.1 Mintaqaviy daromad ulushi (FY2024 + FY2025)</h3>
@@ -427,6 +455,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div>
 <p style="font-size:.8rem;color:var(--muted)">*DSM-F FY2025 = continuing operations.</p>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="grid2">
 <div class="panel">
@@ -567,11 +598,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <p style="font-size:.82rem">FY2025 da P&B: $3,760M, TTH: $3,146M. ANH sotilmoqda (CVC ga $2.2B).</p>
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 5: BENCHMARKLAR ====== -->
 <div class="sec" id="tab5">
 <h2><span class="ico">VI</span> Sanoat benchmarklari — tushuntirishlar bilan</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">F&F da sotuv sikli <strong style="color:var(--red)">3-36 oy</strong>. Win rate <strong>10-25%</strong>. Mijoz saqlab qolish <strong style="color:var(--green)">85-92%</strong>.</p>
 
 <div class="panel panel-dark">
 <h3>Benchmark nima?</h3>
@@ -643,6 +679,9 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </table>
 </div>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel">
 <h3>6.4 G'alaba darajasi haqida batafsil (CSO Insights tadqiqoti)</h3>
@@ -705,11 +744,16 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 <div class="highlight"><strong>Eng muhim xulosa:</strong> <strong>Birinchi bo'lish = yutish</strong>. Kim birinchi bo'lib mijoz ehtiyojini aniqlasa va taklif bersa — 80% holatda shartnoma oladi. Shuning uchun <strong>proaktiv sotuv</strong> (mijoz sizga kelishini kutmasdan, o'zingiz borishingiz) juda muhim.<br><br>
 <strong>Amaliy qadam:</strong> Bozor trendlarini kuzating va mijozlarga <strong>ular so'rashdan oldin</strong> taklif bering. Bu F&F kompaniyalarning CMI (Iste'molchi tushunchalari) bo'limi aynan shu ishni qiladi.</div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 6: GIVAUDAN CASE STUDY ====== -->
 <div class="sec" id="tab6">
 <h2><span class="ico">VII</span> Givaudan batafsil tahlili</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px"><strong>41%</strong> global, <strong>59%</strong> mahalliy mijozlar. <strong>12,000+</strong> mijoz, <strong>300,000+</strong> brief/yil. R&D <strong style="color:var(--gold)">7.6%</strong>.</p>
 
 <div class="panel panel-glow">
 <h3>7.1 Mijoz segmentatsiyasi — Global vs Mahalliy/Mintaqaviy</h3>
@@ -734,6 +778,9 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 </div>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel">
 <h3>7.1b Sanoat vertikallari</h3>
@@ -839,11 +886,34 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 7: ORGSTRUKTURA ====== -->
 <div class="sec" id="tab7">
 <h2><span class="ico">VIII</span> Tashkiliy tuzilma — 4 kompaniya</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px"><strong style="color:var(--giv)">Givaudan:</strong> 7 qatlam, 162 sayt. <strong style="color:var(--iff)">IFF:</strong> CCO modeli. <strong style="color:var(--sym)">Symrise:</strong> "ONE Symrise". <strong style="color:var(--dsm)">DSM-F:</strong> Cross-BU sinergiya.</p>
+
+<div class="panel panel-glow">
+<h3>4 kompaniya model taqqoslash jadvali</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Jihat</th><th><span class="badge badge-giv">Givaudan</span></th><th><span class="badge badge-iff">IFF</span></th><th><span class="badge badge-sym">Symrise</span></th><th><span class="badge badge-dsm">DSM-F</span></th></tr>
+<tr><td><strong>Model turi</strong></td><td>2 bo'lim x 4 mintaqa</td><td>CCO markazlashgan</td><td>"ONE Symrise" yagona interfeys</td><td>Bo'limlararo sinergiya</td></tr>
+<tr><td><strong>AI vositalar</strong></td><td>Carto, Myromi, Creatogether</td><td>Salesforce CRM</td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><strong>Brief tezligi</strong></td><td>Creatogether: 4 hafta</td><td>Standart</td><td>Standart</td><td>11 qo'llash markazi</td></tr>
+<tr><td><strong>O'zaro sotuv yondashuvi</strong></td><td>Bo'lim ichida</td><td>CCO orqali 4 segment</td><td>Avtomatlashtirilgan</td><td>$175M sinergiya</td></tr>
+<tr><td><strong>Saytlar soni</strong></td><td>162 sayt, 190+ mamlakat</td><td>~170+ sayt</td><td>~100 sayt</td><td>~200+ sayt</td></tr>
+<tr><td><strong>Mijoz soni</strong></td><td>12,000+</td><td>~25,000+</td><td>~6,000+</td><td>~30,000+ (Total Group)</td></tr>
+</table>
+</div>
+</div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <!-- GIVAUDAN ORG -->
 <div class="panel panel-glow">
@@ -1039,11 +1109,16 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </table>
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 8: KPI LAVOZIMLAR ====== -->
 <div class="sec" id="tab8">
 <h2><span class="ico">IX</span> Har bir lavozim KPI lari (sotuv jamoasi)</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">CEO dan koordinatorgacha — har bir lavozim KPI bilan o'lchanadi. Texnik xodimlar ham "sotuvchi" hisoblanadi.</p>
 
 <div class="panel">
 <h3>9.1 CEO</h3>
@@ -1059,6 +1134,9 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </table>
 </div>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel">
 <h3>9.2 Division President</h3>
@@ -1296,11 +1374,16 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 <strong>XULOSA:</strong> Bitta bo'g'in sekinlashsa — HAMMA ta'sir ko'radi. QC 48 soat o'rniga 1 hafta ketsa &rarr; KAM brief muddatini o'tkazib yuboradi &rarr; WIN yo'qoladi &rarr; CEO target bajarilmaydi.
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 10: SOTUV JARAYONI ====== -->
 <div class="sec" id="tab10">
 <h2><span class="ico">XI</span> Sotuv jarayoni (0-10 bosqich)</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">Shortlist &rarr; Brief &rarr; Co-creation &rarr; Namuna &rarr; Sinov &rarr; Shartnoma &rarr; Ishga tushirish &rarr; Takroriy biznes.</p>
 
 <div class="panel">
 <h3>10.1 Tashqi varonka (xaridor ko'zi bilan)</h3>
@@ -1315,6 +1398,9 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 <p style="font-size:.85rem">Agar vendor shortlistga kirmasa, keyingi bosqichlarga chiqishi juda qiyin. Shuning uchun kompaniyalar mahalliy markaz, ijodiy markaz, sensorik lab, iste'molchi tushunchasi va qo'llash lablariga pul tikadi.</p>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel panel-glow">
 <h3>10.2 Ichki varonka (kompaniya ichida) — 10 bosqich</h3>
@@ -1356,11 +1442,35 @@ Agar sizning yillik savdoingiz <strong>$1 million</strong> bo'lsa, sotuv jamoasi
 </div>
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 11: SOTUV BATAFSIL ====== -->
 <div class="sec" id="tab11">
 <h2><span class="ico">XI-B</span> GIVAUDAN — TO'LIQ SAVDO JARAYONI (0 dan $ gacha)</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px">Givaudan modeli: <strong>0-10 bosqich</strong>, <strong style="color:var(--blue)">3-18 oy</strong> sikl. Tmall bilan <strong style="color:var(--gold)">40&rarr;4 hafta</strong>.</p>
+
+<div class="panel panel-dark">
+<h3>Sotuv sikli uzunligi</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Loyiha turi</th><th>Muddat</th><th>Izoh</th></tr>
+<tr><td><strong>Oddiy / mavjud mijoz</strong></td><td style="color:var(--green);font-weight:700">3-6 oy</td><td>Mavjud formulani moslashtirish, kichik o'zgartirishlar</td></tr>
+<tr><td><strong>O'rta murakkablik</strong></td><td style="color:var(--blue);font-weight:700">6-12 oy</td><td>Yangi kategoriya, yangi mijoz, o'rtacha texnik talab</td></tr>
+<tr><td><strong>Murakkab / global</strong></td><td style="color:var(--red);font-weight:700">12-18 oy</td><td>Global launch, ko'p mamlakatli tartibga solish, yuqori texnik talab</td></tr>
+<tr><td><strong>Tmall raqamli model</strong></td><td style="color:var(--gold);font-weight:700">40 &rarr; 4 hafta</td><td>Xitoy e-commerce: an'anaviy 40 hafta o'rniga 4 haftada — AI va raqamli vositalar yordamida keskin qisqartirildi</td></tr>
+</table>
+</div>
+<div class="highlight">
+<strong>Asosiy xulosa:</strong> Raqamlashtirish sotuv siklini 10x gacha qisqartirishi mumkin. Givaudan'ning Tmall tajribasi bu yo'nalishda eng ilg'or misol.
+</div>
+</div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <p style="margin-bottom:16px"><strong>Savdo sikli o'rtacha uzunligi:</strong> Oddiy loyiha (mavjud mijoz): <span style="color:var(--green)">3-6 oy</span> | O'rta loyiha (yangi brief): <span style="color:var(--blue)">6-12 oy</span> | Murakkab loyiha: <span style="color:var(--red)">12-18 oy</span> | Tmall raqamli model: <span style="color:var(--gold)">40 haftadan 4 haftagacha</span></p>
 
@@ -1699,26 +1809,32 @@ har bir segment uchun           segmentlarni boshqaradi
 <p style="font-size:.8rem;color:var(--muted)">*DSM-F birlashuv jarayonida — retention vaqtincha pastroq.</p>
 </div>
 
-<div class="panel panel-dark">
-<h3>Sotuv sikli uzunligi</h3>
-<div class="tbl-wrap">
-<table>
-<tr><th>Loyiha turi</th><th>Muddat</th><th>Izoh</th></tr>
-<tr><td><strong>Oddiy / mavjud mijoz</strong></td><td style="color:var(--green);font-weight:700">3-6 oy</td><td>Mavjud formulani moslashtirish, kichik o'zgartirishlar</td></tr>
-<tr><td><strong>O'rta murakkablik</strong></td><td style="color:var(--blue);font-weight:700">6-12 oy</td><td>Yangi kategoriya, yangi mijoz, o'rtacha texnik talab</td></tr>
-<tr><td><strong>Murakkab / global</strong></td><td style="color:var(--red);font-weight:700">12-18 oy</td><td>Global launch, ko'p mamlakatli tartibga solish, yuqori texnik talab</td></tr>
-<tr><td><strong>Tmall raqamli model</strong></td><td style="color:var(--gold);font-weight:700">40 &rarr; 4 hafta</td><td>Xitoy e-commerce: an'anaviy 40 hafta o'rniga 4 haftada — AI va raqamli vositalar yordamida keskin qisqartirildi</td></tr>
-</table>
-</div>
-<div class="highlight">
-<strong>Asosiy xulosa:</strong> Raqamlashtirish sotuv siklini 10x gacha qisqartirishi mumkin. Givaudan'ning Tmall tajribasi bu yo'nalishda eng ilg'or misol.
-</div>
-</div>
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 12: TEXNIK ROLLAR ====== -->
 <div class="sec" id="tab12">
 <h2><span class="ico">XI-C</span> Texnik xodimlarning sotuvdagi roli</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px"><strong>7 ta</strong> texnik rol sotuvga ta'sir qiladi. Perfumer <strong style="color:var(--giv)">40%</strong>, App Scientist <strong style="color:var(--blue)">20%</strong>, KAM faqat <strong style="color:var(--gold)">15%</strong>.</p>
+
+<div class="panel panel-dark">
+<h3>G'alaba darajasiga har bir rolning ta'siri</h3>
+<div style="margin:16px 0">
+<div class="bar-row"><span class="bar-label">Perfumer</span><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--giv)">40%</div></div><span class="bar-val">40%</span></div>
+<div class="bar-row"><span class="bar-label">Qo'llash mutaxassisi</span><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--blue)">20%</div></div><span class="bar-val">20%</span></div>
+<div class="bar-row"><span class="bar-label">Tartibga solish</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--purple)">15%</div></div><span class="bar-val">15%</span></div>
+<div class="bar-row"><span class="bar-label">CMI/Marketing</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:var(--sym)">10%</div></div><span class="bar-val">10%</span></div>
+<div class="bar-row"><span class="bar-label">KAM</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--gold)">15%</div></div><span class="bar-val">15%</span></div>
+</div>
+<div class="highlight">
+<strong>Xulosa:</strong> Sotuv muvaffaqiyatining 85% texnik xodimlar qo'lida! KAM faqat 15% ta'sir qiladi. Bu F&F sanoatining eng muhim xususiyati — "ko'rinmas sotuv kuchi" aslida texnik jamoadir.
+</div>
+</div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel panel-glow">
 <h3>4.1 Perfumer / Flavorist</h3>
@@ -1945,11 +2061,16 @@ har bir segment uchun           segmentlarni boshqaradi
 <strong>Xulosa:</strong> Sotuv muvaffaqiyatining 85% texnik xodimlar qo'lida! KAM faqat 15% ta'sir qiladi. Bu F&F sanoatining eng muhim xususiyati — "ko'rinmas sotuv kuchi" aslida texnik jamoadir.
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 13: BIZNESGA QO'LLASH ====== -->
 <div class="sec" id="tab13">
 <h2><span class="ico">XI-D</span> Sizning biznesga qo'llash</h2>
+
+<div class="summary">
+<p style="font-size:.95rem;margin-bottom:16px"><strong>6 qatlamli</strong> orgstruktura, <strong>10 KPI</strong>, <strong>3 ta asosiy dars</strong>.</p>
 
 <div class="panel panel-glow">
 <h3>6 qatlamli tashkiliy struktura</h3>
@@ -1979,6 +2100,9 @@ har bir segment uchun           segmentlarni boshqaradi
        <span class="salary">KPI: Buyurtma tezligi, ma'lumot aniqligi</span>
 </div>
 </div>
+</div>
+<button class="toggle-btn" onclick="toggleDetails(this)"><span class="arrow">&#9660;</span> <span class="txt">Batafsil ko'rish</span></button>
+<div class="details">
 
 <div class="panel">
 <h3>O'zaro bog'lanish xaritasi</h3>
@@ -2135,6 +2259,8 @@ har bir segment uchun           segmentlarni boshqaradi
 <strong>Maqsad:</strong> Bu 10 bosqichni tizimlashtiring va har bir bosqich uchun aniq javobgar, muddat va natija belgilang. CRM tizimida varonka sifatida kuzating.
 </div>
 </div>
+
+</div><!-- /details -->
 </div>
 
 <!-- ====== TAB 14: DOLLAR TAQSIMOTI ====== -->
@@ -2388,6 +2514,14 @@ btns.forEach(b=>b.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 if(btn)btn.classList.add('active');
 window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// TOGGLE DETAILS
+function toggleDetails(btn){
+const details=btn.nextElementSibling;
+details.classList.toggle('open');
+btn.classList.toggle('open');
+btn.querySelector('.txt').textContent=details.classList.contains('open')?'Yopish':'Batafsil ko\'rish';
 }
 
 // PROGRESS BAR
