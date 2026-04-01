@@ -3,28 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>F&F Sanoati — Premium Hisobot</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>F&F Sanoati — Premium Hisobot 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#06090f;--card:#0d1321;--card2:#131a2b;--surface:#1a2236;--border:rgba(255,255,255,.07);--text:#d0d8e8;--muted:#6b7a94;--white:#fff;--red:#e94560;--gold:#f0c040;--green:#2ecc71;--blue:#3498db;--purple:#9b59b6;--giv:#e94560;--iff:#3498db;--sym:#2ecc71;--dsm:#f0c040;--radius:14px}
+:root{--bg:#06090f;--card:#0d1321;--card2:#131a2b;--surface:#1a2236;--border:rgba(255,255,255,.07);--text:#d0d8e8;--muted:#6b7a94;--white:#fff;--red:#e94560;--gold:#f0c040;--green:#2ecc71;--blue:#3498db;--purple:#9b59b6;--giv:#e94560;--iff:#3498db;--sym:#2ecc71;--dsm:#f0c040;--radius:14px;--shadow:0 4px 24px rgba(0,0,0,.4)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
 h1,h2,h3{font-family:'Playfair Display','Georgia',serif;color:var(--white)}
 h2{font-size:1.7rem;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+h2 .ico{font-size:1.4rem}
 h3{font-size:1.15rem;margin:28px 0 14px;color:#c0cce0}
 h3::before{content:'';display:inline-block;width:4px;height:18px;background:var(--red);border-radius:2px;margin-right:8px;vertical-align:middle}
+h4{font-size:1rem;color:var(--white);margin:18px 0 10px}
 a{color:var(--blue);text-decoration:none}
 strong{color:var(--white)}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 16px 20px}
+li{margin-bottom:6px}
 
 /* PROGRESS BAR */
-#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green),var(--blue));z-index:99999;width:0%;transition:width .2s}
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green),var(--blue));z-index:99999;width:0%;transition:width .15s}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:9999;background:rgba(6,9,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-scroll{display:flex;gap:4px;padding:8px 16px;max-width:1300px;margin:auto;overflow-x:auto;scrollbar-width:none}
+nav{position:sticky;top:0;z-index:9999;background:rgba(6,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-scroll{display:flex;gap:4px;padding:8px 16px;max-width:1400px;margin:auto;overflow-x:auto;scrollbar-width:none}
 .nav-scroll::-webkit-scrollbar{display:none}
-.nav-btn{padding:8px 14px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:.2s;font-family:'Inter',sans-serif}
+.nav-btn{padding:8px 14px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:.2s;font-family:'Inter',sans-serif}
 .nav-btn:hover{color:var(--white);background:rgba(255,255,255,.06)}
 .nav-btn.active{color:var(--white);background:var(--red);box-shadow:0 2px 12px rgba(233,69,96,.4)}
 
@@ -33,853 +38,1638 @@ nav{position:sticky;top:0;z-index:9999;background:rgba(6,9,15,.88);backdrop-filt
 .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(233,69,96,.12),transparent 60%);animation:float 8s ease-in-out infinite}
 .hero::after{content:'';position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,152,219,.1),transparent 60%);animation:float 10s ease-in-out infinite reverse}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
-.hero h1{font-size:2.8rem;position:relative;margin-bottom:8px;letter-spacing:-.5px}
+.hero h1{font-size:2.8rem;position:relative;margin-bottom:8px;letter-spacing:-.5px;background:linear-gradient(135deg,var(--white),#a0b0cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero .sub{font-size:1.2rem;color:var(--muted);position:relative}
 .hero .meta{margin-top:20px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;position:relative}
 .hero .tag{background:rgba(255,255,255,.08);padding:6px 16px;border-radius:20px;font-size:.8rem;color:var(--text);border:1px solid var(--border)}
 .hero .tag b{color:var(--gold)}
+.hero .stat-row{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap;position:relative}
+.hero .stat{text-align:center}
+.hero .stat .num{font-size:2rem;font-weight:800;font-family:'Inter',sans-serif}
+.hero .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 
 /* CONTAINER */
-.wrap{max-width:1200px;margin:0 auto;padding:20px 16px}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 16px}
 
 /* SECTIONS */
 .sec{display:none;animation:fadeUp .4s}
 .sec.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-/* PANEL */
-.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px}
+/* PANELS */
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px;box-shadow:var(--shadow)}
+.panel-dark{background:var(--card2)}
+.panel-glow{border:1px solid rgba(233,69,96,.2);box-shadow:0 0 30px rgba(233,69,96,.05)}
 
-/* CARDS */
-.grid{display:grid;gap:16px;margin:16px 0}
-.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
-.crd{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:20px;transition:.25s}
-.crd:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)}
-.crd .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:4px}
-.crd .val{font-size:2rem;font-weight:800;font-family:'Playfair Display',serif}
-.crd .note{font-size:.82rem;color:var(--muted);margin-top:4px}
-.crd.giv{border-left:4px solid var(--giv)} .crd.iff{border-left:4px solid var(--iff)} .crd.sym{border-left:4px solid var(--sym)} .crd.dsm{border-left:4px solid var(--dsm)}
+/* GRID */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 
-/* BADGES */
-.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.5px}
-.b-giv{background:rgba(233,69,96,.15);color:var(--giv)} .b-iff{background:rgba(52,152,219,.15);color:var(--iff)} .b-sym{background:rgba(46,204,113,.15);color:var(--sym)} .b-dsm{background:rgba(240,192,64,.15);color:var(--dsm)}
-
-/* TABLES */
-.tw{overflow-x:auto;margin:14px 0;border-radius:10px;border:1px solid var(--border)}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;margin:16px 0;border-radius:10px;border:1px solid var(--border)}
 table{width:100%;border-collapse:collapse;font-size:.85rem}
-th{background:var(--surface);color:var(--white);padding:12px 14px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--red)}
+th{background:var(--surface);color:var(--white);padding:12px 14px;text-align:left;font-weight:700;white-space:nowrap;border-bottom:2px solid var(--border)}
 td{padding:10px 14px;border-bottom:1px solid var(--border)}
-tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-tr:hover td{background:rgba(233,69,96,.04)}
-.hi{color:var(--red);font-weight:700}
+tr:hover td{background:rgba(255,255,255,.02)}
+.tbl-giv th{border-bottom-color:var(--giv)}
+.tbl-iff th{border-bottom-color:var(--iff)}
+.tbl-sym th{border-bottom-color:var(--sym)}
+.tbl-dsm th{border-bottom-color:var(--dsm)}
 
 /* BARS */
-.bar-group{margin:14px 0}
-.bar-row{display:flex;align-items:center;margin:8px 0}
-.bar-lbl{width:130px;font-size:.82rem;font-weight:600;flex-shrink:0;color:var(--muted)}
-.bar-track{flex:1;height:30px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden}
-.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:.72rem;font-weight:700;color:var(--white);transition:width 1.2s cubic-bezier(.4,0,.2,1)}
-.bf-giv{background:linear-gradient(90deg,var(--giv),#ff6b81)} .bf-iff{background:linear-gradient(90deg,var(--iff),#5dade2)} .bf-sym{background:linear-gradient(90deg,var(--sym),#58d68d)} .bf-dsm{background:linear-gradient(90deg,var(--dsm),#f7dc6f);color:#333}
+.bar-row{display:flex;align-items:center;gap:10px;margin:8px 0}
+.bar-label{min-width:120px;font-size:.82rem;text-align:right;color:var(--muted)}
+.bar-track{flex:1;height:22px;background:var(--surface);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:.72rem;font-weight:700;color:var(--white);transition:width .6s ease}
+.bar-val{min-width:60px;font-size:.82rem;font-weight:600;color:var(--white)}
 
-/* TIMELINE */
-.tl{position:relative;padding-left:32px;margin:16px 0}
-.tl::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--border)}
-.tl-item{position:relative;margin-bottom:18px;padding-left:8px}
-.tl-item::before{content:'';position:absolute;left:-25px;top:7px;width:12px;height:12px;border-radius:50%;border:2px solid;background:var(--bg)}
-.tl-item.giv::before{border-color:var(--giv);box-shadow:0 0 8px var(--giv)} .tl-item.iff::before{border-color:var(--iff);box-shadow:0 0 8px var(--iff)} .tl-item.sym::before{border-color:var(--sym);box-shadow:0 0 8px var(--sym)} .tl-item.dsm::before{border-color:var(--dsm);box-shadow:0 0 8px var(--dsm)}
-.tl-year{font-weight:700;color:var(--gold);font-size:.85rem}
-.tl-desc{color:var(--muted);font-size:.85rem}
+/* ORG CHART */
+.org{background:var(--card2);border-radius:12px;padding:20px;margin:16px 0;border:1px solid var(--border);font-family:'Inter',monospace;font-size:.82rem;line-height:1.6;white-space:pre-wrap;overflow-x:auto;color:var(--text)}
+.org b{color:var(--white)}
+.org .layer{color:var(--gold);font-weight:700}
+.org .salary{color:var(--green);font-style:italic}
+.org .note{color:var(--muted);font-size:.78rem}
 
 /* FLOW */
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0}
-.flow-s{background:var(--surface);border:1px solid var(--border);color:var(--white);padding:10px 18px;border-radius:25px;font-size:.82rem;font-weight:600}
-.flow-a{color:var(--red);font-size:1.2rem;font-weight:700}
-.flow-s.win{background:var(--green);border-color:var(--green)}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:16px 0;padding:14px}
+.flow-step{background:var(--surface);padding:10px 16px;border-radius:8px;font-size:.82rem;font-weight:600;color:var(--white);text-align:center;min-width:100px}
+.flow-arrow{color:var(--gold);font-size:1.2rem;margin:0 4px}
 
-/* ORG */
-.org-tree{text-align:center;padding:20px 0}
-.org-level{margin:8px 0;display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
-.org-box{background:linear-gradient(135deg,var(--surface),var(--card2));border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:.8rem;color:var(--white);display:inline-block;min-width:120px}
-.org-box.l1{background:linear-gradient(135deg,#1a1040,#2c1654);border-color:var(--purple);font-size:.9rem;font-weight:700}
-.org-box.l2{background:linear-gradient(135deg,#1a2a4a,#1e3a5f);border-color:var(--blue)}
-.org-box.l3{background:linear-gradient(135deg,#0f2a3a,#164050);border-color:var(--iff)}
-.org-box.l4{background:linear-gradient(135deg,#0a2a1a,#154030);border-color:var(--green)}
-.org-conn{color:var(--muted);font-size:1.2rem;text-align:center}
+/* KPI CARD */
+.kpi-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center}
+.kpi-card .val{font-size:1.6rem;font-weight:800;color:var(--white);font-family:'Inter',sans-serif}
+.kpi-card .lbl{font-size:.75rem;color:var(--muted);margin-top:4px}
 
-/* KPI GRID */
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin:14px 0}
-.kpi-item{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--card2);border-radius:8px;border-left:3px solid var(--blue)}
-.kpi-item .kn{font-size:.82rem} .kpi-item .kv{font-weight:700;color:var(--gold);font-size:.85rem}
+/* COMPANY BADGE */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:700;margin-right:6px}
+.badge-giv{background:rgba(233,69,96,.15);color:var(--giv);border:1px solid rgba(233,69,96,.3)}
+.badge-iff{background:rgba(52,152,219,.15);color:var(--iff);border:1px solid rgba(52,152,219,.3)}
+.badge-sym{background:rgba(46,204,113,.15);color:var(--sym);border:1px solid rgba(46,204,113,.3)}
+.badge-dsm{background:rgba(240,192,64,.15);color:var(--dsm);border:1px solid rgba(240,192,64,.3)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--red);border:2px solid var(--card)}
+.tl-item .tl-yr{font-size:.75rem;color:var(--gold);font-weight:700}
+.tl-item .tl-txt{font-size:.85rem}
 
 /* BACK TO TOP */
-#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1.2rem;cursor:pointer;opacity:0;transition:.3s;z-index:9999;box-shadow:0 4px 16px rgba(233,69,96,.4)}
-#btt.show{opacity:1}
+#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1.2rem;cursor:pointer;display:none;z-index:9999;box-shadow:0 4px 16px rgba(233,69,96,.4);transition:.2s}
 #btt:hover{transform:scale(1.1)}
 
-/* SOURCE LIST */
-.src-list{columns:2;column-gap:24px;font-size:.78rem;color:var(--muted);margin:16px 0}
-.src-list li{margin-bottom:6px;break-inside:avoid}
+/* CAREER PATH */
+.career-path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
+.career-step{background:var(--surface);padding:6px 12px;border-radius:6px;font-size:.78rem;color:var(--white);font-weight:500}
+.career-arrow{color:var(--gold);font-weight:700}
 
-@media(max-width:768px){
-.hero h1{font-size:1.8rem}
-.hero .meta{flex-direction:column;align-items:center}
-.grid{grid-template-columns:1fr !important}
-.nav-btn{font-size:.72rem;padding:6px 10px}
-.panel{padding:18px 14px}
-.bar-lbl{width:90px;font-size:.75rem}
-.org-level{flex-direction:column;align-items:center}
-.src-list{columns:1}
-}
-@media print{nav,.hero,#btt,#prog{display:none}.sec{display:block !important}.panel{break-inside:avoid;border:1px solid #ccc}body{background:#fff;color:#222}h2,h3,strong{color:#111}td,th{color:#222}}
+/* PRINT */
+@media print{body{background:#fff;color:#222}nav,.hero,#prog,#btt{display:none!important}.sec{display:block!important}.panel{border:1px solid #ddd;box-shadow:none}th{background:#f0f0f0;color:#000}td{color:#222}}
+
+/* RESPONSIVE */
+@media(max-width:768px){.hero h1{font-size:1.8rem}.hero .stat .num{font-size:1.4rem}.grid2,.grid3,.grid4{grid-template-columns:1fr}h2{font-size:1.4rem}.nav-btn{font-size:.72rem;padding:6px 10px}}
+
+/* DOMINO CHAIN */
+.domino{display:flex;flex-direction:column;gap:0;margin:16px 0}
+.domino-step{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--card2);border-left:3px solid var(--green);margin-bottom:2px}
+.domino-step:first-child{border-radius:8px 8px 0 0}
+.domino-step:last-child{border-radius:0 0 8px 8px;border-left-color:var(--gold)}
+.domino-step .d-icon{font-size:1rem;min-width:24px;text-align:center}
+.domino-step .d-text{font-size:.85rem}
+.domino-step .d-arrow{color:var(--gold);margin-left:auto;font-weight:700}
+
+/* SOURCE LIST */
+.src-list{counter-reset:src}
+.src-item{counter-increment:src;margin-bottom:8px;font-size:.82rem;padding-left:32px;position:relative}
+.src-item::before{content:counter(src);position:absolute;left:0;top:0;width:22px;height:22px;background:var(--surface);color:var(--gold);border-radius:50%;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* HIGHLIGHT BOX */
+.highlight{background:linear-gradient(135deg,rgba(233,69,96,.08),rgba(52,152,219,.08));border:1px solid rgba(233,69,96,.15);border-radius:12px;padding:18px;margin:16px 0}
+.highlight strong{color:var(--gold)}
+
+/* CROSS-FUNC DIAGRAM */
+.cross-func{background:var(--card2);border-radius:12px;padding:24px;border:1px solid var(--border);margin:16px 0}
+.cf-center{text-align:center;margin-bottom:16px}
+.cf-center .cf-main{display:inline-block;background:var(--red);color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:1rem}
+.cf-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.cf-branch{background:var(--surface);border-radius:8px;padding:14px;text-align:center;border-top:3px solid var(--blue)}
+.cf-branch h5{color:var(--white);font-size:.85rem;margin-bottom:4px}
+.cf-branch p{font-size:.78rem;color:var(--muted);margin:0}
 </style>
 </head>
 <body>
 
+<!-- PROGRESS BAR -->
 <div id="prog"></div>
 
-<!-- HERO -->
-<div class="hero">
-<h1>F&F Sanoati: To'liq Hisobot</h1>
-<div class="sub">Givaudan &middot; IFF &middot; Symrise &middot; DSM-Firmenich</div>
-<div class="meta">
-<span class="tag">Bozor hajmi: <b>&euro;45.3 mlrd</b></span>
-<span class="tag">Top 4 ulushi: <b>~61%</b></span>
-<span class="tag">FY2024 + FY2025 yonma-yon</span>
-<span class="tag">Tayyorlangan: <b>2026, 1-aprel</b></span>
-</div>
-</div>
-
-<!-- NAV -->
-<nav id="nav">
+<!-- NAVIGATION -->
+<nav>
 <div class="nav-scroll">
-<button class="nav-btn active" data-t="s1">Umumiy</button>
-<button class="nav-btn" data-t="s2">Moliya</button>
-<button class="nav-btn" data-t="s3">Geografiya</button>
-<button class="nav-btn" data-t="s4">Segmentlar</button>
-<button class="nav-btn" data-t="s5">M&A</button>
-<button class="nav-btn" data-t="s6">Benchmarklar</button>
-<button class="nav-btn" data-t="s7">Givaudan Case</button>
-<button class="nav-btn" data-t="s8">Orgstruktura</button>
-<button class="nav-btn" data-t="s9">KPI</button>
-<button class="nav-btn" data-t="s10">Sotuv jarayoni</button>
-<button class="nav-btn" data-t="s11">$1 Taqsimoti</button>
-<button class="nav-btn" data-t="s12">Taqqoslash</button>
-<button class="nav-btn" data-t="s13">Xulosalar</button>
-<button class="nav-btn" data-t="s14">Manbalar</button>
+<button class="nav-btn active" onclick="showTab(0)">Kirish</button>
+<button class="nav-btn" onclick="showTab(1)">Moliyaviy</button>
+<button class="nav-btn" onclick="showTab(2)">Geografik</button>
+<button class="nav-btn" onclick="showTab(3)">Segmentlar</button>
+<button class="nav-btn" onclick="showTab(4)">M&A</button>
+<button class="nav-btn" onclick="showTab(5)">Benchmarklar</button>
+<button class="nav-btn" onclick="showTab(6)">Givaudan Case</button>
+<button class="nav-btn" onclick="showTab(7)">Orgstruktura</button>
+<button class="nav-btn" onclick="showTab(8)">KPI lavozimlar</button>
+<button class="nav-btn" onclick="showTab(9)">Texnik KPI</button>
+<button class="nav-btn" onclick="showTab(10)">Sotuv jarayoni</button>
+<button class="nav-btn" onclick="showTab(11)">Dollar taqsimoti</button>
+<button class="nav-btn" onclick="showTab(12)">Strategik taqqoslash</button>
+<button class="nav-btn" onclick="showTab(13)">Xulosalar</button>
+<button class="nav-btn" onclick="showTab(14)">Manbalar</button>
 </div>
 </nav>
 
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+<!-- HERO -->
+<div class="hero">
+<h1>F&F Sanoati: To'liq Umumlashtirilgan Hisobot</h1>
+<p class="sub">Givaudan &middot; IFF &middot; Symrise &middot; DSM-Firmenich</p>
+<div class="meta">
+<span class="tag"><b>FY2024 + FY2025</b> yonma-yon taqqoslash</span>
+<span class="tag">Tayyorlangan: <b>2026-yil, 1-aprel</b></span>
+<span class="tag">Manbalar: <b>6 ta asosiy hujjat + 27 manba</b></span>
+</div>
+<div class="stat-row">
+<div class="stat"><div class="num" style="color:var(--giv)">~$8.2B</div><div class="lbl">Givaudan</div></div>
+<div class="stat"><div class="num" style="color:var(--iff)">$11.5B</div><div class="lbl">IFF</div></div>
+<div class="stat"><div class="num" style="color:var(--sym)">~$5.4B</div><div class="lbl">Symrise</div></div>
+<div class="stat"><div class="num" style="color:var(--dsm)">~$13.8B</div><div class="lbl">DSM-Firmenich</div></div>
+</div>
+</div>
 
 <div class="wrap">
 
-<!-- ===== S1: UMUMIY ===== -->
-<div class="sec active" id="s1">
-<div class="panel">
-<h2>&#127758; Bozor Umumiy Ko'rinishi</h2>
-<p>Global F&F bozori 2024 yilda taxminan <strong>&euro;45.3 mlrd</strong>. Givaudan bu "kengaytirilgan bozor maydonini" <strong>CHF 42 mlrd</strong> deb tariflaydi. Bozor <strong>ikki qavatli model</strong>ga o'tmoqda: yuqorida global key-accountlar, pastda tez o'sayotgan local/regional accountlar.</p>
-<div class="grid g4" style="margin-top:20px">
-<div class="crd giv"><div class="lbl">Givaudan</div><div class="val">CHF 7.5B</div><div class="note">FY2025 &middot; 17,580 xodim<br><span class="badge b-giv">Gross 43.5%</span> <span class="badge b-giv">R&D 7.4%</span></div></div>
-<div class="crd iff"><div class="lbl">IFF</div><div class="val">$10.9B</div><div class="note">FY2025 &middot; ~21,500 xodim<br><span class="badge b-iff">Gross 36.2%</span> <span class="badge b-iff">R&D 6.4%</span></div></div>
-<div class="crd sym"><div class="lbl">Symrise</div><div class="val">&euro;4.9B</div><div class="note">FY2025 &middot; 12,745 xodim<br><span class="badge b-sym">Gross 37.6%</span> <span class="badge b-sym">R&D 5.6%</span></div></div>
-<div class="crd dsm"><div class="lbl">DSM-Firmenich</div><div class="val">&euro;9.0B</div><div class="note">FY2025 cont. ops &middot; 28,550<br><span class="badge b-dsm">Gross ~39%</span> <span class="badge b-dsm">R&D 7.9%</span></div></div>
-</div>
-</div>
+<!-- ====== TAB 0: KIRISH ====== -->
+<div class="sec active" id="tab0">
+<h2><span class="ico">I</span> Kirish va metodologiya</h2>
+
 <div class="panel">
 <h3>Manbalar</h3>
-<div class="tw"><table>
+<div class="tbl-wrap">
+<table>
 <tr><th>#</th><th>Manba</th><th>Qamrov</th><th>Til</th></tr>
-<tr><td>1</td><td>Givaudan GCFR 2025, IFF 10-K 2025, Symrise CR 2025, DSM-F IAR 2025</td><td>FY2025</td><td>Ruscha</td></tr>
+<tr><td>1</td><td>Givaudan GCFR 2025, IFF 10-K 2025, Symrise CR 2025, DSM-F IAR 2025 (PDF tahlil)</td><td>FY2025</td><td>Ruscha</td></tr>
 <tr><td>2</td><td>ff-industry-deep-analysis.pplx.md</td><td>FY2024 batafsil + benchmarklar + case study</td><td>O'zbekcha</td></tr>
 <tr><td>3</td><td>stage1_financial_data.md</td><td>FY2024 eng batafsil moliyaviy metrikalar</td><td>Inglizcha</td></tr>
 <tr><td>4</td><td>BOZOR_TAHLILI_TOLIQ.md</td><td>FY2025 + sanoat tahlili + sotuv tizimi</td><td>O'zbekcha</td></tr>
 <tr><td>5</td><td>Kompaniyalar rasmiy yillik hisobotlari</td><td>FY2024-2025</td><td>Asl tillar</td></tr>
 <tr><td>6</td><td>Alexander Group, CSO Insights, Damodaran, ICTA, 6sense</td><td>Sanoat benchmarklari</td><td>Inglizcha</td></tr>
-</table></div>
+</table>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>FY2024 vs FY2025 farqi</h3>
+<ul>
+<li><strong>FY2024 ma'lumotlari</strong> — stage1 va pplx manbalaridan. Eng batafsil: manbalar, valyuta kurslari, segment tafsilotlari.</li>
+<li><strong>FY2025 ma'lumotlari</strong> — PDF va BOZOR_TAHLILI manbalaridan. Eng yangi raqamlar.</li>
+<li><strong>DSM-Firmenich eslatma:</strong> FY2024 da IFRS daromad +20% o'sdi, chunki Firmenich birlashishi faqat 2023 may oyidan hisobga olingan. Pro-forma asos: +4%. FY2025 da continuing operations va discontinued operations ajratilgan.</li>
+</ul>
 </div>
 <div class="panel">
 <h3>Valyuta kurslari</h3>
-<div class="tw"><table>
+<div class="tbl-wrap">
+<table>
 <tr><th>Valyuta</th><th>FY2024 o'rtacha (USD ga)</th><th>FY2025 taxminiy</th></tr>
-<tr><td>CHF &rarr; USD</td><td>~1.104</td><td>~1.10</td></tr>
+<tr><td>CHF &rarr; USD</td><td>~1.104 (1 CHF = $1.104)</td><td>~1.10</td></tr>
 <tr><td>EUR &rarr; USD</td><td>~1.08</td><td>~1.08</td></tr>
 <tr><td>USD</td><td>1.00</td><td>1.00</td></tr>
-</table></div>
-<p style="font-size:.82rem;color:var(--muted)"><strong>DSM-Firmenich eslatma:</strong> FY2024 da IFRS daromad +20% o'sdi (Firmenich faqat 2023 maydan hisobga olingan). Pro-forma: +4%. FY2025 da continuing va discontinued ops ajratilgan.</p>
-</div>
-<div class="panel">
-<h3>O'sish drayverlari</h3>
-<div class="grid g3">
-<div class="crd"><div class="lbl">&#127924; Fragrance</div><div class="note">Premiumizatsiya, nisha brendlar, Z avlod, e-commerce. Nozik atirlar COVID dan beri <strong>+80% LFL</strong>. Janubiy Osiyo/Yaqin Sharqda 3 yilda <strong>3x</strong></div></div>
-<div class="crd"><div class="lbl">&#127854; Food / Taste</div><div class="note">Shakar kamaytirish, o'simlik asosli, salomatlik foydalari. Bozor <strong>2.1% CAGR</strong>. Rivojlanayotgan iqtisodiyotlarda eng yuqori o'sish</div></div>
-<div class="crd"><div class="lbl">&#127760; Geografiya</div><div class="note">Hindiston, Yaqin Sharq, tanlangan Lotin Amerikasi kuchli. Osiyoning ayrim qismlari yumshoqroq. Givaudan daromadining <strong>49%</strong> yuqori o'sish bozorlaridan</div></div>
+</table>
 </div>
 </div>
 </div>
 
-<!-- ===== S2: MOLIYA ===== -->
-<div class="sec" id="s2">
-<div class="panel">
-<h2>&#128200; Moliyaviy Taqqoslash (FY2024 + FY2025)</h2>
-<h3>Umumiy daromad</h3>
-<div class="tw"><table>
-<tr><th>Kompaniya</th><th>FY2024 (asl valyuta)</th><th>FY2024 ~USD</th><th>FY2025 (asl valyuta)</th><th>O'zgarish</th><th>FY24 organik</th><th>FY25 organik</th></tr>
-<tr><td><span class="badge b-giv">Givaudan</span></td><td>CHF 7,412M</td><td>~$8.2B</td><td>CHF 7,472M</td><td>+0.8%</td><td class="hi">+12.3%</td><td>~+3%</td></tr>
-<tr><td><span class="badge b-iff">IFF</span></td><td>$11,484M</td><td>$11.5B</td><td>$10,890M</td><td>-5.2%&sup1;</td><td>+6.0%</td><td>~+3%</td></tr>
-<tr><td><span class="badge b-sym">Symrise</span></td><td>&euro;4,999M</td><td>~$5.4B</td><td>&euro;4,929M</td><td>-1.4%</td><td>+8.7%</td><td>~+6%</td></tr>
-<tr><td><span class="badge b-dsm">DSM-F</span></td><td>&euro;12,799M</td><td>~$13.8B</td><td>&euro;9,034M&sup2;</td><td>&mdash;</td><td>+6.0%</td><td>~+4%</td></tr>
-<tr><td>Kerry Group</td><td>&euro;6,900M</td><td>~$7.5B</td><td>&euro;6,800M</td><td>-1.4%</td><td>&mdash;</td><td>&mdash;</td></tr>
-</table></div>
-<p style="font-size:.78rem;color:var(--muted)">&sup1; IFF pastligi divestitsiyalar natijasi. &sup2; DSM-F FY25 = continuing ops; Total Group: &euro;12,521M.</p>
+<div class="panel panel-glow">
+<h3>Bozor umumiy ko'rinishi</h3>
+<p>Global F&F bozori 2024 yilda taxminan <strong style="color:var(--gold)">$45.3 mlrd</strong> ni tashkil etgan. To'rt yirik o'yinchi (Givaudan, IFF, DSM-Firmenich, Symrise) bozorning <strong>~61%</strong> ini nazorat qiladi. Givaudan "kengaytirilgan bozor maydonini" taxminan <strong>CHF 42 mlrd</strong> deb tariflaydi.</p>
+<p>Bozor <strong>ikki qavatli model</strong>ga o'tmoqda: yuqorida global key-accountlar, pastda tez o'sayotgan local/regional accountlar.</p>
+<div class="grid4" style="margin-top:16px">
+<div class="kpi-card"><div class="val" style="color:var(--giv)">~17-22%</div><div class="lbl">Givaudan ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--iff)">~17%</div><div class="lbl">IFF ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--dsm)">~15%</div><div class="lbl">DSM-F ulushi</div></div>
+<div class="kpi-card"><div class="val" style="color:var(--sym)">~11%</div><div class="lbl">Symrise ulushi</div></div>
 </div>
-
-<div class="panel">
-<h3>Gross Margin (FY24 / FY25)</h3>
-<div class="bar-group">
-<div class="bar-row"><div class="bar-lbl">Givaudan</div><div class="bar-track"><div class="bar-fill bf-giv" style="width:88%">44.1% &rarr; 43.5%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">DSM-F</div><div class="bar-track"><div class="bar-fill bf-dsm" style="width:78%">33.2% &rarr; ~39%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Symrise</div><div class="bar-track"><div class="bar-fill bf-sym" style="width:77%">39.3% &rarr; 37.6%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">IFF</div><div class="bar-track"><div class="bar-fill bf-iff" style="width:72%">35.9% &rarr; 36.2%</div></div></div>
-</div>
-<h3>R&D intensivligi (% daromad)</h3>
-<div class="bar-group">
-<div class="bar-row"><div class="bar-lbl">DSM-F</div><div class="bar-track"><div class="bar-fill bf-dsm" style="width:79%">6.2% &rarr; 7.9%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Givaudan</div><div class="bar-track"><div class="bar-fill bf-giv" style="width:76%">7.6% &rarr; 7.4%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">IFF</div><div class="bar-track"><div class="bar-fill bf-iff" style="width:64%">5.8% &rarr; 6.4%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Symrise</div><div class="bar-track"><div class="bar-fill bf-sym" style="width:56%">5.5% &rarr; 5.6%</div></div></div>
-</div>
-<h3>EBITDA margin (FY24 / FY25)</h3>
-<div class="bar-group">
-<div class="bar-row"><div class="bar-lbl">Givaudan</div><div class="bar-track"><div class="bar-fill bf-giv" style="width:85%">23.8% &rarr; ~22%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Symrise</div><div class="bar-track"><div class="bar-fill bf-sym" style="width:74%">20.7% &rarr; ~20%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">IFF</div><div class="bar-track"><div class="bar-fill bf-iff" style="width:69%">19.2% &rarr; ~19%</div></div></div>
-<div class="bar-row"><div class="bar-lbl">DSM-F</div><div class="bar-track"><div class="bar-fill bf-dsm" style="width:62%">16.5% &rarr; ~18%</div></div></div>
 </div>
 </div>
 
+<!-- ====== TAB 1: MOLIYAVIY ====== -->
+<div class="sec" id="tab1">
+<h2><span class="ico">II</span> Moliyaviy taqqoslash (FY2024 + FY2025)</h2>
+
 <div class="panel">
-<h3>Yig'ma taqqoslash jadvali (FY2024 / FY2025)</h3>
-<div class="tw"><table>
-<tr><th>Metrika</th><th>Givaudan</th><th>IFF</th><th>Symrise</th><th>DSM-Firmenich</th></tr>
-<tr><td><strong>Daromad</strong></td><td>CHF 7,412M / 7,472M</td><td>$11,484M / $10,890M</td><td>&euro;4,999M / &euro;4,929M</td><td>&euro;12,799M / &euro;9,034M*</td></tr>
-<tr><td><strong>Organik o'sish</strong></td><td class="hi">+12.3% / ~+3%</td><td>+6.0% / ~+3%</td><td>+8.7% / ~+6%</td><td>+6.0% / ~+4%</td></tr>
-<tr><td><strong>Gross margin</strong></td><td class="hi">44.1% / 43.5%</td><td>35.9% / 36.2%</td><td>39.3% / 37.6%</td><td>33.2% / ~39%</td></tr>
-<tr><td><strong>EBITDA margin</strong></td><td class="hi">23.8% / ~22%</td><td>19.2% / ~19%</td><td>20.7% / ~20%</td><td>16.5% / ~18%</td></tr>
-<tr><td><strong>Net margin</strong></td><td class="hi">14.7% / ~14%</td><td>2.1% / ~2%</td><td>9.6% / ~9%</td><td>2.2% / ~3%</td></tr>
-<tr><td><strong>R&D % savdo</strong></td><td class="hi">7.6% / 7.4%</td><td>5.8% / 6.4%</td><td>5.5% / 5.6%</td><td>6.2% / 7.9%</td></tr>
-<tr><td><strong>S&M % savdo</strong></td><td>13.1% / 13.3%</td><td>17.4% / 16.8%*</td><td>14.0% / 14.1%</td><td>14.1% / 14.2%</td></tr>
-<tr><td><strong>Sof foyda</strong></td><td>CHF 1,090M / ~1,050M</td><td>$243M / ~$250M</td><td>&euro;478M / ~&euro;450M</td><td>&euro;280M / ~&euro;300M</td></tr>
+<h3>2.1 Umumiy daromad</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 (asl valyuta)</th><th>FY2024 (~USD)</th><th>FY2025 (asl valyuta)</th><th>O'zgarish</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span> Givaudan</td><td>CHF 7,412M</td><td>~$8.2B</td><td>CHF 7,472M</td><td>+0.8% (reported)</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span> IFF</td><td>$11,484M</td><td>$11.5B</td><td>$10,890M</td><td>-5.2% (reported)*</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span> Symrise</td><td>$4,999M</td><td>~$5.4B</td><td>$4,929M</td><td>-1.4% (reported)</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span> DSM-Firmenich</td><td>$12,799M (IFRS)</td><td>~$13.8B</td><td>$9,034M (cont. ops)**</td><td>&mdash;</td></tr>
+<tr><td>Kerry Group</td><td>$6,900M (cont. ops)</td><td>~$7.5B</td><td>$6,800M (cont. ops)</td><td>-1.4%</td></tr>
+</table>
+</div>
+<p style="font-size:.8rem;color:var(--muted)">*IFF FY2025 pastligi divestitsiyalar (Pharma Solutions, Cosmetic Ingredients) natijasi. **DSM-F FY2025 da continuing ops va discontinued ops ajratilgan; Total Group: $12,521M.</p>
+</div>
+
+<div class="panel">
+<h3>2.2 Organik o'sish (LFL)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 organik/LFL</th><th>FY2025 organik/LFL</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td><strong style="color:var(--green)">+12.3%</strong></td><td>~+3-4% (9 oylik: +3.3%)</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>+6.0% (comparable CN)</td><td>~+3% (taqqoslanadigan)</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>+8.7%</td><td>~+5-7% (taxminiy)</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>+6.0%</td><td>~+4% (cont. ops organik)</td></tr>
+</table>
+</div>
+<div class="highlight">
+<strong>Trend:</strong> FY2024 da barcha kompaniyalar kuchli o'sishni ko'rsatdi (2023 yilgi baza past edi). FY2025 da o'sish sekinlashdi — valyuta ta'siri, Osiyo-Tinch okeani yumshoqligi va tariflar bosimi.
+</div>
+</div>
+
+<div class="panel">
+<h3>2.3 Gross margin (yalpi foyda marjasi)</h3>
+<div style="margin:16px 0">
+<div class="bar-row"><span class="bar-label"><span class="badge badge-giv">GIV</span> FY24</span><div class="bar-track"><div class="bar-fill" style="width:44.1%;background:var(--giv)">44.1%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-giv">GIV</span> FY25</span><div class="bar-track"><div class="bar-fill" style="width:43.5%;background:rgba(233,69,96,.7)">43.5%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-sym">SYM</span> FY24</span><div class="bar-track"><div class="bar-fill" style="width:39.3%;background:var(--sym)">39.3%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-sym">SYM</span> FY25</span><div class="bar-track"><div class="bar-fill" style="width:37.6%;background:rgba(46,204,113,.7)">37.6%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-iff">IFF</span> FY24</span><div class="bar-track"><div class="bar-fill" style="width:35.9%;background:var(--iff)">35.9%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-iff">IFF</span> FY25</span><div class="bar-track"><div class="bar-fill" style="width:36.2%;background:rgba(52,152,219,.7)">36.2%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-dsm">DSM</span> FY24</span><div class="bar-track"><div class="bar-fill" style="width:33.2%;background:var(--dsm)">33.2%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-dsm">DSM</span> FY25</span><div class="bar-track"><div class="bar-fill" style="width:39%;background:rgba(240,192,64,.7)">~39%*</div></div></div>
+</div>
+<p style="font-size:.82rem"><strong>Givaudan barcha yillarda sanoatda eng yuqori gross margin ga ega</strong> — bu premium pozitsiya va kuchli differensiatsiyani aks ettiradi.</p>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>2.4 EBITDA margin</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024</th><th>FY2025</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td><strong>23.8%</strong></td><td>~22-23%</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>19.2% (adj.)</td><td>~19% (adj.)</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>20.7%</td><td>~20-21%</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>16.5% (adj.)</td><td>~18-19% (cont.)</td></tr>
+</table>
+</div>
+</div>
+<div class="panel">
+<h3>2.5 Sof foyda (Net Income / Net Margin)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 sof foyda</th><th>FY2024 net margin</th><th>FY2025 taxminiy</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td>CHF 1,090M</td><td><strong>14.7%</strong></td><td>~14%</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>$243M</td><td>2.1%</td><td>~2-3%</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>$478M</td><td>9.6%</td><td>~9%</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>$280M</td><td>2.2%</td><td>~3% (cont.)</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>2.6 R&D xarajatlari (% daromad)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 R&D</th><th>FY2024 %</th><th>FY2025 R&D</th><th>FY2025 %</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td>CHF 565M</td><td><strong>7.6%</strong></td><td>CHF 551M</td><td><strong>7.4%</strong></td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>$671M</td><td>5.8%</td><td>$694M</td><td>6.4%</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>$276M</td><td>5.5%</td><td>$276M</td><td>5.6%</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>$796M</td><td>6.2%</td><td>$713M</td><td>7.9% (cont.)</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem"><strong>Givaudan va DSM-Firmenich R&D da sanoat yetakchilari</strong> (~7-8%). Bu co-creation va innovatsiya pipeline kuchi orqali raqobat ustunligini ta'minlaydi.</p>
+</div>
+<div class="panel">
+<h3>2.7 Sotuv & Marketing xarajatlari (% daromad)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 S&M</th><th>FY2024 %</th><th>FY2025 S&M</th><th>FY2025 %</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td>CHF 967M</td><td>13.1%</td><td>CHF 993M</td><td>13.3%</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>$1,995M</td><td>17.4%*</td><td>$1,834M</td><td>16.8%*</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>$699M</td><td>14.0%</td><td>$693M</td><td>14.1%</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>$1,801M</td><td>14.1%</td><td>$1,281M</td><td>14.2%</td></tr>
+</table>
+</div>
+<p style="font-size:.8rem;color:var(--muted)">*IFF ning 17.4%/16.8% G&A ham kiritilgan — to'g'ridan-to'g'ri taqqoslab bo'lmaydi.</p>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>2.8 Xodimlar soni va samaradorlik</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024</th><th>FY2025</th><th>O'zgarish</th><th>Daromad/xodim (FY2024)</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td>16,942 FTE</td><td>17,580 FTE</td><td>+638 (+3.8%)</td><td>~CHF 437K</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>~22,400</td><td>~21,500</td><td>-900 (-4.0%)</td><td>~$513K</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>~12,700 FTE</td><td>12,745 FTE</td><td>~flat</td><td>~$393K</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>28,214</td><td>28,550 (Total)</td><td>+336</td><td>~$454K</td></tr>
+</table>
+</div>
+</div>
+<div class="panel">
+<h3>2.9 Qarz yuki</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>FY2024 Net Debt/EBITDA</th><th>FY2025 taxminiy</th></tr>
+<tr><td><span class="badge badge-giv">GIV</span></td><td>2.3x</td><td>~2.0x</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>3.8x</td><td>~3.5x (divestlar)</td></tr>
+<tr><td><span class="badge badge-sym">SYM</span></td><td>1.8x</td><td>~1.5-2.0x</td></tr>
+<tr><td><span class="badge badge-dsm">DSM</span></td><td>~1.2x</td><td>~1.0x</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="panel panel-glow">
+<h3>2.10 Yig'ma taqqoslash jadvali</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Metrika</th><th><span class="badge badge-giv">Givaudan</span> FY24/FY25</th><th><span class="badge badge-iff">IFF</span> FY24/FY25</th><th><span class="badge badge-sym">Symrise</span> FY24/FY25</th><th><span class="badge badge-dsm">DSM-F</span> FY24/FY25</th></tr>
+<tr><td><strong>Daromad</strong></td><td>CHF 7,412M / 7,472M</td><td>$11,484M / $10,890M</td><td>$4,999M / $4,929M</td><td>$12,799M / $9,034M*</td></tr>
+<tr><td><strong>Organik o'sish</strong></td><td>+12.3% / ~+3%</td><td>+6.0% / ~+3%</td><td>+8.7% / ~+6%</td><td>+6.0% / ~+4%</td></tr>
+<tr><td><strong>Gross margin</strong></td><td><strong>44.1%</strong> / <strong>43.5%</strong></td><td>35.9% / 36.2%</td><td>39.3% / 37.6%</td><td>33.2% / ~39%*</td></tr>
+<tr><td><strong>EBITDA margin</strong></td><td><strong>23.8%</strong> / ~22%</td><td>19.2% / ~19%</td><td>20.7% / ~20%</td><td>16.5% / ~18%*</td></tr>
+<tr><td><strong>R&D % savdo</strong></td><td><strong>7.6%</strong> / <strong>7.4%</strong></td><td>5.8% / 6.4%</td><td>5.5% / 5.6%</td><td>6.2% / 7.9%*</td></tr>
+<tr><td><strong>S&M % savdo</strong></td><td>13.1% / 13.3%</td><td>17.4%&dagger; / 16.8%&dagger;</td><td>14.0% / 14.1%</td><td>14.1% / 14.2%</td></tr>
+<tr><td><strong>Net margin</strong></td><td><strong>14.7%</strong> / ~14%</td><td>2.1% / ~2%</td><td>9.6% / ~9%</td><td>2.2% / ~3%</td></tr>
 <tr><td><strong>Xodimlar</strong></td><td>16,942 / 17,580</td><td>~22,400 / ~21,500</td><td>~12,700 / 12,745</td><td>28,214 / 28,550</td></tr>
-<tr><td><strong>Qarz (Net debt/EBITDA)</strong></td><td>2.3x / ~2.0x</td><td>3.8x / ~3.5x</td><td>1.8x / ~1.8x</td><td>~1.2x / ~1.0x</td></tr>
-<tr><td><strong>S&M absolyut</strong></td><td>CHF 967M / 993M</td><td>$1,995M / $1,834M</td><td>&euro;699M / &euro;693M</td><td>&euro;1,801M / &euro;1,281M</td></tr>
-<tr><td><strong>R&D absolyut</strong></td><td>CHF 565M / 551M</td><td>$671M / $694M</td><td>&euro;276M / &euro;276M</td><td>&euro;796M / &euro;713M</td></tr>
-</table></div>
-<p style="font-size:.78rem;color:var(--muted)">*IFF S&A includes G&A. DSM-F FY25 = continuing ops.</p>
+<tr><td><strong>Net debt/EBITDA</strong></td><td>2.3x / ~2.0x</td><td>3.8x / ~3.5x</td><td>1.8x / ~1.8x</td><td>~1.2x / ~1.0x</td></tr>
+</table>
+</div>
+<p style="font-size:.8rem;color:var(--muted)">*DSM-F FY2025 = continuing operations only. &dagger;IFF S&A includes G&A.</p>
 </div>
 </div>
 
-<!-- ===== S3: GEOGRAFIYA ===== -->
-<div class="sec" id="s3">
+<!-- ====== TAB 2: GEOGRAFIK ====== -->
+<div class="sec" id="tab2">
+<h2><span class="ico">III</span> Geografik taqsimot</h2>
+
 <div class="panel">
-<h2>&#127757; Geografik Taqsimot</h2>
-<h3>Mintaqaviy daromad ulushi (FY2024 / FY2025)</h3>
-<div class="tw"><table>
-<tr><th>Mintaqa</th><th>Givaudan</th><th>IFF</th><th>Symrise</th><th>DSM-F</th></tr>
-<tr><td><strong>EAME</strong></td><td>40.2% / ~42%</td><td>33.4% / 34.2%</td><td>39.8% / ~41%</td><td>~35.8% / ~40%</td></tr>
-<tr><td><strong>Shimoliy Amerika</strong></td><td>23.4% / ~23%</td><td class="hi">30.0% / 29.3%</td><td>25.5% / ~25%</td><td>22.9% / ~26%</td></tr>
-<tr><td><strong>Osiyo-Tinch okeani</strong></td><td>24.6% / ~24%</td><td>23.8% / 23.4%</td><td>20.7% / ~21%</td><td class="hi">~26.7% / ~24%</td></tr>
-<tr><td><strong>Lotin Amerikasi</strong></td><td>11.8% / ~11%</td><td>12.8% / 13.1%</td><td>13.9% / ~13%</td><td>14.7% / ~10%</td></tr>
-</table></div>
+<h3>3.1 Mintaqaviy daromad ulushi (FY2024 + FY2025)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Mintaqa</th><th><span class="badge badge-giv">GIV</span> FY24/FY25</th><th><span class="badge badge-iff">IFF</span> FY24/FY25</th><th><span class="badge badge-sym">SYM</span> FY24/FY25</th><th><span class="badge badge-dsm">DSM</span> FY24/FY25</th></tr>
+<tr><td><strong>EAME</strong></td><td>40.2% / ~42%</td><td>33.4% / 34.2%</td><td>39.8% / ~41%</td><td>~35.8% / ~40%*</td></tr>
+<tr><td><strong>Shimoliy Amerika</strong></td><td>23.4% / ~23%</td><td>30.0% / 29.3%</td><td>25.5% / ~25%</td><td>22.9% / ~26%*</td></tr>
+<tr><td><strong>Osiyo-Tinch okeani</strong></td><td>24.6% / ~24%</td><td>23.8% / 23.4%</td><td>20.7% / ~21%</td><td>~26.7% / ~24%*</td></tr>
+<tr><td><strong>Lotin Amerikasi</strong></td><td>11.8% / ~11%</td><td>12.8% / 13.1%</td><td>13.9% / ~13%</td><td>14.7% / ~10%*</td></tr>
+</table>
 </div>
+<p style="font-size:.8rem;color:var(--muted)">*DSM-F FY2025 = continuing operations.</p>
+</div>
+
+<div class="grid2">
 <div class="panel">
-<h3>Givaudan batafsil (CHF mln)</h3>
-<div class="tw"><table>
-<tr><th>Mintaqa</th><th>FY2024</th><th>FY2025</th><th>FY24 LFL</th></tr>
-<tr><td>EAME</td><td>2,982</td><td>Yevropa 2,194 + J.Osiyo/Y.Sharq/Afrika 1,142 + Shveytsariya 80</td><td class="hi">+12.6%</td></tr>
-<tr><td>Shimoliy Amerika</td><td>1,734</td><td>1,712</td><td>+5.9%</td></tr>
-<tr><td>Osiyo-Tinch okeani</td><td>1,821</td><td>1,512</td><td>+11.4%</td></tr>
-<tr><td>Lotin Amerikasi</td><td>875</td><td>832</td><td class="hi">+26.1%</td></tr>
-</table></div>
-<h3>IFF batafsil ($ mln)</h3>
-<div class="tw"><table>
+<h3>Givaudan (CHF mln)</h3>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Mintaqa</th><th>FY2024</th><th>FY2025</th></tr>
+<tr><td>Yevropa (EAME)</td><td>~2,982</td><td>2,194 (Yevropa)</td></tr>
+<tr><td>J.Osiyo/Y.Sharq/Afrika</td><td>(EAME ichida)</td><td>1,142</td></tr>
+<tr><td>Shimoliy Amerika</td><td>1,734</td><td>1,712</td></tr>
+<tr><td>Lotin Amerikasi</td><td>875</td><td>832</td></tr>
+<tr><td>Osiyo-Tinch okeani</td><td>1,821</td><td>1,512</td></tr>
+<tr><td>Shveytsariya</td><td>(EAME ichida)</td><td>80</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem"><strong>FY2024 da eng tez o'sish:</strong> Lotin Amerikasi +26.1% LFL, EAME +12.6%, APAC +11.4%.</p>
+</div>
+
+<div class="panel">
+<h3>IFF ($ mln)</h3>
+<div class="tbl-wrap tbl-iff">
+<table>
 <tr><th>Mintaqa</th><th>FY2024</th><th>FY2025</th></tr>
 <tr><td>Yevropa/Afrika/Y.Sharq</td><td>3,840</td><td>3,727</td></tr>
 <tr><td>Shimoliy Amerika</td><td>3,440</td><td>3,195</td></tr>
 <tr><td>Katta Osiyo</td><td>2,731</td><td>2,546</td></tr>
 <tr><td>Lotin Amerikasi</td><td>1,473</td><td>1,422</td></tr>
-</table></div>
-<h3>Symrise batafsil (&euro; mln)</h3>
-<div class="tw"><table>
+</table>
+</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>Symrise ($ mln)</h3>
+<div class="tbl-wrap tbl-sym">
+<table>
 <tr><th>Mintaqa</th><th>FY2024</th><th>FY2025</th></tr>
 <tr><td>EAME</td><td>1,992</td><td>2,022</td></tr>
 <tr><td>Shimoliy Amerika</td><td>1,277</td><td>1,226</td></tr>
 <tr><td>Osiyo/Tinch okeani</td><td>1,035</td><td>1,027</td></tr>
 <tr><td>Lotin Amerikasi</td><td>695</td><td>655</td></tr>
-</table></div>
-<h3>DSM-Firmenich batafsil (&euro; mln)</h3>
-<div class="tw"><table>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>DSM-Firmenich ($ mln)</h3>
+<div class="tbl-wrap tbl-dsm">
+<table>
 <tr><th>Mintaqa</th><th>FY2024 (IFRS)</th><th>FY2025 (cont. ops)</th></tr>
 <tr><td>EMEA (NL+CH kiritilgan)</td><td>~4,572</td><td>~3,614</td></tr>
 <tr><td>Shimoliy Amerika</td><td>2,928</td><td>2,353</td></tr>
 <tr><td>Osiyo-Tinch okeani</td><td>~3,412</td><td>~2,210</td></tr>
 <tr><td>Lotin Amerikasi</td><td>1,887</td><td>857</td></tr>
-</table></div>
-</div>
-<div class="panel">
-<h3>Trend tahlili</h3>
-<div class="grid g2">
-<div class="crd"><div class="lbl">EAME</div><div class="note">Barcha kompaniyalarda eng katta (33-42%). Givaudan xodimlari ham shu yerda eng ko'p (<strong>47%</strong>)</div></div>
-<div class="crd" style="border-left:4px solid var(--green)"><div class="lbl">Lotin Amerikasi</div><div class="note">Eng tez o'suvchi. Givaudan FY2024: <strong class="hi">+26.1% LFL</strong></div></div>
-<div class="crd"><div class="lbl">Osiyo-Tinch okeani</div><div class="note">FY2025 yumshoqlik. Hindiston/Yaqin Sharq kuchli, boshqalar sekin</div></div>
-<div class="crd"><div class="lbl">Shimoliy Amerika</div><div class="note">IFF eng kuchli (30%). Divestitsiyalar natijasida kamaymoqda</div></div>
+</table>
 </div>
 </div>
 </div>
 
-<!-- ===== S4: SEGMENTLAR ===== -->
-<div class="sec" id="s4">
+<div class="panel highlight">
+<h3>3.3 Trend tahlili</h3>
+<ul>
+<li><strong>EAME</strong> barcha kompaniyalarda eng katta mintaqa (33-42%). Givaudan xodimlari ham shu yerda eng ko'p (47%).</li>
+<li><strong>Shimoliy Amerika</strong> da IFF eng kuchli (30% FY2024). Lekin divestitsiyalar natijasida kamaymoqda.</li>
+<li><strong>Osiyo-Tinch okeani</strong> da DSM-F nisbatan kuchli (~27% FY2024). FY2025 da Osiyo yumshoqligi barcha kompaniyalarga ta'sir qildi.</li>
+<li><strong>Lotin Amerikasi</strong> eng tez o'suvchi mintaqa — Givaudan FY2024 da +26.1% LFL.</li>
+<li><strong>O'sish drayverlari:</strong> Hindiston, Yaqin Sharq va tanlangan Lotin Amerikasi kuchli; Osiyoning ayrim qismlari yumshoqroq.</li>
+</ul>
+</div>
+</div>
+
+<!-- ====== TAB 3: SEGMENTLAR ====== -->
+<div class="sec" id="tab3">
+<h2><span class="ico">IV</span> Segment taqsimoti</h2>
+
+<div class="grid2">
 <div class="panel">
-<h2>&#128202; Segment Taqsimoti</h2>
-<h3>Givaudan (CHF mln, FY2024)</h3>
-<div class="tw"><table>
-<tr><th>Segment</th><th>Daromad</th><th>%</th><th>LFL o'sish</th><th>Sub-vertikal</th></tr>
-<tr><td><strong>Taste & Wellbeing</strong></td><td>3,752M</td><td>50.6%</td><td>+10.7%</td><td>Snacklar ~37%, Ichimliklar ~36%, Sut ~12%, Shirinliklar ~15%</td></tr>
-<tr><td><strong>Fragrance & Beauty</strong></td><td>3,660M</td><td>49.4%</td><td class="hi">+14.1%</td><td>Iste'mol mah. ~63%, Nozik atir ~21%, Ingredients & Active Beauty ~16%</td></tr>
-</table></div>
-<p style="font-size:.82rem;color:var(--muted)">FY2025: F&B LFL +7.9%, T&W LFL +2.4% — Fragrance tezroq o'sdi.</p>
-<h3>IFF ($ mln, FY2024)</h3>
-<div class="tw"><table>
-<tr><th>Segment</th><th>Daromad</th><th>%</th><th>Izoh</th></tr>
-<tr><td><strong>Nourish</strong> (Flavors + Food Ingredients)</td><td>5,871M</td><td>51.1%</td><td>&mdash;</td></tr>
-<tr><td><strong>Scent</strong></td><td>2,440M</td><td>21.2%</td><td>Fine Fragrance ikki xonali o'sish</td></tr>
-<tr><td><strong>Health & Biosciences</strong></td><td>2,212M</td><td>19.3%</td><td>&mdash;</td></tr>
-<tr><td><strong>Pharma Solutions</strong></td><td>961M</td><td>8.4%</td><td>FY2025 da sotildi</td></tr>
-</table></div>
-<h3>Symrise (&euro; mln, FY2024)</h3>
-<div class="tw"><table>
+<h3>4.1 Givaudan (CHF mln)</h3>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Segment</th><th>FY2024</th><th>%</th><th>FY2025</th><th>%</th><th>FY2024 LFL</th></tr>
+<tr><td>Taste & Wellbeing</td><td>3,752M</td><td>50.6%</td><td>~3,800M</td><td>~51%</td><td>+10.7%</td></tr>
+<tr><td>Fragrance & Beauty</td><td>3,660M</td><td>49.4%</td><td>~3,672M</td><td>~49%</td><td>+14.1%</td></tr>
+<tr><td><strong>Jami</strong></td><td><strong>7,412M</strong></td><td>100%</td><td><strong>7,472M</strong></td><td>100%</td><td><strong>+12.3%</strong></td></tr>
+</table>
+</div>
+<p style="font-size:.82rem">FY2025 da: F&B LFL +7.9%, T&W LFL +2.4% — Fragrance tomoni tezroq o'sdi.</p>
+
+<h4>Sub-vertikallar</h4>
+<div class="tbl-wrap">
+<table>
+<tr><th>Bo'lim</th><th>Sub-vertikal</th><th>Ulush</th></tr>
+<tr><td><strong>T&W</strong> (51%)</td><td>Snacklar ~37%, Ichimliklar ~36%, Sut ~12%, Shirinliklar ~15%</td><td>CHF 3,752M</td></tr>
+<tr><td><strong>F&B</strong> (49%)</td><td>Iste'mol mahsulotlari ~63%, Nozik atirlar ~21%, Ingredient & Active Beauty ~16%</td><td>CHF 3,660M</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>4.2 IFF ($ mln, FY2024)</h3>
+<div class="tbl-wrap tbl-iff">
+<table>
+<tr><th>Segment</th><th>Daromad</th><th>%</th></tr>
+<tr><td>Nourish (Flavors + Food Ingredients)</td><td>5,871M</td><td>51.1%</td></tr>
+<tr><td>Scent</td><td>2,440M</td><td>21.2%</td></tr>
+<tr><td>Health & Biosciences</td><td>2,212M</td><td>19.3%</td></tr>
+<tr><td>Pharma Solutions</td><td>961M</td><td>8.4%</td></tr>
+<tr><td><strong>Jami</strong></td><td><strong>11,484M</strong></td><td>100%</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem">FY2025 da Pharma Solutions sotildi. Food Ingredients segmenti sotuv jarayonida.</p>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>4.3 Symrise ($ mln, FY2024)</h3>
+<div class="tbl-wrap tbl-sym">
+<table>
 <tr><th>Segment</th><th>Daromad</th><th>%</th><th>Organik o'sish</th></tr>
-<tr><td><strong>Taste, Nutrition & Health</strong></td><td>3,091M</td><td>61.8%</td><td>+7.8%</td></tr>
-<tr><td><strong>Scent & Care</strong></td><td>1,908M</td><td>38.2%</td><td>+10.2%</td></tr>
-</table></div>
-<h3>DSM-Firmenich (&euro; mln, FY2024)</h3>
-<div class="tw"><table>
-<tr><th>Segment</th><th>Daromad</th><th>%</th><th>Adj. EBITDA margin</th><th>Izoh</th></tr>
-<tr><td><strong>Perfumery & Beauty</strong></td><td>3,964M</td><td>31.0%</td><td>22.3%</td><td>FY25: &euro;3,760M</td></tr>
-<tr><td><strong>ANH</strong></td><td>3,324M</td><td>26.0%</td><td>10.3%</td><td>CVC ga sotilmoqda (&euro;2.2B)</td></tr>
-<tr><td><strong>TTH</strong></td><td>3,245M</td><td>25.4%</td><td>19.0%</td><td>FY25: &euro;3,146M</td></tr>
-<tr><td><strong>HNC</strong></td><td>2,214M</td><td>17.3%</td><td>16.8%</td><td>&mdash;</td></tr>
-</table></div>
+<tr><td>Taste, Nutrition & Health</td><td>3,091M</td><td>61.8%</td><td>+7.8%</td></tr>
+<tr><td>Scent & Care</td><td>1,908M</td><td>38.2%</td><td>+10.2%</td></tr>
+<tr><td><strong>Jami</strong></td><td><strong>4,999M</strong></td><td>100%</td><td><strong>+8.7%</strong></td></tr>
+</table>
 </div>
 </div>
 
-<!-- ===== S5: M&A ===== -->
-<div class="sec" id="s5">
 <div class="panel">
-<h2>&#128176; M&A Faoliyati (2022-2025)</h2>
-<h3><span class="badge b-giv">Givaudan</span> &mdash; Intizomli bolt-on sotib olishlar</h3>
-<div class="tl">
-<div class="tl-item giv"><span class="tl-year">2023</span><br><span class="tl-desc"><strong>Amyris</strong> kosmetik ingredientlar portfeli &mdash; CHF 183M (~$200M). Neossance&reg; Squalane va barqaror go'zallik ingredientlari.</span></div>
-<div class="tl-item giv"><span class="tl-year">2024</span><br><span class="tl-desc"><strong>b.kolormakeup & skincare</strong> (Italiya) &mdash; CHF 428M jami. ~250 xodim. | <strong>Alderys SAS</strong> (qolgan 20%) &mdash; CHF 5M.</span></div>
-<div class="tl-item giv"><span class="tl-year">2025</span><br><span class="tl-desc"><strong>Vollmens Fragrances</strong> (Lotin Amerikasi) nazorat ulushi &mdash; L&R mijozlarga yaqinlik. | <strong>Belle Aire Creations</strong> (AQSh) &mdash; ~CHF 65M proforma savdo.</span></div>
+<h3>4.4 DSM-Firmenich ($ mln, FY2024)</h3>
+<div class="tbl-wrap tbl-dsm">
+<table>
+<tr><th>Segment</th><th>Daromad</th><th>%</th><th>Adj. EBITDA margin</th></tr>
+<tr><td>Perfumery & Beauty (P&B)</td><td>3,964M</td><td>31.0%</td><td>22.3%</td></tr>
+<tr><td>Animal Nutrition & Health (ANH)</td><td>3,324M</td><td>26.0%</td><td>10.3%</td></tr>
+<tr><td>Taste, Texture & Health (TTH)</td><td>3,245M</td><td>25.4%</td><td>19.0%</td></tr>
+<tr><td>Health, Nutrition & Care (HNC)</td><td>2,214M</td><td>17.3%</td><td>16.8%</td></tr>
+<tr><td>Corporate</td><td>52M</td><td>0.4%</td><td>n/a</td></tr>
+<tr><td><strong>Jami</strong></td><td><strong>12,799M</strong></td><td>100%</td><td><strong>16.5%</strong></td></tr>
+</table>
 </div>
-<h3><span class="badge b-iff">IFF</span> &mdash; Asosan divest (qarz kamaytirish)</h3>
-<div class="tl">
-<div class="tl-item iff"><span class="tl-year">2022</span><br><span class="tl-desc"><strong>Microbial Control</strong> &rarr; Lanxess &mdash; $1.17B. | <strong>Savory Solutions</strong> &rarr; PAI Partners &mdash; ~$821M</span></div>
-<div class="tl-item iff"><span class="tl-year">2023</span><br><span class="tl-desc"><strong>FSI</strong> &mdash; $200M</span></div>
-<div class="tl-item iff"><span class="tl-year">2024</span><br><span class="tl-desc"><strong>Cosmetic Ingredients</strong> &rarr; Clariant &mdash; $839M. | <strong>Flavors & Essences UK</strong> &mdash; ~$28M</span></div>
-<div class="tl-item iff"><span class="tl-year">2025</span><br><span class="tl-desc"><strong>Pharma Solutions</strong> &mdash; ~$2.3B. | <strong>Nitrocellulose</strong> &mdash; ~$161M. | <strong>Tobacco Flavoring</strong> (NA) &mdash; ~$20M</span></div>
-</div>
-<h3><span class="badge b-sym">Symrise</span> &mdash; Fokuslantirilgan bolt-on + divest</h3>
-<div class="tl">
-<div class="tl-item sym"><span class="tl-year">2022</span><br><span class="tl-desc"><strong>Wing Pet Food</strong> (Xitoy, ~200 xodim) | <strong>SFA Romani + Groupe Neroli</strong> (Fransiya, Grasse) | <strong>Giraffe Foods</strong> (Kanada, soslar/marinadlar)</span></div>
-<div class="tl-item sym"><span class="tl-year">2024-25</span><br><span class="tl-desc"><strong>Probi AB</strong> (Shvetsiya) sotib olish 97.4%. | <strong>Aqua Feed</strong> + <strong>Terpene Ingredients</strong> divest. | <strong>UK beverage trading</strong> sotildi (~&euro;38M)</span></div>
-</div>
-<h3><span class="badge b-dsm">DSM-Firmenich</span> &mdash; Mega-merger + faol divest</h3>
-<div class="tl">
-<div class="tl-item dsm"><span class="tl-year">2023</span><br><span class="tl-desc"><strong>DSM + Firmenich birlashishi</strong> &mdash; &euro;14.3B. Maqsad: &euro;350M sinergiya (2026-27)</span></div>
-<div class="tl-item dsm"><span class="tl-year">2024</span><br><span class="tl-desc"><strong>Yeast Extract</strong> &rarr; Lesaffre &mdash; &euro;144M. | <strong>Marine Lipids</strong> &rarr; KD Pharma. | <strong>Jiangshan vit.C</strong> sotildi</span></div>
-<div class="tl-item dsm"><span class="tl-year">2025</span><br><span class="tl-desc"><strong>Feed Enzymes</strong> &rarr; Novonesis &mdash; <strong>&euro;1.5B</strong>. | Pentapharm, biomedikal sotildi</span></div>
-<div class="tl-item dsm"><span class="tl-year">2026 (e'lon)</span><br><span class="tl-desc"><strong>ANH to'liq</strong> &rarr; CVC Capital Partners &mdash; <strong>~&euro;2.2B</strong></span></div>
-</div>
-</div>
-<div class="panel">
-<h3>Strategik yo'nalishlar</h3>
-<div class="grid g4">
-<div class="crd giv"><div class="lbl">Givaudan</div><div class="note"><strong>SOTIB OLISH</strong> (bolt-on) &rarr; mintaqaviy qoplashni chuqurlashtirish</div></div>
-<div class="crd iff"><div class="lbl">IFF</div><div class="note"><strong>SOTISH</strong> &rarr; qarz kamaytirish, portfel soddalashtirish</div></div>
-<div class="crd sym"><div class="lbl">Symrise</div><div class="note"><strong>FOKUS</strong> &rarr; biotech/health/beauty konvergentsiya</div></div>
-<div class="crd dsm"><div class="lbl">DSM-F</div><div class="note"><strong>MEGA-MERGER + SOTISH</strong> &rarr; yadro portfelga fokus</div></div>
+<p style="font-size:.82rem">FY2025 da P&B: $3,760M, TTH: $3,146M. ANH sotilmoqda (CVC ga $2.2B).</p>
 </div>
 </div>
 </div>
 
-<!-- ===== S6: BENCHMARKLAR ===== -->
-<div class="sec" id="s6">
+<!-- ====== TAB 4: M&A ====== -->
+<div class="sec" id="tab4">
+<h2><span class="ico">V</span> M&A faoliyati (2022-2025)</h2>
+
 <div class="panel">
-<h2>&#128203; Sanoat Benchmarklari</h2>
-<div class="tw"><table>
-<tr><th>#</th><th>Benchmark</th><th>F&F qiymati</th><th>Umumiy B2B</th></tr>
-<tr><td>1</td><td>Sotuv xarajati (% daromad)</td><td class="hi">10-16%</td><td>10-25% SG&A</td></tr>
-<tr><td>2</td><td>Sotuv sikli &mdash; yirik global</td><td class="hi">18-36 oy</td><td>4-6 oy</td></tr>
-<tr><td>3</td><td>Sotuv sikli &mdash; o'rta</td><td>9-18 oy</td><td>&mdash;</td></tr>
-<tr><td>4</td><td>Sotuv sikli &mdash; kichik/mahalliy</td><td>3-9 oy</td><td>&mdash;</td></tr>
-<tr><td>5</td><td>Deal hajmi &mdash; yirik</td><td class="hi">$50M-$500M+/yil</td><td>&mdash;</td></tr>
-<tr><td>6</td><td>Deal hajmi &mdash; o'rta</td><td>$1M-$50M/yil</td><td>&mdash;</td></tr>
-<tr><td>7</td><td>Deal hajmi &mdash; kichik</td><td>&lt;$1M/yil</td><td>&mdash;</td></tr>
-<tr><td>8</td><td>Daromad/sotuv xodimi</td><td class="hi">$3M-$5M+</td><td>$500K-$2M</td></tr>
-<tr><td>9</td><td>Mavjud vs yangi mijoz</td><td>~80% / ~20%</td><td>60-80% mavjud</td></tr>
-<tr><td>10</td><td>To'g'ridan-to'g'ri kanal (daromad %)</td><td class="hi">~60-75%</td><td>47-67%</td></tr>
-<tr><td>11</td><td>Distributor (mijoz soni %)</td><td>~70-80% kichik/o'rta</td><td>&mdash;</td></tr>
-<tr><td>12</td><td>Win rate (brief-to-win)</td><td>~10-25%</td><td>19-29%</td></tr>
-<tr><td>13</td><td>Mijoz saqlab qolish</td><td class="hi">~85-92%</td><td>82%</td></tr>
-<tr><td>14</td><td>Sample &rarr; shartnoma</td><td>~10-25%</td><td>20-35%</td></tr>
-</table></div>
+<h3>5.1 Givaudan — intizomli bolt-on sotib olishlar</h3>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Yil</th><th>Bitim</th><th>Turi</th><th>Qiymat</th><th>Tafsilot</th></tr>
+<tr><td>2023</td><td>Amyris kosmetik ingredientlar portfeli</td><td>Sotib olish</td><td>CHF 183M (~$200M)</td><td>Neossance Squalane va boshqa barqaror go'zallik ingredientlari</td></tr>
+<tr><td>2024</td><td>b.kolormakeup & skincare (Italiya)</td><td>Sotib olish (100%)</td><td>CHF 428M (jami)</td><td>Italiyalik makiyaj/skincare kompaniyasi, ~250 xodim</td></tr>
+<tr><td>2024</td><td>Alderys SAS (qolgan 20%)</td><td>Bolt-on</td><td>CHF 5M</td><td>Fransuz bioinjeneriya kompaniyasi</td></tr>
+<tr><td>2025</td><td>Vollmens Fragrances</td><td>Nazorat ulushi</td><td>Ochiqlanmagan</td><td>Lotin Amerikasi fragrance house — L&R mijozlarga yaqinlik</td></tr>
+<tr><td>2025</td><td>Belle Aire Creations (AQSh)</td><td>Sotib olish</td><td>~CHF 65M proforma</td><td>AQSh fragrance house — Shimoliy Amerikada L&R qoplash</td></tr>
+</table>
 </div>
+<p style="font-size:.82rem"><strong>Strategiya:</strong> Mintaqaviy fragrance house larni sotib olib, local/regional mijozlarga yaqinlikni kuchaytirish.</p>
+</div>
+
 <div class="panel">
-<h3>Damodaran sanoat benchmarklari (NYU)</h3>
-<div class="grid g3">
-<div class="crd"><div class="lbl">Kimyo (specialty)</div><div class="val" style="font-size:1.4rem">35.1%</div><div class="note">Gross margin. SG&A: 17.4%, R&D: 2.6%</div></div>
-<div class="crd"><div class="lbl">Oziq-ovqat qayta ishlash</div><div class="val" style="font-size:1.4rem">23.2%</div><div class="note">Gross margin. SG&A: 12.1%, R&D: 0.6%</div></div>
-<div class="crd" style="border-left:4px solid var(--red)"><div class="lbl">F&F kompaniyalar</div><div class="val" style="font-size:1.4rem;color:var(--red)">36-44%</div><div class="note">Ikkala sanoatdan ham <strong>yuqori</strong></div></div>
+<h3>5.2 IFF — asosan divest (qarz kamaytirish)</h3>
+<div class="tbl-wrap tbl-iff">
+<table>
+<tr><th>Yil</th><th>Bitim</th><th>Turi</th><th>Qiymat</th></tr>
+<tr><td>2022</td><td>Microbial Control</td><td>Sotish</td><td>$1.17B</td></tr>
+<tr><td>2022-2023</td><td>Savory Solutions (qisman)</td><td>Sotish</td><td>~$821M</td></tr>
+<tr><td>2023</td><td>Flavor Specialty Ingredients</td><td>Sotish</td><td>$200M</td></tr>
+<tr><td>2024</td><td>Cosmetic Ingredients</td><td>Sotish</td><td>$839M</td></tr>
+<tr><td>2024</td><td>Flavors & Essences UK</td><td>Sotish</td><td>~$28M</td></tr>
+<tr><td>2025</td><td>Pharma Solutions</td><td>Sotish</td><td>~$2.3B</td></tr>
+<tr><td>2025</td><td>Nitrocellulose</td><td>Sotish</td><td>~$161M</td></tr>
+<tr><td>2025</td><td>Tobacco Flavoring (NA)</td><td>Sotish</td><td>~$20M</td></tr>
+</table>
 </div>
-<h3>Boshqa benchmarklar</h3>
-<div class="grid g2">
-<div class="crd"><div class="lbl">Alexander Group &mdash; CCOS</div><div class="note">Sotuv kompensatsiyasi xarajati: savdoning <strong>~7.9%</strong>. Yangi manbalar: ~10% yangi accountlar + ~12% yangi mahsulotlar = <strong>~22%</strong></div></div>
-<div class="crd"><div class="lbl">CSO Insights &mdash; Win Rate</div><div class="note">O'rtacha: <strong>~46.4%</strong> (prognoz bitimlar). Enablement bilan: <strong>~49%</strong>, bo'lmaganda: ~42.5%</div></div>
-<div class="crd"><div class="lbl">ICTA &mdash; Distributorlar</div><div class="note">Kimyoviy iste'molda distributorlar ulushi: <strong>~9.7% (2008) &rarr; ~12.3% (2022)</strong>. Specialty-nishada yuqoriroq</div></div>
-<div class="crd"><div class="lbl">6sense &mdash; B2B xaridor (2025)</div><div class="note">O'rtacha sikl: <strong>10.1 oy</strong>, <strong>5.1 vendor</strong> ko'riladi, guruh <strong>10+ odam</strong>, birinchi vendor <strong>~80%</strong> yutadi</div></div>
-<div class="crd"><div class="lbl">ACC &mdash; Fragmentatsiya</div><div class="note">Specialty bozorlarda ko'p accountlar yiliga <strong>&lt;$50,000</strong> savdo &mdash; "long tail" mavjud</div></div>
+<p style="font-size:.82rem"><strong>Strategiya:</strong> DuPont N&B ($15.4B, 2021) xarididan keyin qarz yuki 4.5x &rarr; 3.8x &rarr; maqsad &lt;3x. Portfel soddalashtirish.</p>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>5.3 Symrise — fokuslantirilgan bolt-on + divest</h3>
+<div class="tbl-wrap tbl-sym">
+<table>
+<tr><th>Yil</th><th>Bitim</th><th>Turi</th><th>Tafsilot</th></tr>
+<tr><td>2022</td><td>Wing Pet Food (Xitoy)</td><td>Sotib olish</td><td>Uy hayvonlari ozuqasi palatability, ~200 xodim</td></tr>
+<tr><td>2022</td><td>SFA Romani + Groupe Neroli</td><td>Sotib olish</td><td>Grasse'dagi yuqori darajali fragrance house</td></tr>
+<tr><td>2022</td><td>Giraffe Foods (Kanada)</td><td>Sotib olish</td><td>Soslar, marinadlar — NA savory kuchi</td></tr>
+<tr><td>2024-25</td><td>Probi AB (Shvetsiya)</td><td>Sotib olish (97.4%)</td><td>Probiotiklar — health/biotic yo'nalish</td></tr>
+<tr><td>2024</td><td>UK beverage trading</td><td>Sotish</td><td>~$38M — portfel optimallashtirish</td></tr>
+<tr><td>2025</td><td>Aqua Feed</td><td>Sotish</td><td>Portfel tozalash</td></tr>
+<tr><td>2025</td><td>Terpene Ingredients</td><td>Sotish (tayyor.)</td><td>Fokuslanish</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem"><strong>Strategiya:</strong> Biotech/health/beauty konvergentsiyasiga yo'nalish. "Ilmiy platforma" modeliga o'tish.</p>
+</div>
+
+<div class="panel">
+<h3>5.4 DSM-Firmenich — mega-birlashish + faol divest</h3>
+<div class="tbl-wrap tbl-dsm">
+<table>
+<tr><th>Yil</th><th>Bitim</th><th>Turi</th><th>Qiymat</th></tr>
+<tr><td>2023</td><td>DSM + Firmenich birlashishi</td><td>Mega-merger</td><td>$14.3B jami</td></tr>
+<tr><td>2024</td><td>Jiangshan vitamin C</td><td>Sotish</td><td>Kichik</td></tr>
+<tr><td>2024</td><td>Yeast Extract</td><td>Sotish</td><td>$144M (Lesaffre ga)</td></tr>
+<tr><td>2024</td><td>Marine Lipids (MEG-3)</td><td>Sotish</td><td>KD Pharma ga</td></tr>
+<tr><td>2025</td><td>Feed Enzymes</td><td>Sotish</td><td><strong>$1.5B</strong> (Novonesis ga)</td></tr>
+<tr><td>2025</td><td>Pentapharm, biomedikal</td><td>Sotish</td><td>Kichik</td></tr>
+<tr><td>2026 (e'lon)</td><td>Animal Nutrition & Health (to'liq)</td><td>Sotish</td><td><strong>~$2.2B</strong> (CVC ga)</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem"><strong>Strategiya:</strong> ANH dan chiqish, nutrition-health-beauty iste'mol yadrosiga qaytish. Maqsad sinergiyalar: $350M adj. EBITDA/yil (2026-2027).</p>
+</div>
+</div>
+
+<div class="panel highlight">
+<h3>5.5 M&A strategik yo'nalishlar xulosasi</h3>
+<div class="grid4">
+<div class="kpi-card" style="border-top:3px solid var(--giv)"><div class="val" style="font-size:1rem;color:var(--giv)">SOTIB OLISH</div><div class="lbl">Givaudan: bolt-on, mintaqaviy qoplash</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)"><div class="val" style="font-size:1rem;color:var(--iff)">SOTISH</div><div class="lbl">IFF: qarz kamaytirish, portfel soddalashtirish</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--sym)"><div class="val" style="font-size:1rem;color:var(--sym)">FOKUS</div><div class="lbl">Symrise: biotech/health/beauty</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--dsm)"><div class="val" style="font-size:1rem;color:var(--dsm)">MEGA + SOTISH</div><div class="lbl">DSM-F: yadro portfelga fokus</div></div>
 </div>
 </div>
 </div>
 
-<!-- ===== S7: GIVAUDAN CASE ===== -->
-<div class="sec" id="s7">
+<!-- ====== TAB 5: BENCHMARKLAR ====== -->
+<div class="sec" id="tab5">
+<h2><span class="ico">VI</span> Sanoat benchmarklari</h2>
+
 <div class="panel">
-<h2>&#127942; Givaudan Case Study</h2>
-<h3>Mijoz segmentatsiyasi</h3>
-<div class="grid g4">
-<div class="crd giv"><div class="lbl">Global mijozlar</div><div class="val">41%</div><div class="note">FY2025. P&G, Unilever, Nestl&eacute; &darr; Kamaymoqda (FY24: 42%)</div></div>
-<div class="crd giv"><div class="lbl">L&R mijozlar</div><div class="val" style="color:var(--green)">59%</div><div class="note">FY2025. &uarr; Tez o'smoqda &mdash; asosiy o'sish drayveri</div></div>
-<div class="crd giv"><div class="lbl">Eng yirik mijoz</div><div class="val" style="font-size:1.3rem">CHF 507M</div><div class="note">~6-7% savdo. Asosan F&B segmentida</div></div>
-<div class="crd giv"><div class="lbl">Jami mijozlar</div><div class="val" style="font-size:1.3rem">12,000+</div><div class="note">Yiliga 300,000+ brief. Top 10 ~15-25% (taxminiy)</div></div>
+<h3>6.1 Moliyaviy proksi benchmarklar (Damodaran, NYU)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Sanoat</th><th>SG&A/Savdo</th><th>R&D/Savdo</th><th>Gross margin</th></tr>
+<tr><td>Kimyo (specialty)</td><td>~17.43%</td><td>~2.61%</td><td>~35.12%</td></tr>
+<tr><td>Oziq-ovqat qayta ishlash</td><td>~12.12%</td><td>~0.60%</td><td>~23.23%</td></tr>
+</table>
 </div>
-<h3>Sanoat vertikallari</h3>
-<div class="tw"><table>
-<tr><th>Bo'lim</th><th>Sub-vertikal</th><th>Daromad</th></tr>
+<p style="font-size:.82rem"><strong>F&F kompaniyalar ham specialty chemicals, ham food ingredients orasida</strong> — shuning uchun ularning gross margin (36-44%) va R&D (5.5-7.9%) ikkala sanoatdan ham yuqori.</p>
+</div>
+
+<div class="panel">
+<h3>6.2 Sotuv kompensatsiyasi xarajati (Alexander Group)</h3>
+<p><strong>CCOS (compensation cost of sales):</strong> savdoning ~<strong style="color:var(--gold)">7.9%</strong> — sotuv jamoasining naqd kompensatsiyasiga to'g'ri keladi.</p>
+</div>
+
+<div class="panel panel-glow">
+<h3>6.3 Yig'ma benchmark jadvali (14 qator)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>#</th><th>Benchmark</th><th>F&F / Specialty Chemicals</th><th>Umumiy B2B</th><th>Ishonchlilik</th></tr>
+<tr><td>1</td><td>Sotuv xarajati (% daromad)</td><td><strong>10-16%</strong> (sof sotuv kuchi: 5-10%)</td><td>10-25% SG&A</td><td>****</td></tr>
+<tr><td>2a</td><td>Sotuv sikli — yirik global</td><td><strong>18-36 oy</strong></td><td>4-6 oy (ishlab chiqarish)</td><td>**</td></tr>
+<tr><td>2b</td><td>Sotuv sikli — o'rta</td><td><strong>9-18 oy</strong></td><td>&mdash;</td><td>**</td></tr>
+<tr><td>2c</td><td>Sotuv sikli — kichik/mahalliy</td><td><strong>3-9 oy</strong></td><td>&mdash;</td><td>**</td></tr>
+<tr><td>3a</td><td>Deal hajmi — yirik</td><td><strong>$50M-$500M+/yil</strong></td><td>&mdash;</td><td>***</td></tr>
+<tr><td>3b</td><td>Deal hajmi — o'rta</td><td><strong>$1M-$50M/yil</strong></td><td>&mdash;</td><td>***</td></tr>
+<tr><td>3c</td><td>Deal hajmi — kichik</td><td><strong>&lt;$1M/yil</strong></td><td>&mdash;</td><td>***</td></tr>
+<tr><td>4</td><td>Daromad/sotuv xodimi</td><td><strong>$3M-$5M+</strong></td><td>$500K-$2M</td><td>**</td></tr>
+<tr><td>5</td><td>Mavjud vs yangi mijoz</td><td><strong>~80% mavjud / ~20% yangi</strong></td><td>60-80% mavjud</td><td>***</td></tr>
+<tr><td>6a</td><td>To'g'ridan-to'g'ri kanal (daromad %)</td><td><strong>~60-75%</strong></td><td>47-67%</td><td>***</td></tr>
+<tr><td>6b</td><td>Distributor (mijoz soni %)</td><td><strong>~70-80%</strong> kichik/o'rta</td><td>&mdash;</td><td>***</td></tr>
+<tr><td>7</td><td>Win rate (brief-to-win)</td><td><strong>~10-25%</strong></td><td>19-29% (B2B)</td><td>**</td></tr>
+<tr><td>8</td><td>Mijoz saqlab qolish</td><td><strong>~85-92%</strong></td><td>82% (B2B o'rtacha)</td><td>***</td></tr>
+<tr><td>9</td><td>Namuna &rarr; shartnoma</td><td><strong>~10-25%</strong> (end-to-end)</td><td>20-35% (pipeline)</td><td>*</td></tr>
+</table>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>6.4 Win rate benchmarklar (CSO Insights)</h3>
+<ul>
+<li>O'rtacha win rate "prognoz qilingan bitimlar" bo'yicha — ~<strong>46.4%</strong></li>
+<li>Sales enablement bo'lmagan kompaniyalarda — ~<strong>42.5%</strong></li>
+<li>Enablement bilan — ~<strong>49.0%</strong></li>
+</ul>
+</div>
+<div class="panel">
+<h3>6.5 Distributorlar roli (ICTA)</h3>
+<p>Distributorlar xizmat ko'rsatgan kimyoviy iste'mol ulushi: <strong>~9.7% (2008) &rarr; ~12.3% (2022)</strong>. Specialty-nisha va long-tail mijozlarda distributorlarning roli yuqoriroq.</p>
+</div>
+</div>
+
+<div class="grid3">
+<div class="panel">
+<h3>6.6 Yangi vs mavjud daromad (Alexander Group)</h3>
+<ul>
+<li>Savdoning ~<strong>10%</strong> yangi accountlardan</li>
+<li>Savdoning ~<strong>12%</strong> yangi mahsulotlardan</li>
+<li>Jami "yangi manbalar" ~<strong>22%</strong></li>
+</ul>
+</div>
+<div class="panel">
+<h3>6.7 Mijoz fragmentatsiyasi (ACC)</h3>
+<p>Specialty bozorlarda ko'p accountlar yiliga <strong>&lt;$50,000</strong> savdo hosil qiladi — "long tail".</p>
+<ul>
+<li><strong>Kichik long-tail:</strong> o'n minglab $/yil &rarr; distributor/digital</li>
+<li><strong>O'rta bozor:</strong> yuz minglab $ &rarr; inside sales + texnik qo'llab-quvvatlash</li>
+<li><strong>Yirik accountlar:</strong> millionlab $ &rarr; to'g'ridan-to'g'ri KAM + co-creation</li>
+</ul>
+</div>
+<div class="panel">
+<h3>6.8 6sense B2B xaridor (2025)</h3>
+<ul>
+<li>O'rtacha xarid sikli: <strong>10.1 oy</strong></li>
+<li>Xaridorlar o'rtacha <strong>5.1 ta vendor</strong> ni ko'radi</li>
+<li>Xarid guruhi odatda <strong>10+ odam</strong></li>
+<li>Birinchi murojaat qilgan vendor <strong>~80%</strong> holatda yutadi</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ====== TAB 6: GIVAUDAN CASE STUDY ====== -->
+<div class="sec" id="tab6">
+<h2><span class="ico">VII</span> Givaudan Case Study</h2>
+
+<div class="panel panel-glow">
+<h3>7.1 Mijoz segmentatsiyasi — Global vs Mahalliy/Mintaqaviy</h3>
+<div class="grid2">
+<div>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Segment</th><th>FY2024</th><th>FY2025</th><th>Trend</th></tr>
+<tr><td>Global mijozlar (P&G, Unilever, Nestle va h.k.)</td><td>42%</td><td>41%</td><td style="color:var(--red)">&darr; Kamaymoqda</td></tr>
+<tr><td>Mahalliy va mintaqaviy (L&R)</td><td><strong>58%</strong></td><td><strong>59%</strong></td><td style="color:var(--green)">&uarr; Tez o'smoqda</td></tr>
+</table>
+</div>
+<p style="font-size:.82rem">L&R mijozlar FY2024 da +12.3% LFL o'sishning asosiy drayveri bo'ldi.</p>
+</div>
+<div>
+<h4>Top mijoz konsentratsiyasi</h4>
+<ul>
+<li>Eng yirik bitta mijoz: ~<strong style="color:var(--gold)">CHF 507M</strong> = savdoning ~<strong>6-7%</strong></li>
+<li>IFF benchmark: top 25 = ~33% daromad. Givaudan top 10 taxminan <strong>15-25%</strong></li>
+<li><strong>12,000+</strong> mijoz va yiliga <strong>300,000+</strong> brief — diversifikatsiyalangan</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>7.1b Sanoat vertikallari</h3>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Bo'lim</th><th>Sub-vertikal</th><th>Taxminiy ulush</th></tr>
 <tr><td><strong>Taste & Wellbeing</strong> (51%)</td><td>Snacklar ~37%, Ichimliklar ~36%, Sut ~12%, Shirinliklar ~15%</td><td>CHF 3,752M</td></tr>
-<tr><td><strong>Fragrance & Beauty</strong> (49%)</td><td>Iste'mol mahsulotlari ~63%, Nozik atirlar ~21%, Ingredients & Active Beauty ~16%</td><td>CHF 3,660M</td></tr>
-</table></div>
+<tr><td><strong>Fragrance & Beauty</strong> (49%)</td><td>Iste'mol mahsulotlari ~63%, Nozik atirlar ~21%, Ingredient & Active Beauty ~16%</td><td>CHF 3,660M</td></tr>
+</table>
 </div>
-<div class="panel">
-<h3>Sotuv kanallari</h3>
-<div class="grid g3">
-<div class="crd giv"><div class="lbl">&#127968; To'g'ridan-to'g'ri (~90%+ daromad)</div><div class="note">Global CPG larga maxsus hisob menejerlari. Mintaqaviy mijozlarga mintaqaviy jamoalar + texnik mutaxassislar. <strong>78 ishlab chiqarish, 62 yaratish markazi, 162 sayt, 190+ mamlakat</strong></div></div>
-<div class="crd giv"><div class="lbl">&#128666; Distributor</div><div class="note"><strong>Brenntag</strong> &mdash; J.sharqiy Osiyoda Active Beauty. 2030 strategiyasida "4D" yondashuvi doirasida tarmog'ni kengaytirish rejasi</div></div>
-<div class="crd giv"><div class="lbl">&#128187; Raqamli kanallar</div><div class="note">1688.com (Xitoy B2B), Knowde (global), GivaudanPerfume.id (Indoneziya/Xitoy), Creatogether, Carto, Myromi</div></div>
+<div class="highlight">
+<strong>Nozik atirlar ajoyib o'sish:</strong> COVID oldi davridan beri <strong>CHF da +50%, LFL da +80%</strong>. Janubiy Osiyo, Yaqin Sharq va Afrikada 3 yilda <strong>3 baravar</strong> oshgan.
 </div>
-<h3>Raqamli platformalar batafsil</h3>
-<div class="tw"><table>
-<tr><th>Platforma</th><th>Mintaqa</th><th>Vazifasi</th></tr>
-<tr><td><strong>1688.com</strong></td><td>Xitoy</td><td>B2B flagman do'kon (e-commerce Xitoyda kuchaytirish)</td></tr>
-<tr><td><strong>Knowde</strong></td><td>Global</td><td>Taste & Wellbeing storefront</td></tr>
-<tr><td><strong>GivaudanPerfume.id</strong></td><td>Indoneziya, Xitoy</td><td>B2B self-servis atir tanlash va buyurtma</td></tr>
-<tr><td><strong>Creatogether</strong> (Tmall/TMIC)</td><td>Xitoy</td><td>AI hamkorlik &mdash; <strong>4 haftada</strong> briefdan tayyor mahsulotga (an'anaviy: bir necha oy)</td></tr>
-<tr><td><strong>Carto</strong></td><td>Global</td><td>AI-yordamida parfyumer + mijoz hamkorligida formulatsiya</td></tr>
-<tr><td><strong>Myromi</strong></td><td>Global</td><td>Masofaviy hid co-creation qurilmasi &mdash; laboratoriyaga bormasdan iteratsiya</td></tr>
-</table></div>
 </div>
-<div class="panel">
-<h3>Co-creation modeli &mdash; 3 bosqichli kaskad</h3>
-<div class="flow">
-<div class="flow-s">1. Ingredient kashfiyoti<br><small>SunThesis&reg;, Nymphea&trade;, biotech, yashil kimyo</small></div>
-<div class="flow-a">&rarr;</div>
-<div class="flow-s">2. Yechim ishlab chiqish<br><small>Ingredientlarni platformalarga aylantirish</small></div>
-<div class="flow-a">&rarr;</div>
-<div class="flow-s">3. Mijoz bilan hamkorlik<br><small>Carto AI, Myromi, Creatogether</small></div>
-</div>
-<p style="margin-top:12px">Har bir bosqich <strong>switching xarajatlarini oshiradi</strong> va raqobatchilar uchun to'siq yaratadi.</p>
 
-<h3>R&D ta'siri</h3>
-<div class="tw"><table>
+<div class="panel">
+<h3>7.2 Sotuv kanallari</h3>
+<div class="grid3">
+<div>
+<h4>To'g'ridan-to'g'ri sotuv (~90%+ daromad)</h4>
+<ul>
+<li>Global CPG kompaniyalarga maxsus hisob menejerlari</li>
+<li>Mintaqaviy mijozlarga mintaqaviy sotuv jamoalari va texnik mutaxassislar</li>
+<li>Dunyo bo'ylab <strong>78 ishlab chiqarish</strong> va <strong>62 yaratish/tadqiqot markazi</strong>, jami <strong>162 sayt</strong>, <strong>190+ mamlakat</strong></li>
+</ul>
+</div>
+<div>
+<h4>Distributor kanali</h4>
+<ul>
+<li><strong>Brenntag</strong> — Janubi-sharqiy Osiyoda Active Beauty ingredientlari uchun</li>
+<li>FY2025 da distributor orqali daromad miqdoriy ochilmagan</li>
+<li>2030 strategiyasida distributor tarmog'ini kengaytirish "4D" yondashuvi doirasida belgilangan</li>
+</ul>
+</div>
+<div>
+<h4>Raqamli kanallar — 6 platforma</h4>
+<div class="tbl-wrap" style="font-size:.8rem">
+<table>
+<tr><th>Platforma</th><th>Mintaqa</th><th>Vazifasi</th></tr>
+<tr><td><strong>1688.com</strong></td><td>Xitoy</td><td>B2B flagman do'kon</td></tr>
+<tr><td><strong>Knowde</strong></td><td>Global</td><td>T&W storefront</td></tr>
+<tr><td><strong>GivaudanPerfume.id</strong></td><td>Indoneziya, Xitoy</td><td>B2B self-servis atir</td></tr>
+<tr><td><strong>Creatogether</strong></td><td>Xitoy (Tmall/TMIC)</td><td>AI co-creation — 4 haftada brief&rarr;mahsulot</td></tr>
+<tr><td><strong>Carto</strong></td><td>Global</td><td>AI-yordamida formulatsiya</td></tr>
+<tr><td><strong>Myromi</strong></td><td>Global</td><td>Masofaviy hid co-creation qurilmasi</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>7.3 Innovatsiya va texnik sotuv</h3>
+<div class="grid2">
+<div>
+<h4>R&D ta'siri</h4>
+<div class="tbl-wrap">
+<table>
 <tr><th>Ko'rsatkich</th><th>FY2024</th><th>FY2025</th></tr>
 <tr><td>R&D xarajati</td><td>CHF 565M</td><td>CHF 551M</td></tr>
-<tr><td>R&D / daromad</td><td class="hi">~7.6%</td><td class="hi">~7.4%</td></tr>
+<tr><td>R&D / daromad</td><td>~7.6%</td><td>~7.4%</td></tr>
 <tr><td>Faol patentlar</td><td>&gt;5,000</td><td>&gt;5,000</td></tr>
-<tr><td>Yiliga mahsulotlar</td><td>128,400+</td><td>&mdash;</td></tr>
-</table></div>
-
-<h3>Nozik atirlar fenomeni</h3>
-<div class="crd giv" style="margin-top:8px"><div class="note">COVID oldi davridan beri: <strong>CHF da +50%, LFL da +80%</strong> o'sish. Janubiy Osiyo, Yaqin Sharq va Afrikada nozik atir sotuvi 3 yilda <strong>3 baravar</strong> oshgan.</div></div>
-
-<h3>Mintaqaviy tuzilma</h3>
-<p>EAME &mdash; savdo bo'yicha eng katta (<strong>42%</strong>), xodimlar ulushi ham (<strong>47%</strong>). Shimoliy Amerika va APAC yaqin (23% va 24%). Daromadning <strong>49%</strong> yuqori o'sish bozorlaridan kelgan. <strong>House of Lime</strong> (Meksika, 2026): ko'p tarmoqli jamoa, iste'molchi tushunchalar, raqamli vositalar bir joyda &mdash; bozorga chiqish tezligi oshadi.</p>
+<tr><td>Yiliga ishlab chiqarilgan mahsulotlar</td><td>128,400+</td><td>&mdash;</td></tr>
+</table>
 </div>
 </div>
+<div>
+<h4>Co-creation modeli — 3 bosqichli kaskad</h4>
+<div class="domino">
+<div class="domino-step"><span class="d-icon">1</span><span class="d-text"><strong>Ingredient kashfiyoti</strong> — Xususiy ingredientlar (SunThesis, Nymphea), biotech, yashil kimyo</span></div>
+<div class="domino-step"><span class="d-icon">2</span><span class="d-text"><strong>Yechim ishlab chiqish</strong> — Ingredientlarni platformalarga aylantirish</span></div>
+<div class="domino-step"><span class="d-icon">3</span><span class="d-text"><strong>Mijoz bilan hamkorlikda yaratish</strong> — Carto AI, Myromi, Creatogether</span></div>
+</div>
+<p style="font-size:.82rem">Har bir bosqich switching xarajatlarini oshiradi va raqobatchilar uchun to'siq yaratadi.</p>
+</div>
+</div>
+</div>
 
-<!-- ===== S8: ORGSTRUKTURA ===== -->
-<div class="sec" id="s8">
+<div class="grid2">
 <div class="panel">
-<h2>&#127970; Orgstruktura</h2>
-<h3>Givaudan &mdash; 7 qatlamli ierarxiya (162 sayt, 190+ mamlakat)</h3>
-<div class="org-tree">
-<div class="org-level"><div class="org-box l1">&#128081; CEO &mdash; Gilles Andrier<br><small>7 kishilik Executive Committee</small></div></div>
-<div class="org-conn">&darr;</div>
-<div class="org-level">
-<div class="org-box l2">Antoine Khalil<br><strong>President T&W (51%)</strong><br><small>Savoury 37%, Beverages 36%, Sweet 15%, Dairy 12%</small></div>
-<div class="org-box l2">Maurizio Volpi<br><strong>President F&B (49%)</strong><br><small>Consumer 63%, Fine Frag. 21%, Ingredients 16%</small></div>
+<h3>7.3b Digital Factory</h3>
+<p>Ba'zi kontsept aniqlash formatlari ishni "<strong>haftalardan bir kunga</strong>" qisqartiradi — NPD dastlabki bosqichlarini tezlashtirish orqali texnik sotuvni kuchaytirish.</p>
+<h4>House of Lime (Meksika, 2026)</h4>
+<p>Mijozlar Givaudanning ko'p tarmoqli jamoasi bilan ishlaydi — iste'molchi tushunchalar, qo'llash ekspertizasi, flavor yaratish va raqamli vositalar bir joyga yig'ilgan. Maqsad — bozorga chiqish tezligi va muvaffaqiyat darajasini oshirish.</p>
 </div>
-<div class="org-conn">&darr;</div>
-<div class="org-level">
-<div class="org-box l3">EAME</div><div class="org-box l3">N. Amerika</div><div class="org-box l3">APAC</div><div class="org-box l3">LATAM</div>
-<br><small style="color:var(--muted)">~8 ta Commercial Head (2 division &times; 4 mintaqa)</small>
+<div class="panel">
+<h3>7.4 Mintaqaviy tuzilma</h3>
+<p>FY2025 da EAME — savdo bo'yicha eng katta mintaqa (<strong>42%</strong>), xodimlar ulushi bo'yicha ham (<strong>47%</strong>).</p>
+<p>"Savdo ulushi vs xodimlar ulushi" — foydali ko'rsatkich: qayerda ko'proq texnik infratuzilma kerak, qayerda yengilroq kanallar bilan kengaytirish mumkin.</p>
+<p>Givaudanning daromadining <strong>49%</strong> yuqori o'sish bozorlaridan kelgan.</p>
+<div class="tbl-wrap tbl-giv">
+<table>
+<tr><th>Ko'rsatkich</th><th>Qiymat</th></tr>
+<tr><td>Jami xodimlar (FY2025)</td><td>17,580</td></tr>
+<tr><td>Sotuv & Marketing xodimlari</td><td>~2,100 (taxminiy)</td></tr>
+<tr><td>Kreativ/tadqiqot markazlari</td><td>62-65 ta</td></tr>
+<tr><td>Ishlab chiqarish saytlari</td><td>77-78 ta</td></tr>
+<tr><td>Jami saytlar</td><td>162 ta, 190+ mamlakatda</td></tr>
+<tr><td>Mijozlar soni</td><td>10,000-12,000+</td></tr>
+<tr><td>Global mijozlar ulushi</td><td>41% (FY2025)</td></tr>
+<tr><td>L&R mijozlar ulushi</td><td>59% (FY2025)</td></tr>
+</table>
 </div>
-<div class="org-conn">&darr;</div>
-<div class="org-level"><div class="org-box l4">Sales Director (kategoriya/segment bo'yicha)</div></div>
-<div class="org-conn">&darr;</div>
-<div class="org-level"><div class="org-box l4">Sr. KAM ($155-200K) &middot; KAM ($60-90K)</div></div>
-<div class="org-conn">&darr;</div>
-<div class="org-level"><div class="org-box l4">Account Manager ($50-90K) &middot; Sales Support ($50-94K)</div></div>
-<div class="org-conn">&darr;</div>
-<div class="org-level"><div class="org-box l4">Business Analyst / Coordinator</div></div>
 </div>
 </div>
+</div>
+
+<!-- ====== TAB 7: ORGSTRUKTURA ====== -->
+<div class="sec" id="tab7">
+<h2><span class="ico">VIII</span> Tashkiliy tuzilma — 4 kompaniya</h2>
+
+<!-- GIVAUDAN ORG -->
+<div class="panel panel-glow">
+<h3>8.1 Givaudan — 7 qatlamli ierarxiya</h3>
+<div class="org">
+<span class="layer">QATLAM 1: CEO</span>
+<b>Gilles Andrier</b> — 7 kishilik Executive Committee
+
+<span class="layer">QATLAM 2: DIVISION PRESIDENT</span> (EC a'zolari)
+  ├── <b>Antoine Khalil</b> — President, Taste & Wellbeing (51% savdo)
+  │   Segmentlar: Savoury (37%), Beverages (36%), Sweet Goods (15%), Dairy (12%)
+  └── <b>Maurizio Volpi</b> — President, Fragrance & Beauty (49% savdo)
+      Segmentlar: Consumer Products (63%), Fine Fragrance (21%), Ingredients & Active Beauty (16%)
+
+<span class="layer">QATLAM 3: COMMERCIAL HEAD</span> (Mintaqaviy, har divisionda 4 ta)
+  ├── EAME Commercial Head
+  ├── North America Commercial Head
+  ├── Asia Pacific Commercial Head
+  └── Latin America Commercial Head
+  <span class="note">Jami: ~8 ta Commercial Head (2 division x 4 mintaqa)</span>
+
+<span class="layer">QATLAM 4: SALES DIRECTOR</span> (Segment/Kategoriya bo'yicha)
+  ├── Sales Director Savoury & Snacks
+  └── Sales Director Fine Fragrance va h.k.
+
+<span class="layer">QATLAM 5: KEY ACCOUNT MANAGER (KAM) / SENIOR ACCOUNT MANAGER</span>
+  ├── Sr. KAM → 10+ yil tajriba, eng yirik mijozlar (P&G, Unilever, Nestle, L'Oreal)
+  │   <span class="salary">Maosh: $155,000–$200,000</span>
+  └── KAM → 4–6 yil tajriba, o'rta strategik mijozlar
+      <span class="salary">Maosh: $60,000–$90,000</span>
+
+<span class="layer">QATLAM 6: ACCOUNT MANAGER + SALES SUPPORT</span>
+  ├── Account Manager → oddiy mijozlar, kundalik munosabatlar
+  └── Sales Support Officer → hujjatlar, narx, namunalar, CRM
+
+<span class="layer">QATLAM 7: BUSINESS ANALYST / COORDINATOR</span>
+  └── Pipeline tracking, KPI monitoring, sotuv tahlili
+</div>
+</div>
+
+<!-- CAREER PATHS -->
 <div class="panel">
 <h3>Karera yo'li misollari</h3>
-<div class="grid g2">
-<div class="crd giv"><div class="lbl">Louie D'Amico (sobiq President T&W)</div><div class="note">KAM &rarr; Head of BU &rarr; Head of Intl KAM &rarr; Head of Global Beverage &rarr; Commercial Head EAME &rarr; Head of Flavours Americas &rarr; <strong>President Division &rarr; Board</strong></div></div>
-<div class="crd giv"><div class="lbl">Antoine Khalil (hozirgi President T&W)</div><div class="note">Market Research &rarr; KAM &rarr; Commercial Mgmt &rarr; Regional Head Africa & ME &rarr; Regional Head SAMEA &rarr; Commercial Head T&W NA &rarr; <strong>President T&W (EC a'zo)</strong></div></div>
+<div class="grid2">
+<div>
+<h4>Louie D'Amico (sobiq President T&W)</h4>
+<div class="career-path">
+<span class="career-step">KAM</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Head of BU</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Head of International KAM</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Head of Global Beverage BU</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Commercial Head EAME</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Head of Flavours Americas</span><span class="career-arrow">&rarr;</span>
+<span class="career-step" style="background:var(--red)">President Division</span><span class="career-arrow">&rarr;</span>
+<span class="career-step" style="background:var(--gold);color:#000">Board of Directors</span>
 </div>
 </div>
+<div>
+<h4>Antoine Khalil (hozirgi President T&W)</h4>
+<div class="career-path">
+<span class="career-step">Market Research</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">KAM</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Commercial Management</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Regional Head Africa & ME</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Regional Head SAMEA</span><span class="career-arrow">&rarr;</span>
+<span class="career-step">Commercial Head T&W NA</span><span class="career-arrow">&rarr;</span>
+<span class="career-step" style="background:var(--red)">President T&W (EC a'zo)</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CROSS-FUNCTIONAL DIAGRAM -->
 <div class="panel">
-<h3>IFF &mdash; CCO modeli (markazlashgan)</h3>
-<p><strong>Yuvraj Arora</strong> &mdash; President Taste + <strong>Chief Commercial Officer (CCO)</strong>. YAGONA tijorat strategiya barcha segmentlar uchun. <strong>Center for Commercial Excellence:</strong></p>
-<div class="grid g2" style="margin-top:10px">
-<div class="crd iff"><div class="note">&#9989; Global key account planning (yagona reja)</div></div>
-<div class="crd iff"><div class="note">&#9989; Incremental sales acceleration (tizimli cross-selling)</div></div>
-<div class="crd iff"><div class="note">&#9989; Holistic customer engagement (4 segment bir vaqtda)</div></div>
-<div class="crd iff"><div class="note">&#9989; Unified operating model (yagona CRM &mdash; Salesforce)</div></div>
+<h3>Cross-functional bog'liqliklar</h3>
+<div class="cross-func">
+<div class="cf-center">
+<div style="background:var(--surface);display:inline-block;padding:10px 20px;border-radius:8px;margin-bottom:8px;font-weight:600;color:var(--white)">MIJOZ</div>
+<div style="font-size:1.4rem;color:var(--gold);margin:4px 0">&darr;</div>
+<div class="cf-main">KAM / AM — ASOSIY ALOQA NUQTASI</div>
+<div style="font-size:1.4rem;color:var(--gold);margin:4px 0">&darr;</div>
 </div>
-<p style="margin-top:12px">Ierarxiya: CEO &rarr; CCO + Division Presidents &rarr; VP Commercial (mintaqaviy) &rarr; GAD &rarr; Regional Account Director ($155-288K) &rarr; Sales AM &rarr; Sr. Global Sales Coordinator ($75-94K, 250+ formula nazorati)</p>
+<div class="cf-branches">
+<div class="cf-branch" style="border-top-color:var(--red)">
+<h5>KREATIV JAMOA</h5>
+<p>Perfumer / Flavorist</p>
 </div>
+<div class="cf-branch" style="border-top-color:var(--blue)">
+<h5>APPLICATION JAMOA</h5>
+<p>Application Scientist</p>
+</div>
+<div class="cf-branch" style="border-top-color:var(--purple)">
+<h5>MARKETING & CMI</h5>
+<p>Consumer Insights</p>
+</div>
+<div class="cf-branch" style="border-top-color:var(--green)">
+<h5>REGULATORY</h5>
+<p>IFRA, FDA, EU moslik</p>
+</div>
+<div class="cf-branch" style="border-top-color:var(--gold)">
+<h5>QUALITY CONTROL</h5>
+<p>GC/MS, sensory</p>
+</div>
+<div class="cf-branch" style="border-top-color:var(--iff)">
+<h5>SUPPLY CHAIN</h5>
+<p>Xom ashyo, logistika</p>
+</div>
+</div>
+<p style="text-align:center;margin-top:14px;font-size:.85rem;color:var(--gold)"><strong>MUHIM:</strong> KAM har bir funksiyani koordinatsiya qiladi (matrix tuzilma). KAM = loyiha menejeri, lekin buyruq bermaydi — boshqa jamoalar o'z rahbarlariga bo'ysunadi.</p>
+</div>
+</div>
+
+<!-- IFF ORG -->
 <div class="panel">
-<h3>Symrise &mdash; "ONE Symrise"</h3>
-<p>CEO (Dr. Jean-Yves Parisot) &rarr; Walter Ribeiro (TN&H) + [yangi] (S&C). Bitta mijozga barcha segment xizmatlarini <strong>yagona interfeys</strong> orqali taklif qilish. Cross-selling avtomatlashtirilgan.</p>
-<h3>DSM-Firmenich &mdash; Cross-BU sinergiya</h3>
-<p>CEO (Dimitri de Vreeze) &rarr; P&B, TTH, HNC prezidentlari. Bir mijozga bir nechta BU xizmat ko'rsatadi. <strong>11 ta qo'llash markazi</strong>. 2024 da <strong>&euro;100M daromad sinergiyalari</strong>, jami <strong>&euro;175M</strong>.</p>
+<h3>8.2 IFF — CCO modeli (markazlashgan tijorat boshqaruvi)</h3>
+<div class="org">
+<b>CEO: Frank Clyburn</b>
+  └── <b>Yuvraj Arora</b> — President Taste + <span style="color:var(--gold);font-weight:700">CHIEF COMMERCIAL OFFICER (CCO)</span>
+      ║
+      ║  <span class="note">CCO vazifasi: YAGONA tijorat strategiya BARCHA segmentlar uchun</span>
+      ║  → Narxlash, cross-selling, KAM — MARKAZLASHGAN
+      ║  → Center for Commercial Excellence
+      ║
+  ├── <b>Simon Herriott</b> — President, Scent
+  ├── <b>Leticia Goncalves</b> — President, Health & Biosciences
+  └── <b>Andy Muller</b> — President, Food Ingredients
+      │
+      └── VP Commercial (mintaqaviy): NA, EAME, APAC, LATAM
+          └── Global Account Director (GAD) → bitta global mijozni dunyo bo'ylab boshqaradi
+              └── Regional Account Director/Manager → <span class="salary">$155K–$288K maosh</span>
+                  └── Sales Account Manager → kundalik mijoz ishlari
+                      └── Sr. Global Sales Coordinator → SAP, narx, hujjatlar, <span class="salary">$74K-$94K, 250+ formula nazorati</span>
 </div>
+
+<div class="highlight">
+<h4>IFF Center for Commercial Excellence — 4 ustun</h4>
+<div class="grid4">
+<div class="kpi-card" style="border-top:3px solid var(--iff)"><div class="val" style="font-size:.85rem">1</div><div class="lbl">Global key account planning (yagona reja)</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)"><div class="val" style="font-size:.85rem">2</div><div class="lbl">Incremental sales acceleration (cross-selling tizimli izlash)</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)"><div class="val" style="font-size:.85rem">3</div><div class="lbl">Holistic customer engagement (4 segment bir vaqtda)</div></div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)"><div class="val" style="font-size:.85rem">4</div><div class="lbl">Unified operating model (yagona CRM, pipeline, narxlash — Salesforce)</div></div>
+</div>
+</div>
+</div>
+
+<!-- SYMRISE ORG -->
 <div class="panel">
-<h3>Cross-functional bog'liqliklar (KAM + jamoalar)</h3>
-<div style="text-align:center;padding:16px 0">
-<div class="org-box l1">&#128100; MIJOZ</div>
-<div class="org-conn">&darr;</div>
-<div class="org-box" style="background:var(--red);border-color:var(--red);font-weight:700">KAM / Account Manager<br><small>ASOSIY ALOQA NUQTASI</small></div>
-<div class="org-conn">&darr;</div>
-<div class="org-level">
-<div class="org-box l3">&#127912; Kreativ<br><small>Perfumer/Flavorist</small></div>
-<div class="org-box l3">&#128300; Application<br><small>Texnolog</small></div>
-<div class="org-box l3">&#128202; Marketing<br><small>CMI/Insights</small></div>
-</div>
-<div class="org-level" style="margin-top:4px">
-<div class="org-box l4">&#128220; Regulatory</div>
-<div class="org-box l4">&#128269; QC Lab</div>
-<div class="org-box l4">&#128666; Supply Chain</div>
+<h3>8.3 Symrise — "ONE Symrise"</h3>
+<div class="org">
+<b>CEO: Dr. Jean-Yves Parisot</b>
+  ├── <b>Walter Ribeiro</b> — Board Member, Taste, Nutrition & Health
+  │   └── Food & Beverage, Pet Food, Consumer Health
+  └── <b>[Yangi rahbar]</b> — Board Member, Scent & Care
+      └── Fragrance, Cosmetic Ingredients, Aroma Molecules
+          │
+          └── <span style="color:var(--green);font-weight:700">"ONE Symrise" yondashuvi:</span>
+              → Bitta mijozga barcha segment xizmatlarini yagona interfeys orqali taklif qilish
+              → Cross-selling avtomatlashtirilgan
 </div>
 </div>
-<p style="font-size:.85rem;color:var(--muted);text-align:center">KAM har bir funksiyani koordinatsiya qiladi (matrix tuzilma). KAM = loyiha menejeri, lekin buyruq bermaydi &mdash; boshqa jamoalar o'z rahbarlariga bo'ysunadi.</p>
-</div>
+
+<!-- DSM-F ORG -->
 <div class="panel">
-<h3>4 kompaniya modeli taqqoslash</h3>
-<div class="tw"><table>
-<tr><th>Jihat</th><th>Givaudan</th><th>IFF</th><th>Symrise</th><th>DSM-F</th></tr>
-<tr><td><strong>Model</strong></td><td>2 division &times; 4 mintaqa</td><td>CCO markazlashgan</td><td>"ONE Symrise"</td><td>Cross-BU sinergiya</td></tr>
+<h3>8.4 DSM-Firmenich — Cross-BU sinergiya</h3>
+<div class="org">
+<b>CEO: Dimitri de Vreeze</b>
+  ├── <b>Emmanuel Butstraen</b> — President, Perfumery & Beauty
+  ├── <b>Patrick Niels</b> — President, Taste, Texture & Health
+  ├── <b>Ivo Lansbergen</b> — President, Health, Nutrition & Care
+  └── [ANH — sotilmoqda]
+      │
+      └── <span style="color:var(--dsm);font-weight:700">Cross-BU sinergiya modeli:</span>
+          → 2024 da <b>€100M</b> daromad sinergiyalari
+          → Jami <b>€175M</b> ga yetdi
+          → <b>11 ta</b> qo'llash markazi
+          → Bir mijozga bir nechta BU xizmat ko'rsatadi
+</div>
+</div>
+
+<!-- 4-COMPANY COMPARISON -->
+<div class="panel panel-glow">
+<h3>4 kompaniya model taqqoslash jadvali</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Jihat</th><th><span class="badge badge-giv">Givaudan</span></th><th><span class="badge badge-iff">IFF</span></th><th><span class="badge badge-sym">Symrise</span></th><th><span class="badge badge-dsm">DSM-F</span></th></tr>
+<tr><td><strong>Model turi</strong></td><td>2 division x 4 mintaqa</td><td>CCO markazlashgan</td><td>"ONE Symrise" yagona interfeys</td><td>Cross-BU sinergiya</td></tr>
 <tr><td><strong>AI vositalar</strong></td><td>Carto, Myromi, Creatogether</td><td>Salesforce CRM</td><td>&mdash;</td><td>&mdash;</td></tr>
-<tr><td><strong>Cross-sell</strong></td><td>Division ichida</td><td>CCO orqali 4 segment</td><td>Avtomatlashtirilgan</td><td>&euro;175M sinergiya</td></tr>
-<tr><td><strong>L&R strategiya</strong></td><td>Agressiv bolt-on</td><td>Divest fokus</td><td>Probi + biotech</td><td>ANH sotib, yadro fokus</td></tr>
-<tr><td><strong>Saytlar</strong></td><td>162</td><td>~100+</td><td>~100+</td><td>~200+</td></tr>
-<tr><td><strong>Mijozlar</strong></td><td>12,000+ (41/59 global/L&R)</td><td>~18,300 (top 25=33%)</td><td>6,000+ (150 bozor)</td><td>&mdash;</td></tr>
-</table></div>
+<tr><td><strong>Brief tezligi</strong></td><td>Creatogether: 4 hafta</td><td>Standart</td><td>Standart</td><td>11 qo'llash markazi</td></tr>
+<tr><td><strong>Cross-sell yondashuvi</strong></td><td>Division ichida</td><td>CCO orqali 4 segment</td><td>Avtomatlashtirilgan</td><td>$175M sinergiya</td></tr>
+<tr><td><strong>L&R strategiya</strong></td><td>Agressiv — bolt-on acquisitions</td><td>Divest fokus</td><td>Probi + biotech</td><td>ANH sotib, yadro fokus</td></tr>
+<tr><td><strong>Saytlar soni</strong></td><td>162 sayt, 190+ mamlakat</td><td>~170+ sayt</td><td>~100 sayt</td><td>~200+ sayt</td></tr>
+<tr><td><strong>Mijoz soni</strong></td><td>12,000+</td><td>~25,000+</td><td>~6,000+</td><td>~30,000+ (Total Group)</td></tr>
+</table>
 </div>
-</div>
-
-<!-- ===== S9: KPI ===== -->
-<div class="sec" id="s9">
-<div class="panel">
-<h2>&#127919; KPI Tizimi</h2>
-<h3>Sotuv ierarxiyasi KPI lari</h3>
-<div class="tw"><table>
-<tr><th>Lavozim</th><th>Maosh</th><th>Asosiy KPI lar</th></tr>
-<tr><td><strong>CEO</strong></td><td>&mdash;</td><td>LFL 4-6%, EBITDA 22-24%, FCF &gt;12%, TSR oshishi, ESG maqsadlari</td></tr>
-<tr><td><strong>Division President</strong></td><td>&mdash;</td><td>Division LFL 4-7%, GP margin 40-44%, yangi mijozlar, global/L&R balans, innovation revenue, cross-BU sinergiya</td></tr>
-<tr><td><strong>Commercial Head</strong></td><td>&mdash;</td><td>Mintaqa LFL 5-10%, GP 38-44%, pipeline 150%+, win rate &gt;35%, NPS &gt;80%, narx intizomi</td></tr>
-<tr><td><strong>Sales Director</strong></td><td>&mdash;</td><td>Kategoriya byudjeti +5-10%, GP$ maqsadi, win rate 30-40%, pipeline 3x, retention &gt;90%, forecast &gt;85%</td></tr>
-<tr><td><strong>Sr. KAM</strong></td><td>$155-200K</td><td>Mijoz GP, win rate &gt;35%, ADP 90%+, 10-15 brief, cross-sell, tashrif 2-3/hafta, DSO &lt;60 kun</td></tr>
-<tr><td><strong>KAM</strong></td><td>$60-90K</td><td>Revenue +5-10%, win rate, brief pipeline, forecast &gt;85%, narx intizomi</td></tr>
-<tr><td><strong>Account Manager</strong></td><td>$50-90K</td><td>5-10 lead/oy, 8-10 tashrif/hafta, 2-4 shartnoma/chorak, CRM 100%</td></tr>
-<tr><td><strong>Coordinator</strong></td><td>$50-94K</td><td>Namuna &lt;48 soat, hujjat 99%+, CRM 100%, javob &lt;24 soat, Win/Loss hisoboti</td></tr>
-</table></div>
-</div>
-<div class="panel">
-<h3>Texnik xodimlar KPI lari</h3>
-<div class="kpi-grid">
-<div class="kpi-item"><span class="kn">&#127912; Perfumer: Win Rate</span><span class="kv">&gt;35%</span></div>
-<div class="kpi-item"><span class="kn">&#127912; Perfumer: Submissions/oy</span><span class="kv">15-25</span></div>
-<div class="kpi-item"><span class="kn">&#127912; Perfumer: Brief&rarr;submission</span><span class="kv">2-4 hafta</span></div>
-<div class="kpi-item"><span class="kn">&#127912; Perfumer: Iteratsiya</span><span class="kv">&lt;3 marta</span></div>
-<div class="kpi-item"><span class="kn">&#127912; Perfumer: Yangi molekula</span><span class="kv">2-3/yil</span></div>
-<div class="kpi-item"><span class="kn">&#128300; App. Scientist: Prototip</span><span class="kv">&lt;5 kun</span></div>
-<div class="kpi-item"><span class="kn">&#128300; App. Scientist: Scale-up</span><span class="kv">&gt;95%</span></div>
-<div class="kpi-item"><span class="kn">&#128300; App. Scientist: Texnik hal</span><span class="kv">&lt;72 soat</span></div>
-<div class="kpi-item"><span class="kn">&#128300; App. Scientist: Stability</span><span class="kv">&gt;90%</span></div>
-<div class="kpi-item"><span class="kn">&#128300; App. Scientist: Narx optim.</span><span class="kv">-5-10%/yil</span></div>
-<div class="kpi-item"><span class="kn">&#128269; Sensory: Baholash tezligi</span><span class="kv">&lt;2 kun</span></div>
-<div class="kpi-item"><span class="kn">&#128269; Sensory: Consumer test</span><span class="kv">4-6/chorak</span></div>
-<div class="kpi-item"><span class="kn">&#128269; Sensory: Internal reject</span><span class="kv">10-15%</span></div>
-<div class="kpi-item"><span class="kn">&#128220; Regulatory: Xatolik</span><span class="kv">0 (nol)</span></div>
-<div class="kpi-item"><span class="kn">&#128220; Regulatory: CoA tezligi</span><span class="kv">&lt;3 kun</span></div>
-<div class="kpi-item"><span class="kn">&#128220; Regulatory: Compliance</span><span class="kv">100%</span></div>
-<div class="kpi-item"><span class="kn">&#128202; CMI: Trend hisobotlari</span><span class="kv">4-6/yil</span></div>
-<div class="kpi-item"><span class="kn">&#128202; CMI: Proaktiv taklif</span><span class="kv">3-5/chorak</span></div>
-<div class="kpi-item"><span class="kn">&#128666; Supply: OTIF</span><span class="kv">&gt;95%</span></div>
-<div class="kpi-item"><span class="kn">&#128666; Supply: Lead time</span><span class="kv">2-4 hafta</span></div>
-<div class="kpi-item"><span class="kn">&#128666; Supply: Stock-out</span><span class="kv">&lt;2%</span></div>
-<div class="kpi-item"><span class="kn">&#128666; Supply: NWC/Sales</span><span class="kv">&lt;22-23%</span></div>
-<div class="kpi-item"><span class="kn">&#128300; QC: Batch release</span><span class="kv">&lt;48 soat</span></div>
-<div class="kpi-item"><span class="kn">&#128300; QC: Out-of-spec</span><span class="kv">&lt;1%</span></div>
-<div class="kpi-item"><span class="kn">&#128300; QC: CoA chiqarish</span><span class="kv">&lt;24 soat</span></div>
-<div class="kpi-item"><span class="kn">&#128300; QC: Recall</span><span class="kv">0/yil</span></div>
-</div>
-</div>
-<div class="panel">
-<h3>KPI ta'sir zanjiri (Domino effekti)</h3>
-<div class="flow">
-<div class="flow-s">QC Lab</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Supply Chain</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Regulatory</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">App. Scientist</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Perfumer</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Sensory</div><div class="flow-a">&rarr;</div>
-<div class="flow-s win">KAM &rarr; WIN!</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Sales Director</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Division President</div><div class="flow-a">&rarr;</div>
-<div class="flow-s" style="background:var(--gold);color:#333">CEO &#128081;</div>
-</div>
-<p style="margin-top:10px;font-size:.85rem;color:var(--muted)"><strong>Bitta bo'g'in sekinlashsa &mdash; HAMMA ta'sir ko'radi.</strong> QC 48 soat o'rniga 1 hafta ketsa &rarr; KAM brief muddatini o'tkazib yuboradi &rarr; WIN yo'qoladi &rarr; CEO target bajarilmaydi.</p>
 </div>
 </div>
 
-<!-- ===== S10: SOTUV JARAYONI ===== -->
-<div class="sec" id="s10">
+<!-- ====== TAB 8: KPI LAVOZIMLAR ====== -->
+<div class="sec" id="tab8">
+<h2><span class="ico">IX</span> Har bir lavozim KPI lari (sotuv jamoasi)</h2>
+
 <div class="panel">
-<h2>&#128640; Sotuv Jarayoni</h2>
-<h3>Tashqi varonka (xaridor ko'zi bilan)</h3>
+<h3>9.1 CEO</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Umumiy daromad o'sishi (LFL)</td><td><strong>4-5%</strong> organik (Givaudan 2030: 4-6%)</td><td>Yillik</td></tr>
+<tr><td>EBITDA margin</td><td><strong>22-24%</strong></td><td>Yillik</td></tr>
+<tr><td>Free Cash Flow / Sales</td><td><strong>12-14%</strong> (Givaudan: &gt;12%)</td><td>Yillik</td></tr>
+<tr><td>Total Shareholder Return (TSR)</td><td>Oshib borishi</td><td>3-5 yillik</td></tr>
+<tr><td>Strategik maqsadlar bajarilishi</td><td>2030 Strategy milestones</td><td>Yillik</td></tr>
+<tr><td>ESG maqsadlari</td><td>Belgilangan targetlar</td><td>Yillik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>9.2 Division President</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Division daromad o'sishi</td><td><strong>4-7%</strong> LFL</td><td>Choraklik/Yillik</td></tr>
+<tr><td>Division operating margin</td><td><strong>18-22%</strong></td><td>Choraklik</td></tr>
+<tr><td>Gross Profit margin</td><td><strong>40-44%</strong> (Givaudan)</td><td>Choraklik</td></tr>
+<tr><td>Yangi mijozlar soni</td><td>Oshib borishi</td><td>Yillik</td></tr>
+<tr><td>Global vs Local balans</td><td><strong>42/58%</strong> (Givaudan)</td><td>Yillik</td></tr>
+<tr><td>Innovation revenue</td><td>Yangi mahsulotlardan %</td><td>Yillik</td></tr>
+<tr><td>Cross-BU sinergiya (DSM)</td><td>+$125M qo'shimcha rev.</td><td>Yillik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>9.3 Commercial Head / VP Commercial</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Mintaqaviy daromad o'sishi</td><td><strong>5-10%</strong> LFL</td><td>Choraklik</td></tr>
+<tr><td>Mintaqaviy Gross Profit</td><td><strong>38-44%</strong></td><td>Choraklik</td></tr>
+<tr><td>Yangi biznes pipeline</td><td>Byudjetning <strong>150%+</strong> qiymati</td><td>Oylik</td></tr>
+<tr><td>Win Rate (mintaqa)</td><td><strong>&gt;35%</strong></td><td>Choraklik</td></tr>
+<tr><td>Sotuv jamoasi samaradorligi</td><td>Revenue per salesperson</td><td>Yillik</td></tr>
+<tr><td>Mijoz qoniqish indeksi</td><td>NPS/CSAT <strong>&gt;80%</strong></td><td>Yillik</td></tr>
+<tr><td>Narx intizomi</td><td>Margin erosion <strong>&lt;1%</strong>/chorak</td><td>Choraklik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>9.4 Sales Director</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Segment/kategoriya daromadi</td><td>Byudjet <strong>+5-10%</strong></td><td>Oylik/Choraklik</td></tr>
+<tr><td>Gross Profit (absolyut)</td><td>GP$ maqsadi</td><td>Oylik</td></tr>
+<tr><td>KAM jamoasi Win Rate</td><td><strong>&gt;30-40%</strong></td><td>Choraklik</td></tr>
+<tr><td>Pipeline coverage ratio</td><td><strong>3x</strong> quarterly target</td><td>Oylik</td></tr>
+<tr><td>Mijoz retention</td><td><strong>&gt;90%</strong></td><td>Yillik</td></tr>
+<tr><td>Distributor revenue</td><td>Byudjet maqsadi</td><td>Choraklik</td></tr>
+<tr><td>Forecast accuracy</td><td><strong>&gt;85%</strong> aniqlik</td><td>Oylik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel panel-glow">
+<h3>9.5 Key Account Manager (KAM) — <span style="color:var(--green)">$60K-$200K maosh</span></h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Mijoz daromadi</td><td>ADP byudjeti <strong>+5-10%</strong></td><td>Oylik</td></tr>
+<tr><td>Mijoz Gross Profit</td><td>GP$ va GP% maqsadi</td><td>Oylik</td></tr>
+<tr><td>Win Rate</td><td><strong>&gt;35-40%</strong></td><td>Choraklik</td></tr>
+<tr><td>Brief pipeline (aktiv loyihalar)</td><td>min <strong>10-15</strong></td><td>Haftalik</td></tr>
+<tr><td>ADP/CDP bajarilishi</td><td><strong>&gt;90%</strong> action items</td><td>Choraklik</td></tr>
+<tr><td>Cross-sell hajmi</td><td>Qo'shimcha kategoriya rev.</td><td>Yillik</td></tr>
+<tr><td>Mijoz tashriflari</td><td>Multi-level, min <strong>2-3/hafta</strong></td><td>Haftalik</td></tr>
+<tr><td>Narx intizomi</td><td>Belgilangan chegirmadan oshmasligi</td><td>Har shartnomada</td></tr>
+<tr><td>Forecast accuracy</td><td><strong>&gt;85%</strong></td><td>Oylik</td></tr>
+<tr><td>Debitorlik nazorati</td><td>DSO <strong>&lt;60 kun</strong></td><td>Oylik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>9.6 Account Manager — <span style="color:var(--green)">$50K-$90K maosh</span></h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Yangi lead soni</td><td><strong>5-10</strong> ta/oy</td><td>Oylik</td></tr>
+<tr><td>Mijoz tashriflari</td><td><strong>8-10</strong> ta/hafta</td><td>Haftalik</td></tr>
+<tr><td>Yangi shartnomalar</td><td><strong>2-4</strong> ta/chorak</td><td>Choraklik</td></tr>
+<tr><td>Revenue (hudud bo'yicha)</td><td>Byudjet maqsadi</td><td>Oylik</td></tr>
+<tr><td>Brief/taklif yuborish</td><td><strong>5-8</strong> ta/oy</td><td>Oylik</td></tr>
+<tr><td>Lead-to-close vaqti</td><td>Sanoat o'rtachasi</td><td>Choraklik</td></tr>
+<tr><td>CRM yangilash intizomi</td><td><strong>100%</strong> aktual</td><td>Kunlik</td></tr>
+<tr><td>Mijoz feedback</td><td>Ijobiy</td><td>Choraklik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>9.7 Sales Support / Coordinator — <span style="color:var(--green)">$50K-$94K maosh</span></h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Namuna yuborish tezligi</td><td><strong>&lt;48 soat</strong></td><td>Har so'rovda</td></tr>
+<tr><td>Hujjatlar aniqligi</td><td><strong>99%+</strong> xatosiz</td><td>Oylik</td></tr>
+<tr><td>CRM/SAP ma'lumot sifati</td><td><strong>100%</strong> to'liq</td><td>Haftalik</td></tr>
+<tr><td>Mijoz so'rovlariga javob</td><td><strong>&lt;24 soat</strong></td><td>Har so'rovda</td></tr>
+<tr><td>Narx hujjatlari aniqligi</td><td><strong>100%</strong></td><td>Har shartnomada</td></tr>
+<tr><td>Win/Loss hisoboti</td><td>Har chorakda o'z vaqtida</td><td>Choraklik</td></tr>
+<tr><td>Portfolio nazorati</td><td><strong>250+ formula</strong></td><td>Doimiy</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ====== TAB 9: TEXNIK KPI ====== -->
+<div class="sec" id="tab9">
+<h2><span class="ico">X</span> Texnik xodimlar KPI lari</h2>
+
+<div class="grid2">
+<div class="panel">
+<h3>Perfumer / Flavorist</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Win Rate (o'z formulalar)</td><td><strong>&gt;35%</strong></td><td>Choraklik</td></tr>
+<tr><td>Submission soni</td><td><strong>15-25</strong>/oy</td><td>Oylik</td></tr>
+<tr><td>Brief-to-submission vaqti</td><td><strong>2-4 hafta</strong></td><td>Har brief</td></tr>
+<tr><td>Iteratsiya soni</td><td><strong>&lt;3 marta</strong></td><td>Har loyihada</td></tr>
+<tr><td>Yangi molekula/innovatsiya</td><td><strong>2-3</strong>/yil</td><td>Yillik</td></tr>
+<tr><td>Mijoz bilan uchrashuv</td><td><strong>4-6</strong>/chorak</td><td>Choraklik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>Application Scientist / Texnolog</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Prototip tayyorlash tezligi</td><td><strong>&lt;5 kun</strong></td><td>Har so'rovda</td></tr>
+<tr><td>Scale-up muvaffaqiyat %</td><td><strong>&gt;95%</strong></td><td>Choraklik</td></tr>
+<tr><td>Texnik muammo hal qilish</td><td><strong>&lt;72 soat</strong></td><td>Har muammoda</td></tr>
+<tr><td>Stability test pass rate</td><td><strong>&gt;90%</strong></td><td>Choraklik</td></tr>
+<tr><td>Mijoz zavodiga tashrif</td><td><strong>2-4</strong>/chorak</td><td>Choraklik</td></tr>
+<tr><td>Formula narx optimizatsiyasi</td><td><strong>-5-10%</strong> xarajat</td><td>Yillik</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>Sensory Analyst</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Baholash tezligi</td><td><strong>&lt;2 kun</strong></td><td>Har submissionda</td></tr>
+<tr><td>Consumer test o'tkazish</td><td><strong>4-6</strong>/chorak</td><td>Choraklik</td></tr>
+<tr><td>Internal reject nisbati</td><td><strong>10-15%</strong> (sifat darvozasi)</td><td>Choraklik</td></tr>
+<tr><td>Batch QC mos kelish</td><td><strong>&gt;99%</strong></td><td>Oylik</td></tr>
+<tr><td>Competitor benchmarking</td><td><strong>2</strong>/chorak</td><td>Choraklik</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>Regulatory / Compliance Specialist</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>CoA/hujjat tayyorlash tezligi</td><td><strong>&lt;3 kun</strong></td><td>Har submissionda</td></tr>
+<tr><td>Regulatory xatolik soni</td><td><strong>0</strong> (nol)</td><td>Choraklik</td></tr>
+<tr><td>Yangi regulyatsiya moslash</td><td><strong>&lt;30 kun</strong></td><td>Har o'zgarishda</td></tr>
+<tr><td>Audit tayyorligi</td><td><strong>100%</strong></td><td>Doimiy</td></tr>
+<tr><td>Formulalar compliance %</td><td><strong>100%</strong></td><td>Doimiy</td></tr>
+<tr><td>IFRA/FDA/EU hujjatlar</td><td>Barcha to'liq</td><td>Doimiy</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="panel">
+<h3>CMI / Marketing</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Trend hisobotlari</td><td><strong>4-6</strong>/yil</td><td>Yillik</td></tr>
+<tr><td>Proaktiv takliflar</td><td><strong>3-5</strong>/chorak</td><td>Choraklik</td></tr>
+<tr><td>Consumer testlar</td><td><strong>6-10</strong>/yil</td><td>Yillik</td></tr>
+<tr><td>Lead generation</td><td><strong>5-10</strong>/oy</td><td>Oylik</td></tr>
+<tr><td>Ko'rgazma ROI</td><td>Belgilangan target</td><td>Har ko'rgazmada</td></tr>
+</table>
+</div>
+</div>
+
+<div class="panel">
+<h3>Supply Chain / Procurement</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>On-time delivery (OTIF)</td><td><strong>&gt;95%</strong></td><td>Oylik</td></tr>
+<tr><td>Lead time</td><td><strong>2-4 hafta</strong></td><td>Har buyurtmada</td></tr>
+<tr><td>Xom ashyo xarajat kamaytirish</td><td><strong>-2-5%</strong>/yil</td><td>Yillik</td></tr>
+<tr><td>Stock-out nisbati</td><td><strong>&lt;2%</strong></td><td>Oylik</td></tr>
+<tr><td>Net Working Capital/Sales</td><td><strong>&lt;22-23%</strong> (Givaudan: 22%)</td><td>Choraklik</td></tr>
+<tr><td>Supplier audit passing</td><td><strong>&gt;95%</strong></td><td>Yillik</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>Quality Control (QC Lab)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>KPI</th><th>Maqsad</th><th>Davr</th></tr>
+<tr><td>Batch release tezligi</td><td><strong>&lt;48 soat</strong></td><td>Har batchda</td></tr>
+<tr><td>Out-of-spec nisbati</td><td><strong>&lt;1%</strong></td><td>Oylik</td></tr>
+<tr><td>Mijoz shikoyatlari</td><td><strong>0</strong></td><td>Yillik</td></tr>
+<tr><td>GC/MS aniqlik</td><td><strong>&gt;99.5%</strong></td><td>Doimiy</td></tr>
+<tr><td>CoA chiqarish tezligi</td><td><strong>&lt;24 soat</strong></td><td>Har jo'natmada</td></tr>
+<tr><td>Recall/qaytarilgan mahsulot</td><td><strong>0</strong></td><td>Yillik</td></tr>
+</table>
+</div>
+</div>
+
+<!-- KPI DOMINO CHAIN -->
+<div class="panel panel-glow">
+<h3>9.9 KPI ta'sir zanjiri (Domino effekti)</h3>
+<div class="domino">
+<div class="domino-step" style="border-left-color:var(--gold)"><span class="d-icon" style="color:var(--gold)">1</span><span class="d-text"><strong>QC Lab:</strong> batch tezkor chiqadi (&lt;48 soat)</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--blue)"><span class="d-icon" style="color:var(--blue)">2</span><span class="d-text"><strong>Supply Chain:</strong> vaqtida yetkazadi (OTIF &gt;95%)</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--purple)"><span class="d-icon" style="color:var(--purple)">3</span><span class="d-text"><strong>Regulatory:</strong> hujjatlar tayyor (&lt;3 kun)</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--iff)"><span class="d-icon" style="color:var(--iff)">4</span><span class="d-text"><strong>Application Scientist:</strong> prototip ishlaydi (&lt;5 kun)</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--red)"><span class="d-icon" style="color:var(--red)">5</span><span class="d-text"><strong>Perfumer:</strong> g'olib formula yaratdi (win rate &gt;35%)</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--sym)"><span class="d-icon" style="color:var(--sym)">6</span><span class="d-text"><strong>Sensory Panel:</strong> tasdiqladi</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--giv)"><span class="d-icon" style="color:var(--giv)">7</span><span class="d-text"><strong>KAM:</strong> mijozga taqdim etdi &rarr; <strong style="color:var(--gold)">WIN!</strong></span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--text)"><span class="d-icon">8</span><span class="d-text"><strong>Sales Director:</strong> target bajarildi</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--text)"><span class="d-icon">9</span><span class="d-text"><strong>Division President:</strong> margin o'sdi</span><span class="d-arrow">&darr;</span></div>
+<div class="domino-step" style="border-left-color:var(--gold)"><span class="d-icon" style="color:var(--gold)">10</span><span class="d-text"><strong>CEO:</strong> aksiyadorlar mamnun</span></div>
+</div>
+<div class="highlight" style="margin-top:12px">
+<strong>XULOSA:</strong> Bitta bo'g'in sekinlashsa — HAMMA ta'sir ko'radi. QC 48 soat o'rniga 1 hafta ketsa &rarr; KAM brief muddatini o'tkazib yuboradi &rarr; WIN yo'qoladi &rarr; CEO target bajarilmaydi.
+</div>
+</div>
+</div>
+
+<!-- ====== TAB 10: SOTUV JARAYONI ====== -->
+<div class="sec" id="tab10">
+<h2><span class="ico">XI</span> Sotuv jarayoni (0-10 bosqich)</h2>
+
+<div class="panel">
+<h3>10.1 Tashqi varonka (xaridor ko'zi bilan)</h3>
 <div class="flow">
-<div class="flow-s">Shortlist</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Brief</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Co-creation</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Namuna</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Sinov</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Regulyativ</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Ishga tushirish</div><div class="flow-a">&rarr;</div>
-<div class="flow-s win">Takroriy biznes</div>
+<div class="flow-step" style="background:var(--giv)">Shortlistga kirish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Brief olish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Birgalikda yaratish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Lab/Namuna</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Pilotaj sinovi</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Tijorat ta'minoti</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step" style="background:var(--green)">Takroriy brief / O'zaro sotuv</div>
 </div>
-<p style="margin-top:10px;font-size:.85rem;color:var(--muted)">Agar vendor shortlistga kirmasa &mdash; keyingi bosqichlarga chiqishi juda qiyin. Shuning uchun kompaniyalar mahalliy markaz, ijodiy markaz, sensorik lab, iste'molchi tushunchasi va qo'llash lablariga pul tikadi.</p>
+<p style="font-size:.85rem">Agar vendor shortlistga kirmasa, keyingi bosqichlarga chiqishi juda qiyin. Shuning uchun kompaniyalar mahalliy markaz, ijodiy markaz, sensorik lab, iste'molchi tushunchasi va qo'llash lablariga pul tikadi.</p>
 </div>
-<div class="panel">
-<h3>Ichki varonka (0-10 bosqich)</h3>
-<div class="tw"><table>
-<tr><th>Bosqich</th><th>Kim boshqaradi</th><th>Nima qiladi</th><th>KPI / Signal</th></tr>
-<tr><td><strong>0. Market intelligence</strong></td><td>CMI / Marketing</td><td>Trend tahlili, proaktiv taklif</td><td>Lead generation, trend hisobotlari</td></tr>
-<tr><td><strong>1. Account reja va brief olish</strong></td><td>KAM / AM</td><td>Mijozni yuritadi, maqsadli brieflarni tanlaydi</td><td>Sotuv, GP, win rate, ADP</td></tr>
+
+<div class="panel panel-glow">
+<h3>10.2 Ichki varonka (kompaniya ichida) — 10 bosqich</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Bosqich</th><th>Kim boshqaradi</th><th>Nima qiladi</th><th>KPI/Signal</th></tr>
+<tr><td><strong>0. Market intelligence</strong></td><td>CMI / Marketing</td><td>Trend tahlili, proaktiv taklif</td><td>Lead generation</td></tr>
+<tr><td><strong>1. Account reja va brief olish</strong></td><td>KAM / AM</td><td>Mijozni yuritadi, maqsadli brieflarni tanlaydi</td><td>Sotuv, GP, win rate</td></tr>
 <tr><td><strong>2. Brief kvalifikatsiyasi</strong></td><td>KAM + Sales Director</td><td>Brief baholanadi, ustuvorlik beriladi</td><td>Pipeline coverage</td></tr>
 <tr><td><strong>3. Texnik kvalifikatsiya</strong></td><td>App. Scientist / Flavorist / Parfyumer</td><td>Briefni formulaga aylantiradi</td><td>Yutilgan brieflar</td></tr>
 <tr><td><strong>4. Namuna tayyorlash</strong></td><td>Kreativ jamoa + QC</td><td>Formula yaratiladi, sifat tekshiriladi</td><td>Submission soni, tezlik</td></tr>
-<tr><td><strong>5. Regulyativ tekshirish</strong></td><td>Regulatory specialist</td><td>Muvofiqlik, xavfsizlik, hujjatlar</td><td>Compliance %, xatolik 0</td></tr>
-<tr><td><strong>6. Mijoz sinovi</strong></td><td>KAM + Application + Sensory</td><td>Sensorik baholash, yoqtirish ballari</td><td>Consumer test natijalari</td></tr>
-<tr><td><strong>7. Iteratsiya</strong></td><td>Perfumer + Application</td><td>Qayta ishlash (odatda 1-3 marta)</td><td>Iteratsiya soni &lt;3</td></tr>
-<tr><td><strong>8. Pilotaj / Scale-up</strong></td><td>Operations + Application</td><td>Ishlab chiqarishga o'tkazish</td><td>Scale-up pass rate &gt;95%</td></tr>
-<tr><td><strong>9. Tijorat ishga tushirish</strong></td><td>KAM + Supply Chain</td><td>Shartnoma, narx, yetkazish</td><td>Revenue, OTIF &gt;95%</td></tr>
+<tr><td><strong>5. Regulyativ tekshirish</strong></td><td>Regulatory specialist</td><td>Muvofiqlik, xavfsizlik, hujjatlar</td><td>Compliance %</td></tr>
+<tr><td><strong>6. Mijoz sinovi</strong></td><td>KAM + Application + Sensory</td><td>Mijoz sinov o'tkazadi, sensorik baholash</td><td>Yoqtirish ballari</td></tr>
+<tr><td><strong>7. Iteratsiya</strong></td><td>Perfumer + Application</td><td>Qayta ishlash (odatda 1-3 marta)</td><td>Iteratsiya soni</td></tr>
+<tr><td><strong>8. Pilotaj / kengaytirish</strong></td><td>Operations + Application</td><td>Scale-up, ishlab chiqarishga o'tkazish</td><td>Scale-up pass rate</td></tr>
+<tr><td><strong>9. Tijorat ishga tushirish</strong></td><td>KAM + Supply Chain</td><td>Shartnoma, narx, yetkazish</td><td>Revenue, OTIF</td></tr>
 <tr><td><strong>10. Account kengaytirish</strong></td><td>KAM + Division</td><td>Cross-sell, takroriy brief, yangi kategoriya</td><td>Cross-sell rate, retention</td></tr>
-</table></div>
+</table>
 </div>
+</div>
+
 <div class="panel">
-<h3>Kompaniyalar farqlari</h3>
-<div class="tw"><table>
-<tr><th>Jihat</th><th>Givaudan</th><th>IFF</th><th>Symrise</th><th>DSM-F</th></tr>
-<tr><td><strong>Tuzilma</strong></td><td>2 division &times; 4 mintaqa</td><td>CCO markazlashgan</td><td>"ONE Symrise"</td><td>Cross-BU sinergiya</td></tr>
+<h3>10.3 Givaudan vs raqobatchilar farqlari</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Jihat</th><th><span class="badge badge-giv">Givaudan</span></th><th><span class="badge badge-iff">IFF</span></th><th><span class="badge badge-sym">Symrise</span></th><th><span class="badge badge-dsm">DSM-F</span></th></tr>
+<tr><td><strong>Tuzilma</strong></td><td>2 division x 4 mintaqa</td><td>CCO markazlashgan</td><td>"ONE Symrise" yagona interfeys</td><td>Cross-BU sinergiya</td></tr>
 <tr><td><strong>AI vositalar</strong></td><td>Carto, Myromi, Creatogether</td><td>Salesforce CRM</td><td>&mdash;</td><td>&mdash;</td></tr>
 <tr><td><strong>Brief tezligi</strong></td><td>Creatogether: 4 hafta</td><td>Standart</td><td>Standart</td><td>11 qo'llash markazi</td></tr>
-<tr><td><strong>Cross-sell</strong></td><td>Division ichida</td><td>CCO orqali 4 segment</td><td>Avtomatlashtirilgan</td><td>&euro;175M sinergiya</td></tr>
-</table></div>
-<h3>Sotuv argumenti farqi</h3>
-<div class="grid g4">
-<div class="crd giv"><div class="lbl">Givaudan</div><div class="note">"Eng innovativ co-creation yechimlar" &mdash; <strong>PREMIUM</strong></div></div>
-<div class="crd iff"><div class="lbl">IFF</div><div class="note">"Masshtab va to'liq portfel" &mdash; <strong>ONE-STOP-SHOP</strong></div></div>
-<div class="crd sym"><div class="lbl">Symrise</div><div class="note">"Naturallar va ilmiy platforma" &mdash; <strong>SUSTAINABILITY</strong></div></div>
-<div class="crd dsm"><div class="lbl">DSM-F</div><div class="note">"Aniq iqtisodiy natija" &mdash; <strong>ROI</strong> (Gouda keis: &euro;1.5M/yil tejash)</div></div>
+<tr><td><strong>Cross-sell</strong></td><td>Division ichida</td><td>CCO orqali 4 segment</td><td>Avtomatlashtirilgan</td><td>$175M sinergiya</td></tr>
+<tr><td><strong>L&R strategiya</strong></td><td>Agressiv — bolt-on acquisitions</td><td>Divest fokus</td><td>Probi + biotech</td><td>ANH sotib, yadro fokus</td></tr>
+</table>
 </div>
 </div>
+
 <div class="panel">
-<h3>Asosiy formula</h3>
-<div class="flow" style="justify-content:center">
-<div class="flow-s">KAM brief olib kiradi</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Qo'llash jamoasi formulaga aylantiradi</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Regulyativ muvofiq qiladi</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Operatsiyalar kengaytiradi</div><div class="flow-a">&rarr;</div>
-<div class="flow-s win">AM takroriy brief + cross-sell</div>
+<h3>10.4 Sotuv argumenti farqi</h3>
+<div class="grid4">
+<div class="kpi-card" style="border-top:3px solid var(--giv)">
+<div class="val" style="font-size:.9rem;color:var(--giv)">Givaudan</div>
+<div class="lbl">"Sizga eng innovativ, co-creation asosidagi yechimlar beramiz" — premium pozitsiya</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)">
+<div class="val" style="font-size:.9rem;color:var(--iff)">IFF</div>
+<div class="lbl">"Bizning masshtabimiz va keng qamrovimiz sizga to'liq portfel beradi" — one-stop-shop</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--sym)">
+<div class="val" style="font-size:.9rem;color:var(--sym)">Symrise</div>
+<div class="lbl">"Naturallar va ilmiy platforma orqali barqaror yechimlar" — sustainability</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--dsm)">
+<div class="val" style="font-size:.9rem;color:var(--dsm)">DSM-F</div>
+<div class="lbl">"Sizga aniq iqtisodiy natija beramiz" — measurable ROI (Gouda keis: $1.5M/yil)</div>
+</div>
 </div>
 </div>
 </div>
 
-<!-- ===== S11: $1 TAQSIMOTI ===== -->
-<div class="sec" id="s11">
-<div class="panel">
-<h2>&#128176; Har Bir $1 Ning Taqsimoti</h2>
-<h3>Givaudan &mdash; $1.00 daromaddan (FY2024 haqiqiy)</h3>
-<div class="bar-group">
-<div class="bar-row"><div class="bar-lbl">COGS</div><div class="bar-track"><div class="bar-fill" style="width:56%;background:linear-gradient(90deg,#636e72,#95a5a6)">$0.559 (55.9%)</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Sotuv & Marketing</div><div class="bar-track"><div class="bar-fill bf-giv" style="width:26%">$0.131 (13.1%)</div></div></div>
-<div class="bar-row"><div class="bar-lbl">R&D</div><div class="bar-track"><div class="bar-fill" style="width:15%;background:linear-gradient(90deg,#8e44ad,#a569bd)">$0.076 (7.6%)</div></div></div>
-<div class="bar-row"><div class="bar-lbl">Boshqa xarajatlar</div><div class="bar-track"><div class="bar-fill" style="width:17%;background:linear-gradient(90deg,#5d6d7e,#7f8c8d)">$0.087 (8.7%)</div></div></div>
-<div class="bar-row"><div class="bar-lbl"><strong>SOF FOYDA</strong></div><div class="bar-track"><div class="bar-fill" style="width:29%;background:linear-gradient(90deg,var(--green),#58d68d)"><strong>$0.147 (14.7%)</strong></div></div></div>
-</div>
-<h3>4 kompaniya taqqoslash ($1 dan)</h3>
-<div class="tw"><table>
-<tr><th>$1 dan</th><th>Givaudan</th><th>IFF</th><th>Symrise</th><th>DSM-F</th></tr>
-<tr><td><strong>COGS</strong></td><td>$0.559</td><td>$0.641</td><td>$0.607</td><td>$0.668</td></tr>
-<tr><td><strong>Gross Profit</strong></td><td class="hi">$0.441</td><td>$0.359</td><td>$0.393</td><td>$0.332</td></tr>
-<tr><td><strong>Sotuv & Marketing</strong></td><td>$0.131</td><td>$0.174</td><td>$0.140</td><td>$0.141</td></tr>
-<tr><td><strong>R&D</strong></td><td class="hi">$0.076</td><td>$0.058</td><td>$0.055</td><td>$0.062</td></tr>
-<tr><td><strong>Sof foyda</strong></td><td class="hi"><strong>$0.147</strong></td><td>$0.021</td><td>$0.096</td><td>$0.022</td></tr>
-</table></div>
-<p><strong>Givaudan har $1 savdodan eng ko'p foyda oladi</strong> &mdash; premium pozitsiya, kuchli differensiatsiya, yuqori R&D investitsiya va value-based selling modeli.</p>
+<!-- ====== TAB 11: DOLLAR TAQSIMOTI ====== -->
+<div class="sec" id="tab11">
+<h2><span class="ico">XII</span> Har bir dollarning taqsimoti</h2>
+
+<div class="panel panel-glow">
+<h3>11.1 Givaudan — $1.00 daromadning taqsimoti (FY2024 haqiqiy)</h3>
+<div style="margin:16px 0">
+<div class="bar-row"><span class="bar-label">COGS</span><div class="bar-track"><div class="bar-fill" style="width:55.9%;background:#445">$0.559 (55.9%)</div></div></div>
+<div class="bar-row"><span class="bar-label" style="color:var(--gold)"><strong>Yalpi foyda</strong></span><div class="bar-track"><div class="bar-fill" style="width:44.1%;background:var(--giv)">$0.441 (44.1%)</div></div></div>
+<div class="bar-row"><span class="bar-label">S&M va tarqatish</span><div class="bar-track"><div class="bar-fill" style="width:13.1%;background:var(--blue)">$0.131</div></div></div>
+<div class="bar-row"><span class="bar-label">R&D</span><div class="bar-track"><div class="bar-fill" style="width:7.6%;background:var(--purple)">$0.076</div></div></div>
+<div class="bar-row"><span class="bar-label">G&A</span><div class="bar-track"><div class="bar-fill" style="width:3.5%;background:#556">~$0.035</div></div></div>
+<div class="bar-row"><span class="bar-label">Amortizatsiya va boshqa</span><div class="bar-track"><div class="bar-fill" style="width:5.2%;background:#556">~$0.052</div></div></div>
+<div class="bar-row"><span class="bar-label" style="color:var(--green)"><strong>Sof foyda</strong></span><div class="bar-track"><div class="bar-fill" style="width:14.7%;background:var(--green)"><strong>$0.147 (14.7%)</strong></div></div></div>
 </div>
 </div>
 
-<!-- ===== S12: TAQQOSLASH ===== -->
-<div class="sec" id="s12">
 <div class="panel">
-<h2>&#9878;&#65039; Strategik Taqqoslash</h2>
-<h3>Kuchli va zaif tomonlar</h3>
-<div class="tw"><table>
-<tr><th>Kompaniya</th><th>Kuchli tomon</th><th>Zaif tomon</th><th>Bozor ulushi</th></tr>
-<tr><td><span class="badge b-giv">Givaudan</span></td><td>Eng yuqori R&D, AI co-creation, nozik atir merosi, eng yuqori margin, L&R strategiya muvaffaqiyati</td><td>CHF valyuta ta'siri, pharma/biotech yo'q, Osiyo yumshoqligi</td><td class="hi">~17-22%</td></tr>
-<tr><td><span class="badge b-iff">IFF</span></td><td>Masshtab va keng qamrov, bio-fanlar kuchi, CCO modeli</td><td>Post-merger murakkablik, yuqori qarz (3.8x), past sof foyda (2%)</td><td>~17%</td></tr>
-<tr><td><span class="badge b-sym">Symrise</span></td><td>Naturallar integratsiyasi, eng kam qarz (1.8x), Probi/biotech, pet food #1</td><td>Kichikroq masshtab, S&C rahbar vakansiyasi</td><td>~11%</td></tr>
-<tr><td><span class="badge b-dsm">DSM-F</span></td><td>Ko'p tarmoqli fan (multi-domain science), keng palitra, sinergiya natijalari</td><td>Portfel murakkabligi, past margin (IFRS), ijro riski</td><td>~15%</td></tr>
-<tr><td>Kerry Group</td><td>Ta'm texnologiyasida #1, kuchli food innovation</td><td>Atir biznesi yo'q, past R&D (4.6%)</td><td>&mdash;</td></tr>
-</table></div>
+<h3>11.2 4 kompaniya taqqoslash ($1 dan)</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kategoriya</th><th><span class="badge badge-giv">Givaudan</span></th><th><span class="badge badge-iff">IFF</span></th><th><span class="badge badge-sym">Symrise</span></th><th><span class="badge badge-dsm">DSM-F</span></th></tr>
+<tr><td>COGS</td><td>$0.559</td><td>$0.641</td><td>$0.607</td><td>$0.668</td></tr>
+<tr><td><strong>Gross Profit</strong></td><td><strong style="color:var(--giv)">$0.441</strong></td><td>$0.359</td><td>$0.393</td><td>$0.332</td></tr>
+<tr><td>S&M</td><td>$0.131</td><td>$0.174*</td><td>$0.140</td><td>$0.141</td></tr>
+<tr><td>R&D</td><td>$0.076</td><td>$0.058</td><td>$0.055</td><td>$0.062</td></tr>
+<tr><td><strong>Net Income</strong></td><td><strong style="color:var(--green)">$0.147</strong></td><td>$0.021</td><td>$0.096</td><td>$0.022</td></tr>
+</table>
 </div>
-<div class="panel">
-<h3>Kompaniya maqsadlari</h3>
-<div class="tw"><table>
-<tr><th>Kompaniya</th><th>Organik o'sish</th><th>EBITDA margin</th><th>Boshqa</th></tr>
-<tr><td><span class="badge b-giv">Givaudan 2030</span></td><td>4-6% LFL</td><td>&mdash;</td><td>FCF &gt;12%, ~8% R&D, innovatsiyaga asoslangan o'sish</td></tr>
-<tr><td><span class="badge b-dsm">DSM-F o'rta muddatli</span></td><td>5-7%</td><td>22-23%</td><td>Naqd/savdo &gt;10%, sinergiyalar &euro;350M</td></tr>
-<tr><td><span class="badge b-sym">Symrise 2028</span></td><td>5-7%</td><td>21-23%</td><td>FCF &gt;14%</td></tr>
-<tr><td><span class="badge b-iff">IFF 2026</span></td><td>1-4%</td><td>&mdash;</td><td>Qarz kamaytirish &lt;3x</td></tr>
-</table></div>
+<p style="font-size:.8rem;color:var(--muted)">*IFF S&M includes G&A.</p>
+<div class="highlight">
+<strong>Givaudan har $1 savdodan eng ko'p foyda oladi</strong> — sabablar: premium pozitsiya, kuchli differensiatsiya, yuqori R&D investitsiya, va value-based selling modeli.
+</div>
 </div>
 </div>
 
-<!-- ===== S13: XULOSALAR ===== -->
-<div class="sec" id="s13">
+<!-- ====== TAB 12: STRATEGIK TAQQOSLASH ====== -->
+<div class="sec" id="tab12">
+<h2><span class="ico">XIII</span> Raqobatchilar strategik taqqoslash</h2>
+
 <div class="panel">
-<h2>&#127775; Xulosalar va Asosiy Topilmalar</h2>
-<div class="grid g2">
-<div class="crd giv"><div class="lbl">&#128200; Moliyaviy yetakchi</div><div class="note"><strong>Givaudan</strong> &mdash; hajm bo'yicha 3-o'rinda (~$8.2B), lekin eng yuqori gross margin (43-44%), eng yuqori R&D (~7.5%), eng kuchli net margin (14-15%)</div></div>
-<div class="crd"><div class="lbl">&#128176; Sotuv modeli</div><div class="note">Sotuv sikli <strong>3-36 oy</strong>. Mijozlarning 70-80% kichik (distributor), daromadning 60-75% yirik (to'g'ridan-to'g'ri). Retention <strong>85-92%</strong>. Sample-to-win <strong>10-25%</strong></div></div>
-<div class="crd" style="border-left:4px solid var(--gold)"><div class="lbl">&#128161; Asosiy formula</div><div class="note"><strong>Sotuv odam bitim olib keladi, qo'llash jamoasi yutadi, regulyativ o'tkazadi, operatsiyalar saqlab qoladi</strong></div></div>
-<div class="crd"><div class="lbl">&#128200; FY24 &rarr; FY25</div><div class="note">FY2024 kuchli o'sish (2023 baza past). FY2025 sekinlashdi: valyuta, Osiyo yumshoqligi, tariflar. Fragrance food/taste dan tezroq o'smoqda</div></div>
-<div class="crd" style="border-left:4px solid var(--green)"><div class="lbl">&#127942; Givaudan differensiatsiyasi</div><div class="note">L&R strategiya <strong>59%</strong>. Raqamli innovatsiya (Carto, Creatogether, Myromi) &mdash; sotuv siklini <strong>oylardan haftalarga</strong>. 3 bosqichli R&D kaskadi. Nozik atirlar <strong>+80% LFL</strong></div></div>
-<div class="crd"><div class="lbl">&#127760; Portfel tozalash</div><div class="note">IFF divest ($4B+), DSM-F ANH sotish (&euro;2.2B), Symrise Aqua Feed/Terpene divest. Fokus: yuqori marjali, innovatsiyaga asoslangan segmentlar</div></div>
-</div>
-</div>
-<div class="panel">
-<h3>Eng kuchli sotuv tizimi formulasi</h3>
-<div class="flow" style="justify-content:center">
-<div class="flow-s">Shortlist</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Brief</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Birgalikda yaratish</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Namuna/Sinov</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Regulyativ/Kengaytirish</div><div class="flow-a">&rarr;</div>
-<div class="flow-s">Ishga tushirish</div><div class="flow-a">&rarr;</div>
-<div class="flow-s win">Takroriy biznes &#128640;</div>
-</div>
-<p style="margin-top:16px;text-align:center;font-size:.9rem;color:var(--muted)">Bu sohada varonka <em>lead &rarr; qo'ng'iroq &rarr; taklif &rarr; yopish</em> EMAS.<br>Bu yerda varonka: <strong>shortlist &rarr; brief &rarr; birgalikda yaratish &rarr; namuna/sinov &rarr; regulyativ &rarr; ishga tushirish &rarr; takroriy biznes</strong></p>
+<h3>12.1 Kuchli va zaif tomonlar</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>Kompaniya</th><th>Kuchli tomon</th><th>Zaif tomon</th></tr>
+<tr><td><span class="badge badge-giv">Givaudan</span></td><td>Eng yuqori R&D, AI co-creation, nozik atir merosi, eng yuqori margin, L&R strategiya muvaffaqiyati</td><td>CHF valyuta ta'siri, pharma/biotech yo'q, Osiyo-Tinch okeani yumshoqligi</td></tr>
+<tr><td><span class="badge badge-iff">IFF</span></td><td>Masshtab va keng qamrov, bio-fanlar kuchi, CCO modeli</td><td>Post-merger murakkablik, yuqori qarz (3.8x), past sof foyda</td></tr>
+<tr><td><span class="badge badge-sym">Symrise</span></td><td>Naturallar integratsiyasi, eng kam qarz, Probi/biotech strategiya, uy hayvonlari ozuqasida #1</td><td>Kichikroq masshtab, S&C rahbar vakansiyasi</td></tr>
+<tr><td><span class="badge badge-dsm">DSM-F</span></td><td>Ko'p tarmoqli fan (multi-domain science), keng ingredient palitrasi, sinergiya natijalari</td><td>Portfel murakkabligi, past margin (IFRS), ijro riski</td></tr>
+<tr><td>Kerry Group</td><td>Ta'm texnologiyasida #1, kuchli food innovation</td><td>Atir biznesi yo'q, past R&D intensivligi (4.6%)</td></tr>
+</table>
 </div>
 </div>
 
-<!-- ===== S14: MANBALAR ===== -->
-<div class="sec" id="s14">
 <div class="panel">
-<h2>&#128218; Manbalar</h2>
+<h3>12.2 Strategik differensiatsiya xaritasi</h3>
+<div style="background:var(--card2);border-radius:12px;padding:24px;font-family:monospace;font-size:.85rem;line-height:1.8;text-align:center;border:1px solid var(--border)">
+<div style="color:var(--muted);margin-bottom:8px">PREMIUM / INNOVATSIYA</div>
+<div style="margin:8px 0"><span style="color:var(--giv);font-weight:700">&#9679; Givaudan</span> &nbsp;&nbsp; (Eng yuqori margin, eng yuqori R&D)</div>
+<div style="margin:8px 0"><span style="color:var(--dsm);font-weight:700">&#9679; DSM-Firmenich</span> &nbsp;&nbsp; <span style="color:var(--sym);font-weight:700">&#9679; Symrise</span></div>
+<div style="margin:8px 0;color:var(--muted)">&larr; KICHIK MASSHTAB &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; KATTA MASSHTAB &rarr;</div>
+<div style="margin:8px 0"><span style="color:var(--iff);font-weight:700">&#9679; IFF</span> &nbsp;&nbsp; (Eng keng qamrov)</div>
+<div style="margin:8px 0"><span style="color:var(--muted);font-weight:700">&#9679; Kerry</span></div>
+<div style="color:var(--muted);margin-top:8px">COMMODITY / XARAJAT</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>12.3 Bozor ulushi (F&F)</h3>
+<div style="margin:16px 0">
+<div class="bar-row"><span class="bar-label"><span class="badge badge-giv">Givaudan</span></span><div class="bar-track"><div class="bar-fill" style="width:22%;background:var(--giv)">~17-22%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-iff">IFF</span></span><div class="bar-track"><div class="bar-fill" style="width:17%;background:var(--iff)">~17%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-dsm">DSM-F</span></span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--dsm)">~15%</div></div></div>
+<div class="bar-row"><span class="bar-label"><span class="badge badge-sym">Symrise</span></span><div class="bar-track"><div class="bar-fill" style="width:11%;background:var(--sym)">~11%</div></div></div>
+</div>
+<div class="kpi-card" style="margin-top:12px;border-top:3px solid var(--gold)">
+<div class="val" style="color:var(--gold)">~61%</div>
+<div class="lbl">Top 4 jami bozor ulushi</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>12.4 Kompaniya strategik maqsadlari</h3>
+<div class="grid4">
+<div class="kpi-card" style="border-top:3px solid var(--giv)">
+<div class="val" style="font-size:.9rem;color:var(--giv)">2030</div>
+<div class="lbl">Givaudan 2030 Strategy: 4-6% LFL, EBITDA &gt;23%, FCF &gt;12%, "4D" yondashuvi</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)">
+<div class="val" style="font-size:.9rem;color:var(--iff)">2026</div>
+<div class="lbl">IFF: Portfel soddalashtirish, qarz &lt;3x, CCO modeli samaradorligi</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--sym)">
+<div class="val" style="font-size:.9rem;color:var(--sym)">2028</div>
+<div class="lbl">Symrise: Biotech/health/beauty konvergentsiya, "ONE Symrise"</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--dsm)">
+<div class="val" style="font-size:.9rem;color:var(--dsm)">2026-27</div>
+<div class="lbl">DSM-F: $350M sinergiya, ANH chiqish, yadro portfelga fokus</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ====== TAB 13: XULOSALAR ====== -->
+<div class="sec" id="tab13">
+<h2><span class="ico">XIV</span> Xulosalar va asosiy topilmalar</h2>
+
+<div class="panel panel-glow">
+<h3>13.1 Moliyaviy skelet</h3>
+<div class="grid4">
+<div class="kpi-card" style="border-top:3px solid var(--giv)">
+<div class="val" style="font-size:1rem;color:var(--giv)">~$8.2B</div>
+<div class="lbl">Givaudan — hajm bo'yicha 3-o'rinda, lekin eng yuqori gross margin (43-44%), eng yuqori R&D (~7.5%), eng kuchli net margin (14-15%)</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--dsm)">
+<div class="val" style="font-size:1rem;color:var(--dsm)">~$13.8B</div>
+<div class="lbl">DSM-F — eng katta hajm (IFRS), lekin past margin va faol restrukturizatsiya</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--iff)">
+<div class="val" style="font-size:1rem;color:var(--iff)">$10.9-11.5B</div>
+<div class="lbl">IFF — kuchli masshtab, lekin qarz yuki (3.8x) va past sof foyda (2%)</div>
+</div>
+<div class="kpi-card" style="border-top:3px solid var(--sym)">
+<div class="val" style="font-size:1rem;color:var(--sym)">~$5.4B</div>
+<div class="lbl">Symrise — eng samarali (eng past qarz, eng kam xodim boshiga xarajat), barqaror o'sish</div>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<h3>13.2 Sotuv modeli xulosalari</h3>
+<ul>
+<li>F&F sanoatida sotuv sikli <strong>3-36 oy</strong> — eng uzun B2B sikllaridan biri</li>
+<li>Mijozlarning <strong>70-80%</strong> kichik/mahalliy (distributor orqali), lekin daromadning <strong>60-75%</strong> yirik mijozlardan (to'g'ridan-to'g'ri)</li>
+<li>Mijoz saqlab qolish <strong>85-92%</strong> — formula "lock-in" va hamkorlikdagi IP tufayli</li>
+<li>Sample-to-win konversiya <strong>10-25%</strong> — sanoatning eng maxfiy KPI si</li>
+<li><strong>Sotuv odam bitim olib keladi, qo'llash jamoasi uni yutadi, regulyativ o'tkazadi, operatsiyalar saqlab qoladi</strong></li>
+</ul>
+</div>
+
+<div class="panel">
+<h3>13.3 Givaudan differensiatsiyasi</h3>
+<ul>
+<li>L&R (mahalliy/mintaqaviy) mijozlar strategiyasi muvaffaqiyatli — <strong>59%</strong> ga yetdi, tez o'smoqda</li>
+<li>Raqamli innovatsiya (Carto, Creatogether, Myromi) — sotuv siklini <strong>oylardan haftalarga</strong> qisqartirmoqda</li>
+<li>3 bosqichli R&D kaskadi — har bir bosqichda switching xarajatini oshiradi</li>
+<li>Nozik atirlar — COVID dan beri <strong>+80% LFL</strong> o'sish</li>
+</ul>
+</div>
+
+<div class="panel">
+<h3>13.4 FY2024 &rarr; FY2025 trend</h3>
+<ul>
+<li>FY2024 da barcha kompaniyalar kuchli o'sish ko'rsatdi (2023 baza past edi)</li>
+<li>FY2025 da o'sish sekinlashdi: valyuta, Osiyo yumshoqligi, tariflar, kirish xarajatlari</li>
+<li>Portfel tozalash davom etmoqda: IFF divest, DSM-F ANH sotish, Symrise fokuslanish</li>
+<li><strong>Fragrance tomoni food/taste dan tezroq o'smoqda</strong> — premiumizatsiya, nisha brendlar, Z avlod</li>
+</ul>
+</div>
+
+<div class="panel highlight">
+<h3>13.5 Eng kuchli sotuv tizimi formulasi</h3>
+<div class="flow">
+<div class="flow-step" style="background:var(--giv)">Shortlist</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Brief</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Birgalikda yaratish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Namuna/Sinov</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Regulyativ/Kengaytirish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step">Ishga tushirish</div><span class="flow-arrow">&rarr;</span>
+<div class="flow-step" style="background:var(--green)">Takroriy biznes</div>
+</div>
+<div class="org" style="margin-top:12px">KAM brief olib kiradi
+  &rarr; Qo'llash jamoasi formulaga aylantiradi
+    &rarr; Regulyativ muvofiq qiladi
+      &rarr; Operatsiyalar kengaytiradi
+        &rarr; AM qaytib takroriy brief va cross-sell boshqaradi</div>
+</div>
+</div>
+
+<!-- ====== TAB 14: MANBALAR ====== -->
+<div class="sec" id="tab14">
+<h2><span class="ico">XV</span> Manbalar ro'yxati (27 ta)</h2>
+
+<div class="panel">
 <h3>Moliyaviy hisobotlar</h3>
-<ol class="src-list">
-<li><strong>Givaudan</strong> GCFR 2025 &mdash; givaudan.com/files/giv-2025-gcfr.pdf</li>
-<li><strong>Givaudan</strong> Financial Summary 2024 &mdash; givaudan.com/files/giv-2024-financial-summary.pdf</li>
-<li><strong>Givaudan</strong> Integrated Report 2024 &mdash; givaudan.com/files/giv-2024-integrated-report.pdf</li>
-<li><strong>IFF</strong> Form 10-K FY2024 &mdash; SEC EDGAR</li>
-<li><strong>IFF</strong> Form 10-K FY2025 &mdash; SEC EDGAR</li>
-<li><strong>Symrise</strong> Corporate Report 2024</li>
-<li><strong>Symrise</strong> Corporate Report 2025</li>
-<li><strong>DSM-Firmenich</strong> IAR 2024 &mdash; annualreport.dsm-firmenich.com/2024/</li>
-<li><strong>DSM-Firmenich</strong> IAR 2025 &mdash; annualreport.dsm-firmenich.com/2025/</li>
-<li><strong>Kerry Group</strong> Annual Report &mdash; kerry.com/annual-report/</li>
-</ol>
+<div class="src-list">
+<div class="src-item"><strong>Givaudan:</strong> GCFR 2025 — <a href="https://www.givaudan.com/files/giv-2025-gcfr.pdf" target="_blank">givaudan.com/files/giv-2025-gcfr.pdf</a></div>
+<div class="src-item"><strong>Givaudan:</strong> Financial Summary 2024 — <a href="https://www.givaudan.com/files/giv-2024-financial-summary.pdf" target="_blank">givaudan.com/files/giv-2024-financial-summary.pdf</a></div>
+<div class="src-item"><strong>Givaudan:</strong> Integrated Report 2024 — <a href="https://www.givaudan.com/files/giv-2024-integrated-report.pdf" target="_blank">givaudan.com/files/giv-2024-integrated-report.pdf</a></div>
+<div class="src-item"><strong>IFF:</strong> Form 10-K FY2024 — <a href="https://www.sec.gov/Archives/edgar/data/51253/000005125325000018/iff2024annualreport-final.pdf" target="_blank">sec.gov (IFF 2024)</a></div>
+<div class="src-item"><strong>IFF:</strong> Form 10-K FY2025 — <a href="https://www.sec.gov/Archives/edgar/data/51253/000005125326000006/iff-20251231.htm" target="_blank">sec.gov (IFF 2025)</a></div>
+<div class="src-item"><strong>Symrise:</strong> Corporate Report 2024 — <a href="https://symrise.com/corporatereport/2024/" target="_blank">symrise.com/corporatereport/2024</a></div>
+<div class="src-item"><strong>Symrise:</strong> Corporate Report 2025 — <a href="https://symrise.com/corporatereport/2025/" target="_blank">symrise.com/corporatereport/2025</a></div>
+<div class="src-item"><strong>DSM-Firmenich:</strong> IAR 2024 — <a href="https://annualreport.dsm-firmenich.com/2024/" target="_blank">annualreport.dsm-firmenich.com/2024</a></div>
+<div class="src-item"><strong>DSM-Firmenich:</strong> IAR 2025 — <a href="https://annualreport.dsm-firmenich.com/2025/" target="_blank">annualreport.dsm-firmenich.com/2025</a></div>
+<div class="src-item"><strong>Kerry Group:</strong> Annual Report — <a href="https://www.kerry.com/annual-report/" target="_blank">kerry.com/annual-report</a></div>
+</div>
+</div>
+
+<div class="panel">
 <h3>Sanoat tadqiqotlari</h3>
-<ol class="src-list" start="11">
-<li><strong>Damodaran (NYU)</strong> &mdash; Sanoat marjalari</li>
-<li><strong>Alexander Group</strong> &mdash; CCOS (sotuv kompensatsiyasi)</li>
-<li><strong>Alexander Group</strong> &mdash; Manufacturer benchmarks</li>
-<li><strong>CSO Insights</strong> &mdash; Sales Enablement Study</li>
-<li><strong>ICTA</strong> &mdash; Chemical distribution</li>
-<li><strong>6sense</strong> &mdash; 2025 B2B Buyer Experience Report</li>
-<li><strong>American Chemistry Council</strong> &mdash; Guide to Business of Chemistry</li>
-</ol>
-<h3>Givaudan qo'shimcha</h3>
-<ol class="src-list" start="18">
-<li>Givaudan FY2024 Results press release</li>
-<li>Givaudan FY Results Transcript</li>
-<li>Givaudan July 2024 Investor Presentation</li>
-<li>Givaudan 2030 Strategy</li>
-<li>Givaudan Acquisitions page</li>
-<li>Givaudan 1688.com e-commerce (2021)</li>
-<li>Givaudan Knowde storefront</li>
-<li>Givaudan Digital Tools</li>
-<li>Givaudan Myromi (2025)</li>
-<li>Givaudan House of Lime (2026)</li>
-</ol>
+<div class="src-list">
+<div class="src-item"><strong>Damodaran (NYU):</strong> Sanoat marjalari — <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/margin.html" target="_blank">stern.nyu.edu (Damodaran)</a></div>
+<div class="src-item"><strong>Alexander Group:</strong> CCOS — <a href="https://www.alexandergroup.com/insights/are-you-paying-your-sales-people-enough-what-is-your-compensation-cost-of-sales-ccos/" target="_blank">alexandergroup.com (CCOS)</a></div>
+<div class="src-item"><strong>Alexander Group:</strong> Manufacturer benchmarks — <a href="https://www.alexandergroup.com/insights/key-sales-model-benchmarks-for-manufacturers/" target="_blank">alexandergroup.com (benchmarks)</a></div>
+<div class="src-item"><strong>CSO Insights:</strong> Sales Enablement Study — <a href="https://community.highspot.com/wp-content/uploads/2019/10/CSO-Insights-5th-Annual-Sales-Enablement-Study.pdf" target="_blank">highspot.com (CSO Insights)</a></div>
+<div class="src-item"><strong>ICTA:</strong> Chemical distribution — <a href="https://icta-chem.org/about/chemical-distribution/" target="_blank">icta-chem.org</a></div>
+<div class="src-item"><strong>6sense:</strong> 2025 B2B Buyer Experience Report — <a href="https://6sense.com/science-of-b2b/the-2025-b2b-buyer-experience-report/" target="_blank">6sense.com</a></div>
+<div class="src-item"><strong>American Chemistry Council:</strong> Guide to Business of Chemistry — <a href="https://www.americanchemistry.com/content/download/14468/file/2023-Guide-to-the-Business-of-Chemistry.pdf" target="_blank">americanchemistry.com</a></div>
 </div>
 </div>
 
-</div><!-- /wrap -->
+<div class="panel">
+<h3>Givaudan qo'shimcha manbalar</h3>
+<div class="src-list">
+<div class="src-item"><strong>Givaudan FY2024 Results</strong> — <a href="https://www.givaudan.com/media/media-releases/2025/2024-full-year-results" target="_blank">givaudan.com (FY2024 Results)</a></div>
+<div class="src-item"><strong>Givaudan FY Results Transcript</strong> — <a href="https://www.givaudan.com/files/giv-transcript-2024-full-year-results.pdf" target="_blank">givaudan.com (Transcript)</a></div>
+<div class="src-item"><strong>Givaudan July 2024 Investor Presentation</strong> — <a href="https://www.givaudan.com/files/giv-2024-investor-presentation-jul.pdf" target="_blank">givaudan.com (Investor Pres.)</a></div>
+<div class="src-item"><strong>Givaudan 2030 Strategy</strong> — <a href="https://www.givaudan.com/media/media-releases/2025/givaudan-announces-its-2030-strategy" target="_blank">givaudan.com (2030 Strategy)</a></div>
+<div class="src-item"><strong>Givaudan Acquisitions</strong> — <a href="https://www.givaudan.com/investors/investor-information/investment-case/our-acquisitions" target="_blank">givaudan.com (Acquisitions)</a></div>
+<div class="src-item"><strong>Givaudan 1688.com e-commerce</strong> — <a href="https://www.givaudan.com/media/trade-media/2021/givaudan-strengthens-e-commerce-presence-china-1688com-partnership" target="_blank">givaudan.com (1688.com)</a></div>
+<div class="src-item"><strong>Givaudan Knowde</strong> — <a href="https://www.prnewswire.com/news-releases/givaudan-expands-its-online-presence-with-a-new-storefront-on-knowde-301225885.html" target="_blank">prnewswire.com (Knowde)</a></div>
+<div class="src-item"><strong>Givaudan Digital Tools</strong> — <a href="https://www.givaudan.com/taste-wellbeing/imagine/tools/digital-tools" target="_blank">givaudan.com (Digital Tools)</a></div>
+<div class="src-item"><strong>Givaudan Myromi</strong> — <a href="https://www.givaudan.com/media/trade-media/2025/givaudan-launches-myromi" target="_blank">givaudan.com (Myromi)</a></div>
+<div class="src-item"><strong>Givaudan House of Lime</strong> — <a href="https://www.givaudan.com/media/trade-media/2026/givaudan-launches-house-of-lime" target="_blank">givaudan.com (House of Lime)</a></div>
+</div>
+</div>
 
-<footer style="text-align:center;padding:40px 20px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:40px">
-F&F Sanoati To'liq Umumlashtirilgan Hisobot &middot; FY2024 + FY2025 &middot; 2026-yil, 1-aprel<br>
-Givaudan GCFR &middot; IFF 10-K &middot; Symrise CR &middot; DSM-F IAR &middot; Alexander Group &middot; CSO Insights &middot; Damodaran (NYU)
-</footer>
+<div class="panel" style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:32px">
+<p><em>Bu hujjat 2026-yil 1-aprel holatiga ko'ra tayyorlangan. Ma'lumotlar FY2024 va FY2025 moliyaviy hisobotlariga asoslangan. Barcha manbalar hujjatning oxiridagi ro'yxatda ko'rsatilgan.</em></p>
+</div>
+</div>
+
+</div><!-- .wrap -->
+
+<!-- BACK TO TOP -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
 <script>
-// TAB NAV
-document.querySelectorAll('.nav-btn').forEach(btn=>{
-btn.addEventListener('click',()=>{
-document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
-document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
-document.getElementById(btn.dataset.t).classList.add('active');
-window.scrollTo({top:200,behavior:'smooth'});
-});
-});
+// TAB NAVIGATION
+const tabs=document.querySelectorAll('.sec');
+const btns=document.querySelectorAll('.nav-btn');
+function showTab(i){
+tabs.forEach(t=>t.classList.remove('active'));
+btns.forEach(b=>b.classList.remove('active'));
+tabs[i].classList.add('active');
+btns[i].classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
 // PROGRESS BAR
 window.addEventListener('scroll',()=>{
 const h=document.documentElement;
 const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
 document.getElementById('prog').style.width=pct+'%';
-// BACK TO TOP
-document.getElementById('btt').classList.toggle('show',window.scrollY>400);
+const btt=document.getElementById('btt');
+btt.style.display=h.scrollTop>400?'block':'none';
 });
 </script>
 </body>
